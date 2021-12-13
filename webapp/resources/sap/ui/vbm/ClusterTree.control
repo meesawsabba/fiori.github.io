@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ClusterTree</name>
+    <derived/>
+    <documentation>Cluster definition element for tree clusters. Complex clustering based on Voronoi diagrams. The actual clustering is based on the areas
+       in the Voronoi diagram and cluster objects get aggregated to a hierarchy over several levels of detail.</documentation>
+    <baseType>sap.ui.vbm/ClusterBase</baseType>
+    <properties>
+        <property name="animateClusterSplit" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Indicates whether the split of a cluster object into sub clusterers or visual objects should be animated</documentation>
+        </property>
+    </properties>
+</control>

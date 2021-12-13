@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="restrifra">
+  <m:Dialog id="RestrictionDialogFragment" class="sapUiSizeCompact" horizontalScrolling="false" contentWidth="65rem" contentHeight="23rem" draggable="true" resizable="true" title="{i18n>SELECTION_SETTINGS}" beforeClose="beforeClose" busyIndicatorDelay="1">
+    <m:buttons>
+      <m:Button id="restridiab1" text="{i18n>DIALOG_OK}" visible="{Restriction>/changeMode}" press="onOk" />
+      <m:Button id="restridiab2" text="{i18n>DIALOG_CANCEL}" visible="{Restriction>/changeMode}" press="onCancel" />
+      <m:Button id="restridiab3" text="{i18n>DIALOG_CLOSE}" visible="{Restriction>/displayMode}" press="onCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="restriview" viewName="sap.zen.dsh.view.Restriction" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

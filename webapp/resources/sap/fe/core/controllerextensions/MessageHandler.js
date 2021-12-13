@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["sap/ui/core/mvc/ControllerExtension","sap/ui/core/mvc/OverrideExecution","sap/fe/core/actions/messageHandling"],function(C,O,m){"use strict";var M=C.extend("sap.fe.core.controllerextensions.MessageHandler",{metadata:{methods:{showMessageDialog:{"public":true,"final":true},getShowBoundMessagesInMessageDialog:{"public":false,"final":false,overrideExecution:O.Instead}}},getShowBoundMessagesInMessageDialog:function(){return true;},showMessageDialog:function(p){var c=p&&p.customMessages?p.customMessages:undefined,o=this.base.getView().getBindingContext("internal");if(p&&p.isActionParameterDialogOpen&&o){o.setProperty("isActionParameterDialogOpen",true);}var s=this.getShowBoundMessagesInMessageDialog();var b=p&&p.context?p.context:this.getView().getBindingContext();var e=p&&p.bHasEtagMessage;if(o){o.setProperty("isActionParameterDialogOpen",false);}return new Promise(function(r,a){setTimeout(function(){m.showUnboundMessages(c,b,e,s).then(r).catch(a);},0);});},removeTransitionMessages:function(k){if(!k){m.removeBoundTransitionMessages();}m.removeUnboundTransitionMessages();}});return M;});

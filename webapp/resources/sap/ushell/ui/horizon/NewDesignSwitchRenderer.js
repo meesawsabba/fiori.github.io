@@ -1,0 +1,2 @@
+// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/resources","sap/ui/Device"],function(r,D){"use strict";var N={apiVersion:2};N.render=function(a,c){a.openStart("div",c);if(!c.getVisible()){a.style("display","none");}a.class("sapUshellNDS");a.class("sapUiSizeCompact");a.openEnd();a.renderControl(c.getLabelControl());a.renderControl(c.getSwitchControl());a.close("div");};return N;},true);

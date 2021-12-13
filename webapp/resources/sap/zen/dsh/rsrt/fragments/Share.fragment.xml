@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="prev-share-fra1">
+  <m:Popover
+      id="sharePopup"
+      showHeader="false"
+      placement="Bottom">
+    <mvc:XMLView
+        viewName="sap.zen.dsh.rsrt.view.Share"
+        id="ShareView"
+        async="true" />
+  </m:Popover>
+</core:FragmentDefinition>

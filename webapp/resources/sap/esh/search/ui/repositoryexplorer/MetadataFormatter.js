@@ -1,0 +1,7 @@
+/*!
+ * SAPUI5
+
+		(c) Copyright 2009-2021 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["../sinaNexTS/sina/formatters/Formatter"],function(F){"use strict";var n={business_purpose_purpose:true,business_purpose_description:true,remote_connection:true,connection_name:true,remote_connection_type_description:true,description:true,exposed_for_consumption:true,kind:true,is_shared:true,label:true,model_name:true,remote_connection_type:true,remote_entity:true,space_name:true,business_purpose_tags:true,visible_in_space_name:true,};var M=function(){this.init.apply(this,arguments);};M.prototype=Object.assign(Object.create(F.Formatter.prototype),{init:function(c){this.configuration=c;},initAsync:function(){},formatAsync:function(m){var s=m.dataSources[0].sina;var d=s.getDataSource("SEARCH_DESIGN");if(this.configuration.dwcResourceBundle&&this.configuration.dwcResourceBundle.hasText("search_design")&&this.configuration.dwcResourceBundle.hasText("search_design_plural")){d.label=this.configuration.dwcResourceBundle.getText("search_design");d.labelPlural=this.configuration.dwcResourceBundle.getText("search_design_plural");}for(var i=0;i<d.attributesMetadata.length;++i){var a=d.attributesMetadata[i];var t="search_design_"+a.id.toLowerCase();if(this.configuration.dwcResourceBundle&&this.configuration.dwcResourceBundle.hasText(t)){a.label=this.configuration.dwcResourceBundle.getText(t);}if(a.label.toLowerCase()===a.label){a.isSortable=false;}if(n[a.id]){a.isSortable=false;}}return Promise.resolve(m);},});return M;});

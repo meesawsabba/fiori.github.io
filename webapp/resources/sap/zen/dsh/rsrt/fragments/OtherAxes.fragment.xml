@@ -1,0 +1,136 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="BarChartSettings">
+  <form:SimpleForm
+      editable="true"
+      labelSpanXL="3"
+      labelSpanL="3"
+      labelSpanM="3"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="4"
+      emptySpanL="4"
+      emptySpanM="4"
+      emptySpanS="4"
+      columnsXL="1"
+      columnsL="1"
+      columnsM="1"
+      >
+    <form:content>
+      <m:Label
+          labelFor="bc_Category2Dimension"
+          text="{i18n>CategoryAxis2Dimension}" />
+      <m:Select
+          id="bc_Category2Dimension"
+          selectedKey="{om>/dataProvider/0/Chart/cat2Dimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          select="dimChange"
+          selected="{om>/dataProvider/0/Chart/hasCat2Dimension}"
+          text="{i18n>PlaceDimOnCat2Axis}" />
+      <m:Label
+          labelFor="bc_Value2Dimension"
+          text="{i18n>ValueAxisDimension}" />
+      <m:Select
+          id="bc_Value2Dimension"
+          selectedKey="{om>/dataProvider/0/Chart/val2Dimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          select="dimChange"
+          selected="{om>/dataProvider/0/Chart/hasVal2Dimension}"
+          text="{i18n>PlaceDimOnVal2Axis}" />
+      <m:Label
+          labelFor="bc_ColorDimension"
+          text="{i18n>ColorAxisDimension}" />
+      <m:Select
+          id="bc_ColorDimension"
+          selectedKey="{om>/dataProvider/0/Chart/colDimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          id="bc_placeColorAxisOnLayout"
+          select="updateChart"
+          selected="{om>/dataProvider/0/Chart/hasColDimension}"
+          text="{i18n>PlaceDimOnColorAxis}" />
+      <m:Label
+          labelFor="bc_DataFrameDimension"
+          text="{i18n>DataFrameAxisDimension}" />
+      <m:Select
+          id="bc_DataFrameDimension"
+          selectedKey="{om>/dataProvider/0/Chart/dataFrameDimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          id="bc_placeDataFrameAxisOnLayout"
+          select="dimChange"
+          selected="{om>/dataProvider/0/Chart/hasDataFrameDimension}"
+          text="{i18n>PlaceDimOnDataFrameAxis}" />
+      <m:Label
+          labelFor="bcTitleDimension"
+          text="{i18n>TitleAxisDimension}" />
+      <m:Select
+          id="bcTitleDimension"
+          selectedKey="{om>/dataProvider/0/Chart/titDimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          select="dimChange"
+          selected="{om>/dataProvider/0/Chart/hasTitleDimension}"
+          text="{i18n>PlaceDimOnTitleAxis}" />
+      <m:Label
+          labelFor="bcTitleDimension"
+          text="{i18n>TitleAxisDimension}" />
+      <m:Select
+          id="bc_TimeDimension"
+          selectedKey="{om>/dataProvider/0/Chart/timeDimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          id="bc_placeTimeAxisOnLayout"
+          select="dimChange"
+          selected="{om>/dataProvider/0/Chart/hasTimeDimension}"
+          text="{i18n>PlaceDimOnTimeAxis}" />
+    </form:content>
+  </form:SimpleForm>
+</core:FragmentDefinition>

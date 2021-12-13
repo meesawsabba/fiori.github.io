@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:vh="sap.ui.comp.valuehelpdialog"
+  xmlns:fb="sap.ui.comp.filterbar"
+  xmlns:m="sap.m" id="openSelectorDialogView">
+  <vh:ValueHelpDialog id="selectorOpenDia1" class="sapUiSizeCompact" basicSearchText="" title="{
+         parts:[
+         'i18n>SELECTOR',
+         '/description'
+         ],
+         formatter: 'jQuery.sap.formatMessage'
+      }" supportMultiselect="true" supportRanges="{/supportRanges}" supportRangesOnly="false" key="key" tokenDisplayBehaviour="descriptionOnly" descriptionKey="description" ok="onOkValueHelp" cancel="onAfterClose" afterClose="onAfterClose">
+    <vh:filterBar>
+      <fb:FilterBar visible="{/supportRanges}" id="selectorOpenDia2" search="search">
+        <fb:filterGroupItems>
+          <fb:FilterGroupItem id="selectorDia4" groupName="attributes" name="text" label="{i18n>SearchPattern}" visibleInFilterBar="true">
+            <fb:control>
+              <m:Input id="fbdimtext" placeholder="{i18n>RestrictValuePoolByTextFilter}" />
+            </fb:control>
+          </fb:FilterGroupItem>
+        </fb:filterGroupItems>
+      </fb:FilterBar>
+    </vh:filterBar>
+  </vh:ValueHelpDialog>
+</core:FragmentDefinition>

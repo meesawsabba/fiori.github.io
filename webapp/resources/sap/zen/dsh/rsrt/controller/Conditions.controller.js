@@ -1,0 +1,5 @@
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define("sap/zen/dsh/rsrt/controller/Conditions.controller",["sap/base/Log","sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel","sap/zen/commons/thirdparty/lodash"],function(L,C,J,_){"use strict";C.extend("sap.zen.dsh.rsrt.controller.Conditions",{onInit:function(){var t=this;var v=t.getView();t.getASCOND=_.constant(Promise.resolve(sap.ui.core.Fragment.load({name:"sap.zen.dsh.rsrt.fragments.ASCOND",controller:t})).then(function(f){v.addDependent(f);return f;}).catch(function(e){L.error(e);}));},onExit:function(){var t=this;this.getView().destroyDependents();t.getView().removeAllDependents();},conditionPress:function(e){var t=this;var i=e.getParameter("item");t._key=i.getKey();t.getASCOND().then(function(o){o.setModel(new J({active:i.data().active}));o.openBy(i);});},activateCondition:function(){var t=this;var o=t.getView().getModel("om");o.getDataProvider("0").setConditionActive(t._key,true);},deactivateCondition:function(){var t=this;var o=t.getView().getModel("om");o.getDataProvider("0").setConditionActive(t._key,false);}});return sap.zen.dsh.rsrt.controller.Conditions;});

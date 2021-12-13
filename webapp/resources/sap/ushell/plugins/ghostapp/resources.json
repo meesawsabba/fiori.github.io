@@ -1,0 +1,31 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 338,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 241
+		},
+		{
+			"name": "FakeModel-dbg.js",
+			"size": 1129,
+			"isDebug": true
+		},
+		{
+			"name": "FakeModel.js",
+			"size": 521
+		},
+		{
+			"name": "manifest.json",
+			"size": 3144
+		},
+		{
+			"name": "metadata.xml",
+			"size": 145880
+		}
+	]
+}

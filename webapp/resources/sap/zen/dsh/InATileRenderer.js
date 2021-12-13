@@ -1,0 +1,5 @@
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/ushell/library","sap/base/Log","sap/ui/core/Renderer","sap/zen/dsh/WidgetType","sap/ushell/ui/tile/TileBaseRenderer"],function(u,L,R,W,T){"use strict";var I=R.extend(T);I.renderPart=function(r,c){if(c.getWidgetType()===W.pivot){r.write("<div");r.addClass("sapZenDshInATile");r.writeClasses();r.write(">");r.write("<div");r.addClass("sapZenDshInATileData");r.writeClasses();r.write(">");r.write("<div class='sapZenDshInATileIndication'>");r.write("<br><div");r.addClass("sapZenDshInATileNumberFactor");r.writeClasses();r.write(">");r.write("</div>");r.write("</div>");r.write("<div");r.addClass("sapZenDshInATileNumber");r.writeClasses();r.write("</div>");r.write("</div>");r.write("</div>");}else{r.openStart("div").writeControlData(c).class("sapZenDshInATile").openEnd();if(c.getMicrochartBar&&c.getMicrochartBar()){r.renderControl(c.getMicrochartBar());}else{c.getInit().then(function(){c.invalidate();});}r.close("div");}};return I;},true);

@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/gantt/utils/GanttFlexibilityUtils"],function(G){"use strict";return{"hideControl":"default","unhideControl":"default","moveControls":"default","GanttTableColumnOrder":{"changeHandler":{applyChange:function(c,C,p){var m=p.modifier,v=p.view,a=p.appComponent,o=c.getDefinition(),A=o.content["aggregationName"],n=o.content["newValue"],O=o.content["oldValue"];var N=[];n.forEach(function(b){var d=m.bySelector(b,a,v);N.push(d);});if(N.length>0){m.removeAllAggregation(C,A);N.forEach(function(b,i){m.insertAggregation(C,A,b,i,v);});}c.setRevertData(O);return true;},revertChange:function(c,C,p){var a=p.appComponent,v=p.view,m=p.modifier,o=c.getRevertData(),b=c.getDefinition(),A=b.content["aggregationName"];var O=[];o.forEach(function(d){var e=m.bySelector(d,a,v);O.push(e);});if(O.length>0){m.removeAllAggregation(C,A);O.forEach(function(d,i){m.insertAggregation(C,A,d,i,v);});}c.resetRevertData();return true;},completeChangeContent:function(c,s,p){return;},getCondenserInfo:function(c){return{affectedControl:c.getSelector(),classification:sap.ui.fl.condenser.Classification.LastOneWins,uniqueKey:"GanttTableColumnOrder"};}},layers:{"USER":true}},"TableColumnSortOrder":G.fnChangeHandler("TableColumnSortOrder"),"TableColumnFilterValue":G.fnChangeHandler("TableColumnFilterValue"),"TableColumnVisibility":G.fnChangeHandler("TableColumnVisibility")};},true);

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ClusterDistance</name>
+    <derived/>
+    <documentation>Cluster definition element for distance based clusters. Visual objects are clustered based on the visible distance between them. Objects
+       get aggregated to a cluster object as long as they are inside the given distance range to the start object. The start object for a
+       cluster is not specifically defined, just the next object not belonging to a cluster is taken. The visualization objects are placed in
+       the center of gravity of the covered objects. Thus the actual distance between them may vary.&lt;br&gt;
+       This clustering is fast, but the results may not be very convincing.</documentation>
+    <baseType>sap.ui.vbm/ClusterBase</baseType>
+    <properties>
+        <property name="distance" type="sap.ui.core/int" defaultValue="128" group="Behavior">
+            <documentation>Distance in pixels between cluster objects. This distance is used as parameter during the clustering. The visualization objects are
+placed in center of gravity of the covered objects. Thus the actual distance between them may vary.</documentation>
+        </property>
+    </properties>
+</control>

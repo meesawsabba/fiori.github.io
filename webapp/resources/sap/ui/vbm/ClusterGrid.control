@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ClusterGrid</name>
+    <derived/>
+    <documentation>Cluster definition element for grid based clusters. Visual objects are clustered based on a grid. It is possible to have multiple grid
+       based clusters. The visualization object is placed in the center of the grid cell plus a given offset.</documentation>
+    <baseType>sap.ui.vbm/ClusterBase</baseType>
+    <properties>
+        <property name="gridSize" type="sap.ui.core/string" defaultValue="256;256" group="Behavior">
+            <documentation>Size of grid cells in pixels. Format is "distanceX;distanceY"</documentation>
+        </property>
+        <property name="limit" type="sap.ui.core/int" defaultValue="2" group="Behavior">
+            <documentation>Minimal number of objects covered by grid cell fullfilling the cluster rule until clustering is applied.</documentation>
+        </property>
+        <property name="limitTotal" type="sap.ui.core/int" defaultValue="2" group="Behavior">
+            <documentation>Minimal total number of objects covered by grid cell until clustering is applied.</documentation>
+        </property>
+        <property name="orderIndex" type="sap.ui.core/int" group="Behavior">
+            <documentation>Ordering index of given cluster in the sequence of all grid based clusters</documentation>
+        </property>
+        <property name="offset" type="sap.ui.core/string" defaultValue="0;0" group="Appearance">
+            <documentation>Offset for the visualization object from the center of the grid cell. This can be used to show multiple visualization objects in on
+grid cell without overlapping. Format is "offsetX;offsetY"</documentation>
+        </property>
+        <property name="cellSpacing" type="sap.ui.core/int" defaultValue="4" group="Appearance">
+            <documentation>Space between grid cells if cell area is shown</documentation>
+        </property>
+    </properties>
+</control>

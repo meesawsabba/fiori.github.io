@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/fe/semantics/library-preload.js",
+"sourceroot":".",
+"sources":["library-dbg.js","manifest.json"],
+"names":[],
+"mappings":";;;;;;AAeA,gBAAa,4BACZ,CACC,mBACA,qBACD,EACA,UAAW,CACV,aAYA,8BACC,KAAM,mBACN,aAAc,gBACd,MAAO,GACP,WAAY,GACZ,SAAU,GACV,SAAU,GACV,QAAS,SACT,aAAc,IACf,GAEA,OAAO,iBACR,CACD;;;;;",
+"x_com_sap_openui5_sections":[50,478,537,1051]
+}

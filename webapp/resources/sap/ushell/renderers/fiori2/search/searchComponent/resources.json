@@ -1,0 +1,36 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 1000,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 657
+		},
+		{
+			"name": "controller/SearchApp-dbg.controller.js",
+			"size": 2104,
+			"isDebug": true
+		},
+		{
+			"name": "controller/SearchApp.controller.js",
+			"size": 1125
+		},
+		{
+			"name": "manifest.json",
+			"size": 669
+		},
+		{
+			"name": "view/SearchApp-dbg.view.js",
+			"size": 674,
+			"isDebug": true
+		},
+		{
+			"name": "view/SearchApp.view.js",
+			"size": 485
+		}
+	]
+}

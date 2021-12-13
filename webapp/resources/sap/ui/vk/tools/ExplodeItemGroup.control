@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>tools/ExplodeItemGroup</name>
+    <derived/>
+    <documentation>Aggregation element for the output settings of the Viewport</documentation>
+    <developmentState state="experimental"></developmentState>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="name" type="sap.ui.core/string"/>
+        <property name="magnitudeAdjustmentMultiplier" type="sap.ui.core/float" defaultValue="0.0"/>
+    </properties>
+    <aggregations>
+        <aggregation name="items" type="sap.ui.vk/NodeProxy" cardinality="0..n"/>
+    </aggregations>
+</control>

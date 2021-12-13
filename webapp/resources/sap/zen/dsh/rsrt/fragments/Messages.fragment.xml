@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="prev-msg-fra-clt1">
+  <m:MessagePopover
+      id="prev-msg-fra-clt2"
+      placement="Bottom"
+      items="{om>/messages}">
+    <m:items>
+      <m:MessageItem
+          id="prev-msg-fra-clt3"
+          title="{om>Text}"
+          type="{om>Severity}"
+          markupDescription="true"
+          longtextUrl="{om>LongTextUri}"
+          />
+    </m:items>
+  </m:MessagePopover>
+</core:FragmentDefinition>

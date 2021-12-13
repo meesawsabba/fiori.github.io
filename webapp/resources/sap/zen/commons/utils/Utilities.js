@@ -1,0 +1,5 @@
+/*
+ * SAPUI5
+  (c) Copyright 2009-2020 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/zen/commons/utils/jQuery","sap/base/Log"],function(q,L){"use strict";var U=function(){var a=this;a.trunc=Math.trunc||function(x){return isNaN(x)?NaN:(x>0?Math.floor(x):Math.ceil(x));};q.fn.viewportHeight=function(){var d=this.get(0);if(!d){return null;}var n=this.outerHeight();var c=q(window).height();var r=d.getBoundingClientRect();var t=r.top;var b=r.bottom;return Math.max(0,t>0?Math.min(n,c-t):Math.min(b,c));};q.fn.sizeChanged=function(h){var $=this;var i=setInterval(function(){if($.data("_ffHandling")){return;}$.data("_ffHandling",true);var n=$.viewportHeight();var b=$.width();if(n===0){n=q(["#",$.attr("id")].join("")).height();}if(b===0){b=q(["#",$.attr("id")].join("")).width();}if(!($.data("lw")===b&&$.data("lh")===n)&&typeof h==="function"){try{if(!h({lastWidth:$.data("lw"),lastHeight:$.data("lh"),width:b,height:n})){clearInterval(i);}}catch(e){clearInterval(i);L.error(e);}$.data("lw",b);$.data("lh",n);}$.data("_ffHandling",false);},100);return $;};};return new U();});

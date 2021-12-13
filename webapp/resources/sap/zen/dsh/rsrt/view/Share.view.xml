@@ -1,0 +1,41 @@
+<mvc:View
+    xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:footerbar="sap.ushell.ui.footerbar"
+    controllerName="sap.zen.dsh.rsrt.controller.Share"
+    id="prev-share-view-clt1">
+  <m:ActionSheet
+      id="shareSheet"
+      class="sapSmartTemplatesObjectPageActionSheetButton"
+      title="{i18nShared>txt_share}">
+    <m:buttons>
+      <m:Button
+          id="shareEmailButton"
+          icon="sap-icon://email"
+          tooltip="{share>SEMANTIC_CONTROL_SEND_EMAIL}"
+          press="shareEmailPressed"
+          text="{share>SEMANTIC_CONTROL_SEND_EMAIL}"
+          class="sapMFlexBox"
+          width="100%" />
+      <m:Button
+          id="shareJamButton"
+          icon="sap-icon://share-2"
+          press="shareJamPressed"
+          text="{share>SEMANTIC_CONTROL_SHARE_IN_JAM}"
+          tooltip="{share>SEMANTIC_CONTROL_SHARE_IN_JAM}"
+          visible="{/jamVisible}"
+          class="sapMFlexBox"
+          width="100%" />
+      <footerbar:AddBookmarkButton id="bookmarkButton"
+                                   text="{share>SEMANTIC_CONTROL_SAVE_AS_TILE}"
+                                   enabled="{/hasShellContainer}"
+                                   tooltip="{share>SEMANTIC_CONTROL_SAVE_AS_TILE}"
+                                   title="{/Description}"
+                                   subtitle="{i18n>query_preview}"
+                                   info="{/inaSystem}"
+                                   tileIcon="sap-icon://manager-insight"
+                                   class="sapMFlexBox"
+                                   width="100%" />
+    </m:buttons>
+  </m:ActionSheet>
+</mvc:View>

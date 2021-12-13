@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cards/NumericHeaderSideIndicatorsAlignment</name>
+    <derived/>
+    <documentation>Different options for the alignment of the side indicators in the numeric header.</documentation>
+    <since>1.96</since>
+    <enumeration>
+        <value name="Begin">
+            <documentation>Sets the alignment to the beginning (left or right depending on LTR/RTL).</documentation>
+        </value>
+        <value name="End">
+            <documentation>Explicitly sets the alignment to the end (left or right depending on LTR/RTL).</documentation>
+        </value>
+    </enumeration>
+</simple-type>

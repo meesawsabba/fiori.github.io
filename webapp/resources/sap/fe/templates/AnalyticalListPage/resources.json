@@ -1,0 +1,27 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 393,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 278
+		},
+		{
+			"name": "chart/FEChartDelegate-dbg.js",
+			"size": 1617,
+			"isDebug": true
+		},
+		{
+			"name": "chart/FEChartDelegate.js",
+			"size": 401
+		},
+		{
+			"name": "manifest.json",
+			"size": 593
+		}
+	]
+}

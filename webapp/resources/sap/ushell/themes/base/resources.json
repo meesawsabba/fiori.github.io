@@ -1,0 +1,553 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 64,
+			"theme": "base"
+		},
+		{
+			"name": "ActionMode.less",
+			"size": 2196,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "AddBookmarkButton.less",
+			"size": 786,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "AnchorItem.less",
+			"size": 1776,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "AnchorNavigationBar.less",
+			"size": 1958,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "AppearanceView.less",
+			"size": 4623,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ApplicationContainer.less",
+			"size": 922,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Catalog.less",
+			"size": 8759,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ContactSupport.less",
+			"size": 345,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "CustomGroupHeaderListItem.less",
+			"size": 203,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Dashboard.less",
+			"size": 1816,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "DynamicTile.less",
+			"size": 3219,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Factsheet.less",
+			"size": 4871,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "FloatingContainer.less",
+			"size": 1113,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "FlpSettings.less",
+			"size": 1564,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "GridContainer.less",
+			"size": 2056,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "GroupList.less",
+			"size": 1846,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "GroupListItem.less",
+			"size": 1510,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "IconFonts.less",
+			"size": 936,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ImageTile.less",
+			"size": 1185,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "LoadingDialog.less",
+			"size": 1017,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "MeArea.less",
+			"size": 1208,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Notifications.less",
+			"size": 2879,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Page.less",
+			"size": 1044,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "PictureTile.less",
+			"size": 2484,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "PictureViewer.less",
+			"size": 454,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "PlusTile.less",
+			"size": 969,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "QuickAccess.less",
+			"size": 453,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "RightFloatingContainerItem.less",
+			"size": 2090,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Search.less",
+			"size": 7321,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchBarChart.less",
+			"size": 815,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchFLP.less",
+			"size": 139,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchFacet.less",
+			"size": 998,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchFacetDialog.less",
+			"size": 4558,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchFacetTabBar.less",
+			"size": 271,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchFieldGroup.less",
+			"size": 4852,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchInputHelpDialog.less",
+			"size": 446,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchPieChart.less",
+			"size": 669,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchResultListItem.less",
+			"size": 27066,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchResultMap.less",
+			"size": 140,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SearchTileContainer.less",
+			"size": 3134,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Section.less",
+			"size": 1333,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ShellAppTitle.less",
+			"size": 6164,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ShellFloatingAction.less",
+			"size": 1497,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ShellFloatingActions.less",
+			"size": 256,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ShellHeader.less",
+			"size": 8143,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ShellLayout.less",
+			"size": 4674,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "SplitContainer.less",
+			"size": 1278,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "StaticTile.less",
+			"size": 224,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TargetMappingConfiguration.less",
+			"size": 301,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Tile.less",
+			"size": 5209,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TileBase.less",
+			"size": 4260,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TileContainer.less",
+			"size": 10541,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TilePlaceholder.less",
+			"size": 1434,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "TileState.less",
+			"size": 1161,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ToolAreaItem.less",
+			"size": 1977,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ToolbarFiori.less",
+			"size": 156,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UsageAnalyticsPopUp.less",
+			"size": 305,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UsageAnalyticsSelector.less",
+			"size": 603,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UserConsentDialog.less",
+			"size": 1036,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UserPreferencesButton.less",
+			"size": 819,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UserSettings.less",
+			"size": 3004,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "ViewPortContainer.less",
+			"size": 1311,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 12687,
+			"theme": "base"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 234,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 106399,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "flower-standalone.less",
+			"size": 19181,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/BusinessSuiteInAppSymbols.eot",
+			"size": 71827,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/BusinessSuiteInAppSymbols.json",
+			"size": 11188,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/BusinessSuiteInAppSymbols.ttf",
+			"size": 165184,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/BusinessSuiteInAppSymbols.woff",
+			"size": 85144,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/BusinessSuiteInAppSymbols.woff2",
+			"size": 49256,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/SAP-icons.eot",
+			"size": 64804,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/SAP-icons.ttf",
+			"size": 68248,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/SAP-icons.woff",
+			"size": 34576,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/SAP-icons.woff2",
+			"size": 26076,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/SmileIconFont.ttf",
+			"size": 3132,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/sap-fiori-inapp-icons.eot",
+			"size": 22363,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/sap-fiori-inapp-icons.ttf",
+			"size": 26296,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/sap-launch-icons.eot",
+			"size": 231856,
+			"theme": "base"
+		},
+		{
+			"name": "fonts/sap-launch-icons.ttf",
+			"size": 217068,
+			"theme": "base"
+		},
+		{
+			"name": "img/SAPLogo.svg",
+			"size": 1561,
+			"theme": "base"
+		},
+		{
+			"name": "img/launchicons/114_iPhone-Retina_Web_Clip.png",
+			"size": 13405,
+			"theme": "base"
+		},
+		{
+			"name": "img/launchicons/144_iPad_Retina_Web_Clip.png",
+			"size": 17918,
+			"theme": "base"
+		},
+		{
+			"name": "img/launchicons/57_iPhone_Desktop_Launch.png",
+			"size": 5706,
+			"theme": "base"
+		},
+		{
+			"name": "img/launchicons/72_iPad_Desktop_Launch.png",
+			"size": 7525,
+			"theme": "base"
+		},
+		{
+			"name": "img/launchpadDefaultIcon.jpg",
+			"size": 17706,
+			"theme": "base"
+		},
+		{
+			"name": "img/launchpad_favicon.ico",
+			"size": 11502,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 160425,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 5442,
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"size": 160359,
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"size": 186337,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"size": 2133,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 160198,
+			"theme": "base"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 160132,
+			"theme": "base"
+		},
+		{
+			"name": "shared.less",
+			"size": 2120,
+			"designtime": true,
+			"theme": "base"
+		}
+	]
+}

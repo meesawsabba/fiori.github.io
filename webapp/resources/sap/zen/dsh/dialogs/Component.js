@@ -1,0 +1,5 @@
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define("sap/zen/dsh/dialogs/Component",["sap/ui/core/UIComponent","sap/zen/dsh/dialogs/Condition","sap/zen/dsh/dialogs/ContextMenu","sap/zen/dsh/dialogs/Exception","sap/zen/dsh/dialogs/Formular","sap/zen/dsh/dialogs/NewLines","sap/zen/dsh/dialogs/Open","sap/zen/dsh/dialogs/Restriction","sap/zen/dsh/dialogs/Selector","sap/zen/dsh/dialogs/SelectPlanningFunction","sap/zen/dsh/utils/ResourceModel","sap/zen/commons/thirdparty/lodash"],function(U,C,b,E,F,N,O,R,S,c,d,_){"use strict";var e=U.extend("sap.zen.dsh.dialogs.Component",{metadata:{},loaded:function(){var t=this;return t._loadProm;},init:function(){var t=this;U.prototype.init.apply(t,arguments);t._loadProm=Promise.all(_.map([C,b,E,F,N,O,R,S,c],function(f){return f(t);})).then(function(a){_.forEach(a,function(o){o.setModel(d,"i18n");});t.Condition=a[0];t.ContextMenu=a[1];t.Exception=a[2];t.Formular=a[3];t.NewLines=a[4];t.Open=a[5];t.Restriction=a[6];t.Selector=a[7];t.SelectPlanningFunction=a[8];return t;});}});return e;});

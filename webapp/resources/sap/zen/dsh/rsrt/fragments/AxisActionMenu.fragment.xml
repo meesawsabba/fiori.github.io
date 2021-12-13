@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="prev-ars-ctl1">
+  <m:ActionSheet
+      title="{i18nShared>txt_further_actions}"
+      beforeOpen="beforeOpen"
+      id="AxisActionMenu">
+    <m:Button
+        id="prev-aam-tocols"
+        tooltip="{i18n>ADD_TO_COLS}"
+        text="{i18n>ADD_TO_COLS}"
+        app:Name="{/Name}"
+        visible="{/ToColumns}"
+        press="move2Columns" />
+    <m:Button
+        id="prev-aam-torows"
+        tooltip="{i18n>ADD_TO_ROWS}"
+        app:Name="{/Name}"
+        text="{i18n>ADD_TO_ROWS}"
+        visible="{/ToRows}"
+        press="move2Rows" />
+    <m:Button
+        tooltip="{i18n>REMOVE_LAYOUT}"
+        text="{i18n>REMOVE_LAYOUT}"
+        id="LayoutRemove"
+        app:Name="{/Name}"
+        visible="{/ToFree}"
+        press="move2Free" />
+    <m:Button
+        id="prev-ars-ctl3"
+        tooltip="{i18n>MOVE_UP}"
+        text="{i18n>MOVE_UP}"
+        press="up"
+        visible="{/Up}" />
+    <m:Button
+        id="prev-ars-ctl4"
+        tooltip="{i18n>MOVE_DOWN}"
+        text="{i18n>MOVE_DOWN}"
+        visible="{/Down}"
+        press="down" />
+    <m:Button
+        id="prev-ars-ctl5"
+        tooltip="{i18n>CTX_SELECTOR}"
+        text="{i18n>CTX_SELECTOR}"
+        press="selector" />
+    <m:Button
+        id="prev-ars-ctl6"
+        tooltip="{i18n>txt_char_dialog}"
+        text="{i18n>txt_char_dialog}"
+        press="chaProp"
+        visible="{=!${IsStructure}}" />
+  </m:ActionSheet>
+</core:FragmentDefinition>

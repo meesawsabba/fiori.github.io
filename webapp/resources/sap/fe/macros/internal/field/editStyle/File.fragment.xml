@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	template:require="{
+        MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		FIELD: 'sap/fe/macros/field/FieldHelper'
+    }"
+>
+
+	<HBox
+		alignItems="Center"
+		width="100%"
+		justifyContent="SpaceBetween"
+		wrap="Wrap"
+		core:require="{FIELDRUNTIME: 'sap/fe/macros/field/FieldRuntime'}"
+	>
+
+		<core:Fragment fragmentName="sap.fe.macros.internal.field.displayStyle.File" type="XML" />
+
+		<HBox alignItems="Center">
+			<u:FileUploader
+				name="FEV4FileUpload"
+				visible="{ui>/isEditable}"
+				buttonOnly="true"
+				iconOnly="true"
+				multiple="false"
+				tooltip="{this.i18n>M_FIELD_FILEUPLOADER_UPLOAD_BUTTON_TOOLTIP}"
+				icon="sap-icon://upload"
+				style="Transparent"
+				sendXHR="true"
+				useMultipart="false"
+				uploadOnChange="false"
+				uploadAborted="FIELDRUNTIME.handleUploadAborted"
+				uploadComplete="FIELDRUNTIME.handleUploadComplete($event, '{propertyPath>@Org.OData.Core.V1.ContentDisposition/Filename@@FIELD.propertyName}')"
+				uploadUrl="{property>@@MODEL.value}"
+				httpRequestMethod="Put"
+				change="FIELDRUNTIME.uploadStream"
+				fieldGroupIds="{parts:[{path:'dataField>Value/$Path'}, {path:'entityType>'}], formatter: 'FIELD.getFieldGroupIds'}"
+			/>
+
+			<Button
+				icon="sap-icon://sys-cancel"
+				type="Transparent"
+				press="FIELDRUNTIME.removeStream($event, '{propertyPath>}')"
+				tooltip="{this.i18n>M_FIELD_FILEUPLOADER_DELETE_BUTTON_TOOLTIP}"
+				visible="{ui>/isEditable}"
+				fieldGroupIds="{parts:[{path:'dataField>Value/$Path'}, {path:'entityType>'}], formatter: 'FIELD.getFieldGroupIds'}"
+			/>
+		</HBox>
+
+	</HBox>
+
+</core:FragmentDefinition>

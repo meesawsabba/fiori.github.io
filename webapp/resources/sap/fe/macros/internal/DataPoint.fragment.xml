@@ -1,0 +1,123 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:unittest="http://schemas.sap.com/sapui5/preprocessorextension/sap.fe.unittesting/1"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	template:require="{
+                        ID: 'sap/fe/core/helpers/StableIdHelper',
+						FIELD: 'sap/fe/macros/field/FieldHelper',
+						MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+						COMMON: 'sap/fe/macros/CommonHelper',
+						UI: 'sap/fe/core/templating/UIFormatters',
+						MESSAGE: 'sap/base/strings/formatMessage',
+						TEMPLATE: 'sap/fe/macros/internal/helpers/DataPointTemplating',
+						FieldTemplating: 'sap/fe/macros/field/FieldTemplating'
+					  }"
+	core:require="{MESSAGE: 'sap/base/strings/formatMessage' }"
+>
+	<template:with path="metaPath>Value" var="property">
+		<template:if
+			test="{= ${metaPath>Visualization} &amp;&amp; ${metaPath>Visualization/$EnumMember} === 'com.sap.vocabularies.UI.v1.VisualizationType/Rating'}"
+		>
+			<template:then>
+				<template:if test="{this>formatOptions/showLabels}">
+					<Label
+						unittest:id="HeaderRatingIndicatorLabelTestTop"
+						text="{path: 'metaPath>', formatter: 'TEMPLATE.getHeaderRatingIndicatorText'}"
+						visible="{= (${metaPath>SampleSize} || ${metaPath>Description}) ? true : false}"
+					/>
+				</template:if>
+				<RatingIndicator
+					unittest:id="HeaderRatingIndicatorTest"
+					id="{= ${this>idPrefix} ? ID.generate([${this>idPrefix}, 'RatingIndicator-Field-display']) : undefined }"
+					maxValue="{metaPath>TargetValue@@MODEL.format}"
+					value="{metaPath>Value@@MODEL.format}"
+					binding="{metaPath>@@MODEL.getNavigationBinding}"
+					tooltip="{metaPath>@com.sap.vocabularies.Common.v1.QuickInfo@@MODEL.value}"
+					iconSize="{this>formatOptions/iconSize}"
+					class="{= ${this>formatOptions/showLabels} ? 'sapUiTinyMarginTopBottom' : ''}"
+					editable="false"
+				/>
+				<template:if test="{this>formatOptions/showLabels}">
+					<Label
+						unittest:id="HeaderRatingIndicatorLabelTestBottom"
+						text="{= MESSAGE(${this.i18n>T_HEADER_RATING_INDICATOR_FOOTER}, ${metaPath>Value@@MODEL.value}, ${metaPath>TargetValue@@MODEL.value} || '5') }"
+						visible="{= !!${metaPath>SampleSize}}"
+					/>
+				</template:if>
+			</template:then>
+			<template:elseif
+				test="{= ${metaPath>Visualization} &amp;&amp; ${metaPath>Visualization/$EnumMember} === 'com.sap.vocabularies.UI.v1.VisualizationType/Progress'}"
+			>
+				<template:if test="{this>formatOptions/showLabels}">
+					<Label
+						unittest:id="HeaderProgressIndicatorTestTop"
+						text="{path:'metaPath>Description@@MODEL.value'}"
+						visible="{= !!${metaPath>Description@@MODEL.value}}"
+					/>
+				</template:if>
+				<ProgressIndicator
+					unittest:id="HeaderProgressIndicatorTest"
+					id="{= ${this>idPrefix} ? ID.generate([${this>idPrefix}, 'ProgressIndicator-Field-display']) : undefined }"
+					binding="{metaPath>@@MODEL.getNavigationBinding}"
+					displayValue="{this>displayValue}"
+					percentValue="{this>percentValue}"
+					state="{this>criticalityColorExpression}"
+					tooltip="{metaPath>@com.sap.vocabularies.Common.v1.QuickInfo@@MODEL.value}"
+				/>
+				<template:if test="{this>formatOptions/showLabels}">
+					<Label
+						unittest:id="HeaderProgressIndicatorTestBottom"
+						text="{path:'property>$Path@com.sap.vocabularies.Common.v1.Label@@MODEL.value'}"
+						visible="{= !!${property>$Path@com.sap.vocabularies.Common.v1.Label@@MODEL.value} }"
+					/>
+				</template:if>
+			</template:elseif>
+			<template:else>
+				<template:if test="{= ${this>formatOptions/defaultDataPointStyle} === 'ObjectNumber'}">
+					<template:then>
+						<template:if test="{property>$Path@Org.OData.Measures.V1.ISOCurrency}">
+							<template:then>
+									<ObjectNumber
+									unittest:id="ObjectNumberCurrencyTest"
+									id="{= ${this>idPrefix} ? ID.generate([${this>idPrefix}, 'ObjectNumber-Field-display']) : undefined }"
+									state="{this>criticalityColorExpression}"
+									number="{this>objectStatusText}"
+									visible="{= FieldTemplating.getVisibleExpression(${metaPath>@@UI.getDataModelObjectPath})}"
+									emphasized="false"
+									class="sapMObjectNumberLarge"
+									tooltip="{metaPath>@com.sap.vocabularies.Common.v1.QuickInfo@@MODEL.value}"
+								/>
+							</template:then>
+							<template:else>
+								<ObjectNumber
+									unittest:id="ObjectNumberTest"
+									id="{= ${this>idPrefix} ? ID.generate([${this>idPrefix}, 'ObjectNumber-Field-display']) : undefined }"
+									core:require="{FieldRuntime: 'sap/fe/macros/field/FieldRuntime'}"
+									state="{this>criticalityColorExpression}"
+									number="{this>objectStatusNumber}"
+									unit="{= ${property>$Path@Org.OData.Measures.V1.Unit} ? ${property>$Path@Org.OData.Measures.V1.Unit@@MODEL.value} : undefined }"
+									visible="{= FieldTemplating.getVisibleExpression(${metaPath>@@UI.getDataModelObjectPath})}"
+									emphasized="false"
+									class="sapMObjectNumberLarge"
+									tooltip="{metaPath>@com.sap.vocabularies.Common.v1.QuickInfo@@MODEL.value}"
+								/>
+							</template:else>
+						</template:if>
+					</template:then>
+					<template:else>
+						<ObjectStatus
+							unittest:id="MacroDataPointObjectStatus"
+							id="{= ${this>idPrefix} ? ID.generate([${this>idPrefix}, 'ObjectStatus-Field-display']) : undefined }"
+							core:require="{ FieldRuntime: 'sap/fe/macros/field/FieldRuntime' }"
+							icon="{this>iconExpression}"
+							tooltip="{metaPath>@com.sap.vocabularies.Common.v1.QuickInfo@@MODEL.value}"
+							state="{this>criticalityColorExpression}"
+							text="{this>objectStatusText}"
+						/>
+					</template:else>
+				</template:if>
+			</template:else>
+		</template:if>
+	</template:with>
+</core:FragmentDefinition>

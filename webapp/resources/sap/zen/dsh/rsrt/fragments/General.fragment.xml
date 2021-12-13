@@ -1,0 +1,95 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="GeneralSettings">
+  <form:SimpleForm
+      editable="true"
+      labelSpanXL="3"
+      labelSpanL="3"
+      labelSpanM="3"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="4"
+      emptySpanL="4"
+      emptySpanM="4"
+      emptySpanS="4"
+      columnsXL="1"
+      columnsL="1"
+      columnsM="1"
+      >
+    <form:content>
+      <m:Label
+          id="prev-lblchart"
+          text="{i18n>Select_Charttype}"
+          design="Bold"
+          labelFor="chartTypeSelect" />
+      <m:Select
+          id="chartTypeSelect"
+          selectedKey="{om>/dataProvider/0/Chart/chartType}">
+        <core:Item
+            id="prev-charti0"
+            text="{i18n>ct_bar}"
+            key="bar" />
+        <core:Item
+            id="prev-charti1"
+            text="{i18n>ct_line}"
+            key="line" />
+        <core:Item
+            id="prev-charti3"
+            text="{i18n>ct_column}"
+            key="column" />
+        <core:Item
+            id="prev-charti4"
+            text="{i18n>ct_donut}"
+            key="donut" />
+        <core:Item
+            id="prev-charti5"
+            text="{i18n>ct_heatmap}"
+            key="heatmap" />
+        <core:Item
+            id="prev-charti9"
+            text="{i18n>ct_pie}"
+            key="pie" />
+        <core:Item
+            id="prev-charti11"
+            text="{i18n>ct_stacked_bar}"
+            key="stacked_bar" />
+        <core:Item
+            id="prev-charti12"
+            text="{i18n>ct_stacked_column}"
+            key="stacked_column" />
+        <core:Item
+            id="prev-charti13"
+            text="{i18n>ct_timeseries_line}"
+            key="timeseries_line" />
+      </m:Select>
+      <m:Label
+          labelFor="bc_LegendVisible"
+          text="{i18n>TitleVisible}" />
+      <m:CheckBox
+          id="bc_TitleVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/title/visible}" 
+          select="updateChart"/>
+    </form:content>
+    <m:Label
+        labelFor="bcTitleAlignment"
+        text="{i18n>TitleAlignment}" />
+    <m:Select
+        id="bcTitleAlignment"
+        forceSelection="true"
+         change="updateChart"
+        selectedKey="{om>/dataProvider/0/Chart/vizProperties/title/alignment}">
+      <core:Item
+          key="left"
+          text="{i18n>Left}"/>
+      <core:Item
+          key="center"
+          text="{i18n>Center}"/>
+      <core:Item
+          key="right"
+          text="{i18n>Right}"/>
+    </m:Select>
+  </form:SimpleForm>
+</core:FragmentDefinition>

@@ -1,0 +1,195 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library",
+			"size": 894
+		},
+		{
+			"name": ".theming",
+			"size": 98
+		},
+		{
+			"name": "converters/ListReport.ts",
+			"size": 0
+		},
+		{
+			"name": "index.ts",
+			"size": 33
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/fe/semantics/library.js",
+			"size": 914,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Core.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js",
+			"module": "sap/fe/semantics/library-h2-preload.js",
+			"size": 1264,
+			"merged": true,
+			"required": [
+				"sap/ui/core/Core.js",
+				"sap/ui/core/library.js"
+			],
+			"included": [
+				"sap/fe/semantics/library.js",
+				"sap/fe/semantics/manifest.json"
+			]
+		},
+		{
+			"name": "library-h2-preload.js.map",
+			"size": 380,
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/fe/semantics/library-preload.js",
+			"size": 1135,
+			"merged": true,
+			"required": [
+				"sap/ui/core/Core.js",
+				"sap/ui/core/library.js"
+			],
+			"included": [
+				"sap/fe/semantics/library.js",
+				"sap/fe/semantics/manifest.json"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"size": 374,
+			"isDebug": true
+		},
+		{
+			"name": "library.js",
+			"module": "sap/fe/semantics/library.js",
+			"size": 398,
+			"required": [
+				"sap/ui/core/Core.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/fe/semantics/manifest.json",
+			"size": 758
+		},
+		{
+			"name": "resources.json",
+			"size": 827
+		},
+		{
+			"name": "specification/ApplicationV4.ts",
+			"size": 1552
+		},
+		{
+			"name": "specification/common/Application.ts",
+			"size": 469
+		},
+		{
+			"name": "specification/common/i18n.json",
+			"size": 3
+		},
+		{
+			"name": "specification/common/index.ts",
+			"size": 115
+		},
+		{
+			"name": "specification/common/page.ts",
+			"size": 1079
+		},
+		{
+			"name": "specification/common/types.ts",
+			"size": 518
+		},
+		{
+			"name": "specification/common/webapp/manifest/Manifest.ts",
+			"size": 824
+		},
+		{
+			"name": "specification/common/webapp/manifest/index.ts",
+			"size": 54
+		},
+		{
+			"name": "specification/common/webapp/manifest/sapUi5.ts",
+			"size": 950
+		},
+		{
+			"name": "specification/controls/FilterBar.ts",
+			"size": 296
+		},
+		{
+			"name": "specification/controls/ObjectPageHeader.ts",
+			"size": 489
+		},
+		{
+			"name": "specification/controls/ObjectPageLayout.ts",
+			"size": 373
+		},
+		{
+			"name": "specification/controls/ObjectPageSection.ts",
+			"size": 1279
+		},
+		{
+			"name": "specification/controls/ObjectPageTable.ts",
+			"size": 695
+		},
+		{
+			"name": "specification/controls/Table.ts",
+			"size": 6763
+		},
+		{
+			"name": "specification/controls/index.ts",
+			"size": 198
+		},
+		{
+			"name": "specification/index.ts",
+			"size": 136
+		},
+		{
+			"name": "specification/page.ts",
+			"size": 509
+		},
+		{
+			"name": "specification/pages/AnalyticalListPageConfig.ts",
+			"size": 539
+		},
+		{
+			"name": "specification/pages/ListReportConfig.ts",
+			"size": 563
+		},
+		{
+			"name": "specification/pages/ObjectPageConfig.ts",
+			"size": 661
+		},
+		{
+			"name": "specification/pages/index.ts",
+			"size": 116
+		},
+		{
+			"name": "specification/webapp/index.ts",
+			"size": 28
+		},
+		{
+			"name": "specification/webapp/manifest/ManifestSettings.ts",
+			"size": 2194
+		},
+		{
+			"name": "specification/webapp/manifest/index.ts",
+			"size": 139
+		},
+		{
+			"name": "specification/webapp/manifest/sapUi5.ts",
+			"size": 2620
+		},
+		{
+			"name": "specification/webapp/manifest/sapUiPageV4.ts",
+			"size": 1740
+		}
+	]
+}

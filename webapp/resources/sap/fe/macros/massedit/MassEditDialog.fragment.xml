@@ -1,0 +1,106 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	template:require="{
+		ID: 'sap/fe/core/helpers/StableIdHelper'
+	}"
+>
+<f:Form>
+	<f:layout>
+		<f:ResponsiveGridLayout
+				labelSpanXL="4"
+				labelSpanL="4"
+				labelSpanM="12"
+				labelSpanS="12"
+				adjustLabelSpan="false"
+				emptySpanXL="0"
+				emptySpanL="0"
+				emptySpanM="0"
+				emptySpanS="0"
+				columnsXL="2"
+				columnsL="2"
+				columnsM="1"
+				singleContainerFullSize="false"
+			/>
+	</f:layout>
+	<f:formContainers>
+		<f:FormContainer>
+			<f:formElements>
+				<template:repeat list="{dataFieldModel>}" var="dataField">
+					<template:if test="{dataField>visible}">
+						<template:if test="{dataField>unitProperty}">
+							<template:then>
+								<f:FormElement>
+									<f:fields>
+										<Label text="{dataField>label}" required="{dataField>isFieldRequired}">
+											<layoutData>
+												<l:GridData span="XL12 L12 M12 S12" />
+											</layoutData>
+										</Label>
+										<ComboBox
+												id="{= ID.generate(['MED_', ${dataField>entitySet}, ${dataField>dataProperty}]) }"
+												core:require="{MassEditRuntime: 'sap/fe/macros/massedit/MassEditRuntime'}"
+												items="{= '{path : \'fieldsInfo>/values/' + ${dataField>dataProperty} + '\'}' }"
+												change="MassEditRuntime.handleMassEditChange($event)"
+												selectedKey="{dataField>defaultSelectionPath}"
+												visible="{dataField>visible}"
+											>
+											<items>
+												<core:Item key="{fieldsInfo>key}" text="{fieldsInfo>text}" /> 
+											</items>
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S12" />
+											</layoutData>
+										</ComboBox>
+										<ComboBox
+												core:require="{MassEditRuntime: 'sap/fe/macros/massedit/MassEditRuntime'}"
+												id="{= ID.generate(['MED_', ${dataField>entitySet}, ${dataField>unitProperty}]) }"
+												items="{= '{path : \'fieldsInfo>/unitData/' + ${dataField>unitProperty} + '\'}' }"
+												change="MassEditRuntime.handleMassEditChange($event)"
+												selectedKey="{dataField>defaultSelectionUnitPath}"
+												visible="{dataField>visible}"
+											>
+											<items>
+												<core:Item key="{fieldsInfo>key}" text="{fieldsInfo>text}" /> 
+											</items>
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S12" />
+											</layoutData>
+										</ComboBox>
+									</f:fields>
+								</f:FormElement>
+							</template:then>
+							<template:else>
+								<f:FormElement>
+									<f:fields>
+										<Label text="{dataField>label}" required="{dataField>isFieldRequired}">
+											<layoutData>
+												<l:GridData span="XL12 L12 M12 S12" />
+											</layoutData>
+										</Label>
+										<ComboBox
+												id="{= ID.generate(['MED_', ${dataField>entitySet}, ${dataField>dataProperty}]) }"
+												core:require="{MassEditRuntime: 'sap/fe/macros/massedit/MassEditRuntime'}"
+												items="{= '{path : \'fieldsInfo>/values/' + ${dataField>dataProperty} + '\'}' }"
+												change="MassEditRuntime.handleMassEditChange($event)"
+												selectedKey="{dataField>defaultSelectionPath}"
+												visible="{dataField>visible}"
+											>
+											<items>
+												<core:Item key="{fieldsInfo>key}" text="{fieldsInfo>text}" /> 
+											</items>
+										</ComboBox>
+									</f:fields>
+								</f:FormElement>
+							</template:else>	
+						</template:if>
+					</template:if>
+				</template:repeat>
+			</f:formElements>
+		</f:FormContainer>
+	</f:formContainers>
+</f:Form>
+</core:FragmentDefinition>

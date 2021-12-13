@@ -1,0 +1,5 @@
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define("sap/zen/dsh/controller/Settings.controller",["sap/ui/core/mvc/Controller"],function(C){"use strict";var n=sap.ushell&&sap.ushell.Container?sap.ushell.Container.getService("CrossApplicationNavigation"):null;C.extend("sap.zen.dsh.controller.Settings",{onInit:function(){var t=this;t.getView().setBusy(true);t.getView().loaded().then(function(){t.getView().setBusy(false);});},infoProvClick:function(){var t=this;var s="";var i=t.getView().getModel().getProperty("/infoProviderName");var T=t.getView().getModel().getProperty("/infoProviderType");var p={};switch(T){case"compositeprovider":s="BWCompositeProvider";p.hcprName=i;break;case"datastore":s="BWDatastore";p.adsoName=i;break;case"aggregationlevel":s="BWAggregationLevel";p.alvlName=i;break;case"openodsview":s="BWOpenODSView";p.fbpaName=i;break;case"CDSView":s="finrep";p.query="!"+i;break;default:return;}n.toExternal({target:{semanticObject:s,action:"preview"},params:p,writeHistory:true});}});return sap.zen.dsh.controller.Settings;});

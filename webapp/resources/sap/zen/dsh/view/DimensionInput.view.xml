@@ -1,0 +1,32 @@
+<mvc:View xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    controllerName="sap.zen.dsh.controller.DimensionInput"
+    id="DimensionInputView"
+    async="true">
+    <m:MultiInput id="var-m1"
+        enableMultiLineMode="true"
+        showValueHelp="true"
+        showSuggestion="false"
+        valueHelpOnly="false"
+        valueHelpRequest="handleValueHelp"
+        tokens="{Restriction>Values}"
+        tokenUpdate="tokenUpdate"
+        required="false"
+        enabled="{Restriction>/changeMode}"
+        app:name="{Restriction>Name}">
+        <m:tokens>
+            <m:Token id="VariableInput-Token"
+                key="{Restriction>Low}"
+                text="{Restriction>Text}"
+                app:range="{
+                     ={
+                     Low:${Restriction>Low},
+                     High:${Restriction>High},
+                     exclude:!!${Restriction>isExcluding},
+                     operation:${Restriction>Operator}
+                     }
+                     }" />
+        </m:tokens>
+    </m:MultiInput>
+</mvc:View>

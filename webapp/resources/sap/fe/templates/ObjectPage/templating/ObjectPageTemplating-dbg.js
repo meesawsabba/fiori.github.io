@@ -1,0 +1,119 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *      (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/fe/core/helpers/BindingExpression", "sap/fe/core/converters/helpers/BindingHelper", "sap/fe/core/CommonUtils", "sap/fe/macros/field/FieldTemplating", "sap/fe/core/templating/EntitySetHelper"], function (BindingExpression, BindingHelper, CommonUtils, FieldTemplating, EntitySetHelper) {
+  "use strict";
+
+  var _exports = {};
+  var isStickySessionSupported = EntitySetHelper.isStickySessionSupported;
+  var formatValueRecursively = FieldTemplating.formatValueRecursively;
+  var addTextArrangementToBindingExpression = FieldTemplating.addTextArrangementToBindingExpression;
+  var Entity = BindingHelper.Entity;
+  var Draft = BindingHelper.Draft;
+  var UI = BindingHelper.UI;
+  var compileBinding = BindingExpression.compileBinding;
+  var annotationExpression = BindingExpression.annotationExpression;
+  var concat = BindingExpression.concat;
+  var isEmpty = BindingExpression.isEmpty;
+  var ifElse = BindingExpression.ifElse;
+  var and = BindingExpression.and;
+
+  //```mermaid
+  // graph TD
+  // A[Object Page Title] -->|Get DataField Value| C{Evaluate Create Mode}
+  // C -->|In Create Mode| D{Is DataField Value empty}
+  // D -->|Yes| F{Is there a TypeName}
+  // F -->|Yes| G[Is there an custom title]
+  // G -->|Yes| G1[Show the custom title + 'TypeName']
+  // G -->|No| G2[Display the default title 'New + TypeName']
+  // F -->|No| H[Is there a custom title]
+  // H -->|Yes| I[Show the custom title]
+  // H -->|No| J[Show the default 'Unamned Object']
+  // D -->|No| E
+  // C -->|Not in create mode| E[Show DataField Value]
+  // ```
+
+  /**
+   * Compute the title for the object page.
+   * @param oHeaderInfo The @UI.HeaderInfo annotation content
+   * @param oViewData The view data object we're currently on
+   * @param fullContextPath The full context path used to reach that object page
+   * @param oDraftRoot
+   * @returns The binding expression for the object page title
+   */
+  var getExpressionForTitle = function (oHeaderInfo, oViewData, fullContextPath, oDraftRoot) {
+    var _oHeaderInfo$Title, _oHeaderInfo$Title2, _oHeaderInfo$Title2$V, _oHeaderInfo$Title2$V2, _oHeaderInfo$Title2$V3, _oHeaderInfo$Title2$V4, _oHeaderInfo$Title2$V5, _oHeaderInfo$Title2$V6, _oHeaderInfo$Title2$V7;
+
+    var titleNoHeaderInfo = CommonUtils.getTranslatedText("T_NEW_OBJECT", oViewData.resourceBundle, undefined, oViewData.entitySet);
+    var titleWithHeaderInfo = CommonUtils.getTranslatedText("T_ANNOTATION_HELPER_DEFAULT_OBJECT_PAGE_HEADER_TITLE", oViewData.resourceBundle, undefined, oViewData.entitySet);
+    var titleForActiveHeaderNoHeaderInfo = CommonUtils.getTranslatedText("T_ANNOTATION_HELPER_DEFAULT_OBJECT_PAGE_HEADER_TITLE_NO_HEADER_INFO", oViewData.resourceBundle);
+    var titleValueExpression = annotationExpression(oHeaderInfo === null || oHeaderInfo === void 0 ? void 0 : (_oHeaderInfo$Title = oHeaderInfo.Title) === null || _oHeaderInfo$Title === void 0 ? void 0 : _oHeaderInfo$Title.Value);
+
+    if (oHeaderInfo !== null && oHeaderInfo !== void 0 && (_oHeaderInfo$Title2 = oHeaderInfo.Title) !== null && _oHeaderInfo$Title2 !== void 0 && (_oHeaderInfo$Title2$V = _oHeaderInfo$Title2.Value) !== null && _oHeaderInfo$Title2$V !== void 0 && (_oHeaderInfo$Title2$V2 = _oHeaderInfo$Title2$V.$target) !== null && _oHeaderInfo$Title2$V2 !== void 0 && (_oHeaderInfo$Title2$V3 = _oHeaderInfo$Title2$V2.annotations) !== null && _oHeaderInfo$Title2$V3 !== void 0 && (_oHeaderInfo$Title2$V4 = _oHeaderInfo$Title2$V3.Common) !== null && _oHeaderInfo$Title2$V4 !== void 0 && (_oHeaderInfo$Title2$V5 = _oHeaderInfo$Title2$V4.Text) !== null && _oHeaderInfo$Title2$V5 !== void 0 && (_oHeaderInfo$Title2$V6 = _oHeaderInfo$Title2$V5.annotations) !== null && _oHeaderInfo$Title2$V6 !== void 0 && (_oHeaderInfo$Title2$V7 = _oHeaderInfo$Title2$V6.UI) !== null && _oHeaderInfo$Title2$V7 !== void 0 && _oHeaderInfo$Title2$V7.TextArrangement) {
+      // In case an explicit text arrangement was set we make use of it in the description as well
+      titleValueExpression = addTextArrangementToBindingExpression(titleValueExpression, fullContextPath);
+    }
+
+    titleValueExpression = formatValueRecursively(titleValueExpression, fullContextPath); // If there is a TypeName defined, show the default title 'New + TypeName', otherwise show the custom title or the default 'New object'
+
+    var createModeTitle = oHeaderInfo !== null && oHeaderInfo !== void 0 && oHeaderInfo.TypeName ? concat(titleWithHeaderInfo, ": ", annotationExpression(oHeaderInfo.TypeName.toString())) : titleNoHeaderInfo;
+    var activeExpression = oDraftRoot ? Entity.IsActive : true;
+    return compileBinding(ifElse( // If Create Mode && Empty expression
+    and(UI.IsCreateMode, titleValueExpression && isEmpty(titleValueExpression)), createModeTitle, // Otherwise show the default expression
+    ifElse(and(activeExpression, titleValueExpression && isEmpty(titleValueExpression)), titleForActiveHeaderNoHeaderInfo, titleValueExpression)));
+  };
+  /**
+   * Retrieves the expression for the description of an object page.
+   *
+   * @param oHeaderInfo The @UI.HeaderInfo annotation content
+   * @param fullContextPath The full context path used to reach that object page
+   * @returns The binding expression for the object page description
+   */
+
+
+  _exports.getExpressionForTitle = getExpressionForTitle;
+
+  var getExpressionForDescription = function (oHeaderInfo, fullContextPath) {
+    var _oHeaderInfo$Descript, _oHeaderInfo$Descript2, _oHeaderInfo$Descript3, _oHeaderInfo$Descript4, _oHeaderInfo$Descript5, _oHeaderInfo$Descript6, _oHeaderInfo$Descript7, _oHeaderInfo$Descript8, _oHeaderInfo$Descript9;
+
+    var bindingExpression = annotationExpression(oHeaderInfo === null || oHeaderInfo === void 0 ? void 0 : (_oHeaderInfo$Descript = oHeaderInfo.Description) === null || _oHeaderInfo$Descript === void 0 ? void 0 : _oHeaderInfo$Descript.Value);
+
+    if (oHeaderInfo !== null && oHeaderInfo !== void 0 && (_oHeaderInfo$Descript2 = oHeaderInfo.Description) !== null && _oHeaderInfo$Descript2 !== void 0 && (_oHeaderInfo$Descript3 = _oHeaderInfo$Descript2.Value) !== null && _oHeaderInfo$Descript3 !== void 0 && (_oHeaderInfo$Descript4 = _oHeaderInfo$Descript3.$target) !== null && _oHeaderInfo$Descript4 !== void 0 && (_oHeaderInfo$Descript5 = _oHeaderInfo$Descript4.annotations) !== null && _oHeaderInfo$Descript5 !== void 0 && (_oHeaderInfo$Descript6 = _oHeaderInfo$Descript5.Common) !== null && _oHeaderInfo$Descript6 !== void 0 && (_oHeaderInfo$Descript7 = _oHeaderInfo$Descript6.Text) !== null && _oHeaderInfo$Descript7 !== void 0 && (_oHeaderInfo$Descript8 = _oHeaderInfo$Descript7.annotations) !== null && _oHeaderInfo$Descript8 !== void 0 && (_oHeaderInfo$Descript9 = _oHeaderInfo$Descript8.UI) !== null && _oHeaderInfo$Descript9 !== void 0 && _oHeaderInfo$Descript9.TextArrangement) {
+      // In case an explicit text arrangement was set we make use of it in the description as well
+      bindingExpression = addTextArrangementToBindingExpression(bindingExpression, fullContextPath);
+    }
+
+    return compileBinding(formatValueRecursively(bindingExpression, fullContextPath));
+  };
+  /**
+   * Return the expression for the save button.
+   *
+   * @param oViewData The current view data
+   * @param fullContextPath The path used up until here
+   * @returns The binding expression that shows the right save button text
+   */
+
+
+  _exports.getExpressionForDescription = getExpressionForDescription;
+
+  var getExpressionForSaveButton = function (oViewData, fullContextPath) {
+    var saveButtonText = CommonUtils.getTranslatedText("T_OP_OBJECT_PAGE_SAVE", oViewData.resourceBundle);
+    var createButtonText = CommonUtils.getTranslatedText("T_OP_OBJECT_PAGE_CREATE", oViewData.resourceBundle);
+    var saveExpression;
+
+    if (isStickySessionSupported(fullContextPath.startingEntitySet)) {
+      // If we're in sticky mode AND the ui is in create mode, show Create, else show Save
+      saveExpression = ifElse(UI.IsCreateModeSticky, createButtonText, saveButtonText);
+    } else {
+      // If we're in draft AND the draft is a new object (!IsActiveEntity && !HasActiveEntity), show create, else show save
+      saveExpression = ifElse(Draft.IsNewObject, createButtonText, saveButtonText);
+    }
+
+    return compileBinding(saveExpression);
+  };
+
+  _exports.getExpressionForSaveButton = getExpressionForSaveButton;
+  return _exports;
+}, false);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk9iamVjdFBhZ2VUZW1wbGF0aW5nLnRzIl0sIm5hbWVzIjpbImdldEV4cHJlc3Npb25Gb3JUaXRsZSIsIm9IZWFkZXJJbmZvIiwib1ZpZXdEYXRhIiwiZnVsbENvbnRleHRQYXRoIiwib0RyYWZ0Um9vdCIsInRpdGxlTm9IZWFkZXJJbmZvIiwiQ29tbW9uVXRpbHMiLCJnZXRUcmFuc2xhdGVkVGV4dCIsInJlc291cmNlQnVuZGxlIiwidW5kZWZpbmVkIiwiZW50aXR5U2V0IiwidGl0bGVXaXRoSGVhZGVySW5mbyIsInRpdGxlRm9yQWN0aXZlSGVhZGVyTm9IZWFkZXJJbmZvIiwidGl0bGVWYWx1ZUV4cHJlc3Npb24iLCJhbm5vdGF0aW9uRXhwcmVzc2lvbiIsIlRpdGxlIiwiVmFsdWUiLCIkdGFyZ2V0IiwiYW5ub3RhdGlvbnMiLCJDb21tb24iLCJUZXh0IiwiVUkiLCJUZXh0QXJyYW5nZW1lbnQiLCJhZGRUZXh0QXJyYW5nZW1lbnRUb0JpbmRpbmdFeHByZXNzaW9uIiwiZm9ybWF0VmFsdWVSZWN1cnNpdmVseSIsImNyZWF0ZU1vZGVUaXRsZSIsIlR5cGVOYW1lIiwiY29uY2F0IiwidG9TdHJpbmciLCJhY3RpdmVFeHByZXNzaW9uIiwiRW50aXR5IiwiSXNBY3RpdmUiLCJjb21waWxlQmluZGluZyIsImlmRWxzZSIsImFuZCIsIklzQ3JlYXRlTW9kZSIsImlzRW1wdHkiLCJnZXRFeHByZXNzaW9uRm9yRGVzY3JpcHRpb24iLCJiaW5kaW5nRXhwcmVzc2lvbiIsIkRlc2NyaXB0aW9uIiwiZ2V0RXhwcmVzc2lvbkZvclNhdmVCdXR0b24iLCJzYXZlQnV0dG9uVGV4dCIsImNyZWF0ZUJ1dHRvblRleHQiLCJzYXZlRXhwcmVzc2lvbiIsImlzU3RpY2t5U2Vzc2lvblN1cHBvcnRlZCIsInN0YXJ0aW5nRW50aXR5U2V0IiwiSXNDcmVhdGVNb2RlU3RpY2t5IiwiRHJhZnQiLCJJc05ld09iamVjdCJdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0E7QUFDQTs7Ozs7Ozs7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QUFDQSxHQVpNIiwic291cmNlUm9vdCI6Ii4iLCJzb3VyY2VzQ29udGVudCI6WyIvLyBGb3JtYXR0ZXJzIGZvciB0aGUgT2JqZWN0IFBhZ2VcbmltcG9ydCB7XG5cdGFuZCxcblx0aWZFbHNlLFxuXHRpc0VtcHR5LFxuXHRjb25jYXQsXG5cdGFubm90YXRpb25FeHByZXNzaW9uLFxuXHRjb21waWxlQmluZGluZyxcblx0QmluZGluZ0V4cHJlc3Npb25cbn0gZnJvbSBcInNhcC9mZS9jb3JlL2hlbHBlcnMvQmluZGluZ0V4cHJlc3Npb25cIjtcbmltcG9ydCB7IFVJLCBEcmFmdCwgRW50aXR5IH0gZnJvbSBcInNhcC9mZS9jb3JlL2NvbnZlcnRlcnMvaGVscGVycy9CaW5kaW5nSGVscGVyXCI7XG5pbXBvcnQgeyBDb21tb25VdGlscyB9IGZyb20gXCJzYXAvZmUvY29yZVwiO1xuaW1wb3J0IHsgSGVhZGVySW5mb1R5cGUgfSBmcm9tIFwiQHNhcC11eC92b2NhYnVsYXJpZXMtdHlwZXNcIjtcbmltcG9ydCB7IERhdGFNb2RlbE9iamVjdFBhdGggfSBmcm9tIFwic2FwL2ZlL2NvcmUvdGVtcGxhdGluZy9EYXRhTW9kZWxQYXRoSGVscGVyXCI7XG5pbXBvcnQgeyBhZGRUZXh0QXJyYW5nZW1lbnRUb0JpbmRpbmdFeHByZXNzaW9uLCBmb3JtYXRWYWx1ZVJlY3Vyc2l2ZWx5IH0gZnJvbSBcInNhcC9mZS9tYWNyb3MvZmllbGQvRmllbGRUZW1wbGF0aW5nXCI7XG5pbXBvcnQgeyBEYXRhRmllbGRUeXBlcyB9IGZyb20gXCJAc2FwLXV4L3ZvY2FidWxhcmllcy10eXBlcy9kaXN0L2dlbmVyYXRlZC9VSVwiO1xuaW1wb3J0IHsgaXNTdGlja3lTZXNzaW9uU3VwcG9ydGVkIH0gZnJvbSBcInNhcC9mZS9jb3JlL3RlbXBsYXRpbmcvRW50aXR5U2V0SGVscGVyXCI7XG5pbXBvcnQgeyBSZXNvdXJjZUJ1bmRsZSB9IGZyb20gXCJzYXAvYmFzZS9pMThuXCI7XG5cbnR5cGUgVmlld0RhdGEgPSB7XG5cdHJlc291cmNlQnVuZGxlOiBSZXNvdXJjZUJ1bmRsZTtcblx0ZW50aXR5U2V0OiBzdHJpbmc7XG59O1xuXG4vL2BgYG1lcm1haWRcbi8vIGdyYXBoIFREXG4vLyBBW09iamVjdCBQYWdlIFRpdGxlXSAtLT58R2V0IERhdGFGaWVsZCBWYWx1ZXwgQ3tFdmFsdWF0ZSBDcmVhdGUgTW9kZX1cbi8vIEMgLS0+fEluIENyZWF0ZSBNb2RlfCBEe0lzIERhdGFGaWVsZCBWYWx1ZSBlbXB0eX1cbi8vIEQgLS0+fFllc3wgRntJcyB0aGVyZSBhIFR5cGVOYW1lfVxuLy8gRiAtLT58WWVzfCBHW0lzIHRoZXJlIGFuIGN1c3RvbSB0aXRsZV1cbi8vIEcgLS0+fFllc3wgRzFbU2hvdyB0aGUgY3VzdG9tIHRpdGxlICsgJ1R5cGVOYW1lJ11cbi8vIEcgLS0+fE5vfCBHMltEaXNwbGF5IHRoZSBkZWZhdWx0IHRpdGxlICdOZXcgKyBUeXBlTmFtZSddXG4vLyBGIC0tPnxOb3wgSFtJcyB0aGVyZSBhIGN1c3RvbSB0aXRsZV1cbi8vIEggLS0+fFllc3wgSVtTaG93IHRoZSBjdXN0b20gdGl0bGVdXG4vLyBIIC0tPnxOb3wgSltTaG93IHRoZSBkZWZhdWx0ICdVbmFtbmVkIE9iamVjdCddXG4vLyBEIC0tPnxOb3wgRVxuLy8gQyAtLT58Tm90IGluIGNyZWF0ZSBtb2RlfCBFW1Nob3cgRGF0YUZpZWxkIFZhbHVlXVxuLy8gYGBgXG4vKipcbiAqIENvbXB1dGUgdGhlIHRpdGxlIGZvciB0aGUgb2JqZWN0IHBhZ2UuXG4gKiBAcGFyYW0gb0hlYWRlckluZm8gVGhlIEBVSS5IZWFkZXJJbmZvIGFubm90YXRpb24gY29udGVudFxuICogQHBhcmFtIG9WaWV3RGF0YSBUaGUgdmlldyBkYXRhIG9iamVjdCB3ZSdyZSBjdXJyZW50bHkgb25cbiAqIEBwYXJhbSBmdWxsQ29udGV4dFBhdGggVGhlIGZ1bGwgY29udGV4dCBwYXRoIHVzZWQgdG8gcmVhY2ggdGhhdCBvYmplY3QgcGFnZVxuICogQHBhcmFtIG9EcmFmdFJvb3RcbiAqIEByZXR1cm5zIFRoZSBiaW5kaW5nIGV4cHJlc3Npb24gZm9yIHRoZSBvYmplY3QgcGFnZSB0aXRsZVxuICovXG5leHBvcnQgY29uc3QgZ2V0RXhwcmVzc2lvbkZvclRpdGxlID0gZnVuY3Rpb24oXG5cdG9IZWFkZXJJbmZvOiBIZWFkZXJJbmZvVHlwZSB8IHVuZGVmaW5lZCxcblx0b1ZpZXdEYXRhOiBWaWV3RGF0YSxcblx0ZnVsbENvbnRleHRQYXRoOiBEYXRhTW9kZWxPYmplY3RQYXRoLFxuXHRvRHJhZnRSb290OiBPYmplY3QgfCB1bmRlZmluZWRcbik6IEJpbmRpbmdFeHByZXNzaW9uPHN0cmluZz4ge1xuXHRjb25zdCB0aXRsZU5vSGVhZGVySW5mbyA9IENvbW1vblV0aWxzLmdldFRyYW5zbGF0ZWRUZXh0KFwiVF9ORVdfT0JKRUNUXCIsIG9WaWV3RGF0YS5yZXNvdXJjZUJ1bmRsZSwgdW5kZWZpbmVkLCBvVmlld0RhdGEuZW50aXR5U2V0KTtcblxuXHRjb25zdCB0aXRsZVdpdGhIZWFkZXJJbmZvID0gQ29tbW9uVXRpbHMuZ2V0VHJhbnNsYXRlZFRleHQoXG5cdFx0XCJUX0FOTk9UQVRJT05fSEVMUEVSX0RFRkFVTFRfT0JKRUNUX1BBR0VfSEVBREVSX1RJVExFXCIsXG5cdFx0b1ZpZXdEYXRhLnJlc291cmNlQnVuZGxlLFxuXHRcdHVuZGVmaW5lZCxcblx0XHRvVmlld0RhdGEuZW50aXR5U2V0XG5cdCk7XG5cblx0Y29uc3QgdGl0bGVGb3JBY3RpdmVIZWFkZXJOb0hlYWRlckluZm8gPSBDb21tb25VdGlscy5nZXRUcmFuc2xhdGVkVGV4dChcblx0XHRcIlRfQU5OT1RBVElPTl9IRUxQRVJfREVGQVVMVF9PQkpFQ1RfUEFHRV9IRUFERVJfVElUTEVfTk9fSEVBREVSX0lORk9cIixcblx0XHRvVmlld0RhdGEucmVzb3VyY2VCdW5kbGVcblx0KTtcblxuXHRsZXQgdGl0bGVWYWx1ZUV4cHJlc3Npb24gPSBhbm5vdGF0aW9uRXhwcmVzc2lvbigob0hlYWRlckluZm8/LlRpdGxlIGFzIERhdGFGaWVsZFR5cGVzKT8uVmFsdWUpO1xuXHRpZiAoKG9IZWFkZXJJbmZvPy5UaXRsZSBhcyBEYXRhRmllbGRUeXBlcyk/LlZhbHVlPy4kdGFyZ2V0Py5hbm5vdGF0aW9ucz8uQ29tbW9uPy5UZXh0Py5hbm5vdGF0aW9ucz8uVUk/LlRleHRBcnJhbmdlbWVudCkge1xuXHRcdC8vIEluIGNhc2UgYW4gZXhwbGljaXQgdGV4dCBhcnJhbmdlbWVudCB3YXMgc2V0IHdlIG1ha2UgdXNlIG9mIGl0IGluIHRoZSBkZXNjcmlwdGlvbiBhcyB3ZWxsXG5cdFx0dGl0bGVWYWx1ZUV4cHJlc3Npb24gPSBhZGRUZXh0QXJyYW5nZW1lbnRUb0JpbmRpbmdFeHByZXNzaW9uKHRpdGxlVmFsdWVFeHByZXNzaW9uLCBmdWxsQ29udGV4dFBhdGgpO1xuXHR9XG5cblx0dGl0bGVWYWx1ZUV4cHJlc3Npb24gPSBmb3JtYXRWYWx1ZVJlY3Vyc2l2ZWx5KHRpdGxlVmFsdWVFeHByZXNzaW9uLCBmdWxsQ29udGV4dFBhdGgpO1xuXG5cdC8vIElmIHRoZXJlIGlzIGEgVHlwZU5hbWUgZGVmaW5lZCwgc2hvdyB0aGUgZGVmYXVsdCB0aXRsZSAnTmV3ICsgVHlwZU5hbWUnLCBvdGhlcndpc2Ugc2hvdyB0aGUgY3VzdG9tIHRpdGxlIG9yIHRoZSBkZWZhdWx0ICdOZXcgb2JqZWN0J1xuXHRjb25zdCBjcmVhdGVNb2RlVGl0bGUgPSBvSGVhZGVySW5mbz8uVHlwZU5hbWVcblx0XHQ/IGNvbmNhdCh0aXRsZVdpdGhIZWFkZXJJbmZvLCBcIjogXCIsIGFubm90YXRpb25FeHByZXNzaW9uKG9IZWFkZXJJbmZvLlR5cGVOYW1lLnRvU3RyaW5nKCkpKVxuXHRcdDogdGl0bGVOb0hlYWRlckluZm87XG5cdGNvbnN0IGFjdGl2ZUV4cHJlc3Npb24gPSBvRHJhZnRSb290ID8gRW50aXR5LklzQWN0aXZlIDogdHJ1ZTtcblxuXHRyZXR1cm4gY29tcGlsZUJpbmRpbmcoXG5cdFx0aWZFbHNlKFxuXHRcdFx0Ly8gSWYgQ3JlYXRlIE1vZGUgJiYgRW1wdHkgZXhwcmVzc2lvblxuXHRcdFx0YW5kKFVJLklzQ3JlYXRlTW9kZSwgdGl0bGVWYWx1ZUV4cHJlc3Npb24gJiYgaXNFbXB0eSh0aXRsZVZhbHVlRXhwcmVzc2lvbikpLFxuXG5cdFx0XHRjcmVhdGVNb2RlVGl0bGUsXG5cdFx0XHQvLyBPdGhlcndpc2Ugc2hvdyB0aGUgZGVmYXVsdCBleHByZXNzaW9uXG5cdFx0XHRpZkVsc2UoXG5cdFx0XHRcdGFuZChhY3RpdmVFeHByZXNzaW9uLCB0aXRsZVZhbHVlRXhwcmVzc2lvbiAmJiBpc0VtcHR5KHRpdGxlVmFsdWVFeHByZXNzaW9uKSksXG5cdFx0XHRcdHRpdGxlRm9yQWN0aXZlSGVhZGVyTm9IZWFkZXJJbmZvLFxuXHRcdFx0XHR0aXRsZVZhbHVlRXhwcmVzc2lvblxuXHRcdFx0KVxuXHRcdClcblx0KTtcbn07XG5cbi8qKlxuICogUmV0cmlldmVzIHRoZSBleHByZXNzaW9uIGZvciB0aGUgZGVzY3JpcHRpb24gb2YgYW4gb2JqZWN0IHBhZ2UuXG4gKlxuICogQHBhcmFtIG9IZWFkZXJJbmZvIFRoZSBAVUkuSGVhZGVySW5mbyBhbm5vdGF0aW9uIGNvbnRlbnRcbiAqIEBwYXJhbSBmdWxsQ29udGV4dFBhdGggVGhlIGZ1bGwgY29udGV4dCBwYXRoIHVzZWQgdG8gcmVhY2ggdGhhdCBvYmplY3QgcGFnZVxuICogQHJldHVybnMgVGhlIGJpbmRpbmcgZXhwcmVzc2lvbiBmb3IgdGhlIG9iamVjdCBwYWdlIGRlc2NyaXB0aW9uXG4gKi9cbmV4cG9ydCBjb25zdCBnZXRFeHByZXNzaW9uRm9yRGVzY3JpcHRpb24gPSBmdW5jdGlvbihcblx0b0hlYWRlckluZm86IEhlYWRlckluZm9UeXBlIHwgdW5kZWZpbmVkLFxuXHRmdWxsQ29udGV4dFBhdGg6IERhdGFNb2RlbE9iamVjdFBhdGhcbik6IEJpbmRpbmdFeHByZXNzaW9uPHN0cmluZz4ge1xuXHRsZXQgYmluZGluZ0V4cHJlc3Npb24gPSBhbm5vdGF0aW9uRXhwcmVzc2lvbigob0hlYWRlckluZm8/LkRlc2NyaXB0aW9uIGFzIERhdGFGaWVsZFR5cGVzKT8uVmFsdWUpO1xuXHRpZiAoKG9IZWFkZXJJbmZvPy5EZXNjcmlwdGlvbiBhcyBEYXRhRmllbGRUeXBlcyk/LlZhbHVlPy4kdGFyZ2V0Py5hbm5vdGF0aW9ucz8uQ29tbW9uPy5UZXh0Py5hbm5vdGF0aW9ucz8uVUk/LlRleHRBcnJhbmdlbWVudCkge1xuXHRcdC8vIEluIGNhc2UgYW4gZXhwbGljaXQgdGV4dCBhcnJhbmdlbWVudCB3YXMgc2V0IHdlIG1ha2UgdXNlIG9mIGl0IGluIHRoZSBkZXNjcmlwdGlvbiBhcyB3ZWxsXG5cdFx0YmluZGluZ0V4cHJlc3Npb24gPSBhZGRUZXh0QXJyYW5nZW1lbnRUb0JpbmRpbmdFeHByZXNzaW9uKGJpbmRpbmdFeHByZXNzaW9uLCBmdWxsQ29udGV4dFBhdGgpO1xuXHR9XG5cblx0cmV0dXJuIGNvbXBpbGVCaW5kaW5nKGZvcm1hdFZhbHVlUmVjdXJzaXZlbHkoYmluZGluZ0V4cHJlc3Npb24sIGZ1bGxDb250ZXh0UGF0aCkpO1xufTtcblxuLyoqXG4gKiBSZXR1cm4gdGhlIGV4cHJlc3Npb24gZm9yIHRoZSBzYXZlIGJ1dHRvbi5cbiAqXG4gKiBAcGFyYW0gb1ZpZXdEYXRhIFRoZSBjdXJyZW50IHZpZXcgZGF0YVxuICogQHBhcmFtIGZ1bGxDb250ZXh0UGF0aCBUaGUgcGF0aCB1c2VkIHVwIHVudGlsIGhlcmVcbiAqIEByZXR1cm5zIFRoZSBiaW5kaW5nIGV4cHJlc3Npb24gdGhhdCBzaG93cyB0aGUgcmlnaHQgc2F2ZSBidXR0b24gdGV4dFxuICovXG5leHBvcnQgY29uc3QgZ2V0RXhwcmVzc2lvbkZvclNhdmVCdXR0b24gPSBmdW5jdGlvbihvVmlld0RhdGE6IFZpZXdEYXRhLCBmdWxsQ29udGV4dFBhdGg6IERhdGFNb2RlbE9iamVjdFBhdGgpOiBCaW5kaW5nRXhwcmVzc2lvbjxzdHJpbmc+IHtcblx0Y29uc3Qgc2F2ZUJ1dHRvblRleHQgPSBDb21tb25VdGlscy5nZXRUcmFuc2xhdGVkVGV4dChcIlRfT1BfT0JKRUNUX1BBR0VfU0FWRVwiLCBvVmlld0RhdGEucmVzb3VyY2VCdW5kbGUpO1xuXHRjb25zdCBjcmVhdGVCdXR0b25UZXh0ID0gQ29tbW9uVXRpbHMuZ2V0VHJhbnNsYXRlZFRleHQoXCJUX09QX09CSkVDVF9QQUdFX0NSRUFURVwiLCBvVmlld0RhdGEucmVzb3VyY2VCdW5kbGUpO1xuXHRsZXQgc2F2ZUV4cHJlc3Npb247XG5cdGlmIChpc1N0aWNreVNlc3Npb25TdXBwb3J0ZWQoZnVsbENvbnRleHRQYXRoLnN0YXJ0aW5nRW50aXR5U2V0KSkge1xuXHRcdC8vIElmIHdlJ3JlIGluIHN0aWNreSBtb2RlIEFORCB0aGUgdWkgaXMgaW4gY3JlYXRlIG1vZGUsIHNob3cgQ3JlYXRlLCBlbHNlIHNob3cgU2F2ZVxuXHRcdHNhdmVFeHByZXNzaW9uID0gaWZFbHNlKFVJLklzQ3JlYXRlTW9kZVN0aWNreSwgY3JlYXRlQnV0dG9uVGV4dCwgc2F2ZUJ1dHRvblRleHQpO1xuXHR9IGVsc2Uge1xuXHRcdC8vIElmIHdlJ3JlIGluIGRyYWZ0IEFORCB0aGUgZHJhZnQgaXMgYSBuZXcgb2JqZWN0ICghSXNBY3RpdmVFbnRpdHkgJiYgIUhhc0FjdGl2ZUVudGl0eSksIHNob3cgY3JlYXRlLCBlbHNlIHNob3cgc2F2ZVxuXHRcdHNhdmVFeHByZXNzaW9uID0gaWZFbHNlKERyYWZ0LklzTmV3T2JqZWN0LCBjcmVhdGVCdXR0b25UZXh0LCBzYXZlQnV0dG9uVGV4dCk7XG5cdH1cblx0cmV0dXJuIGNvbXBpbGVCaW5kaW5nKHNhdmVFeHByZXNzaW9uKTtcbn07XG4iXX0=

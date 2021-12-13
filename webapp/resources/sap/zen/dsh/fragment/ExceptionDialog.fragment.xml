@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="exceptionfra">
+  <m:Dialog id="exceptiondia" horizontalScrolling="false" contentWidth="630px" contentHeight="555px" draggable="true" resizable="true" title="{i18n>EXCEPTION_SETTINGS}">
+    <m:buttons>
+      <m:Button id="exceptiondiab1" text="{i18n>DIALOG_OK}" press="onOk" />
+      <m:Button id="exceptiondiab2" text="{i18n>DIALOG_CANCEL}" press="onCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="excview" viewName="sap.zen.dsh.view.Exception" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

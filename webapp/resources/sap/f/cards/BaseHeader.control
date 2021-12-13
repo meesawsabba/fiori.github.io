@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>cards/BaseHeader</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Provides basic functionality for header controls that can be used in &lt;code&gt;sap.f.Card&lt;/code.</documentation>
+    <since>1.86</since>
+    <abstract/>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="dataTimestamp" type="sap.ui.core/string" defaultValue="">
+            <documentation>Defines the timestamp of the oldest data in the card. Use this to show to the end user how fresh the information in the card is.
+
+Must be specified in ISO 8601 format.
+
+Will be shown as a relative time like "5 minutes ago".</documentation>
+            <developmentState state="experimental" since="1.89">this feature is experimental and the API may change.</developmentState>
+        </property>
+        <property name="dataTimestampUpdating" type="sap.ui.core/boolean" defaultValue="false" visibility="hidden">
+            <documentation>Set to true to show that the data timestamp is currently updating.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation name="_dataTimestamp" type="sap.m/Text" cardinality="0..1" visibility="hidden">
+            <documentation>Holds the internal data timestamp text aggregation.</documentation>
+        </aggregation>
+        <aggregation name="toolbar" type="sap.ui.core/Control" since="1.86" cardinality="0..1">
+            <documentation>Defines the toolbar.</documentation>
+            <developmentState state="experimental" since="1.86"></developmentState>
+        </aggregation>
+        <aggregation name="_error" type="sap.ui.core/Control" cardinality="0..1" visibility="hidden">
+            <documentation>Defines an error which will be displayed in the header.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,29 @@
+<mvc:View
+    height="100%"
+    controllerName="sap.zen.dsh.rsrt.controller.Exceptions"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="ExceptionsView">
+  <m:HBox id="prev-ex-ctl1">
+    <m:SelectList
+        id="Exceptions"
+        items="{om>/dataProvider/0/Exceptions}"
+        itemPress="exceptionPress">
+      <core:Item
+          id="prev-ex-ctl2"
+          text="{
+                parts: [
+                'i18n>condDescr',
+                'om>Description',
+                'om>StatusText'
+                ],
+                formatter: 'jQuery.sap.formatMessage'
+                }"
+          app:active="{om>active}"
+          key="{om>Name}" />
+    </m:SelectList>
+  </m:HBox>
+</mvc:View>

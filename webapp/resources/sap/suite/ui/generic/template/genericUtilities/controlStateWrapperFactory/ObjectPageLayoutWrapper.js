@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";function O(o){function g(){var c={};c.headerPinned=o.getHeaderContentPinned();return c;}function s(S){if(S&&S.headerPinned){o.setHeaderContentPinned(true);}else{o.setHeaderContentPinned(false);}}function a(h){o.attachHeaderContentPinnedStateChange(h);}return{getState:g,setState:s,attachStateChanged:a};}return O;});

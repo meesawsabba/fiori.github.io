@@ -1,0 +1,32 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *      (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/fe/core/helpers/BindingExpression"], function (BindingExpression) {
+  "use strict";
+
+  var _exports = {};
+  var resolveBindingString = BindingExpression.resolveBindingString;
+  var constant = BindingExpression.constant;
+  var equal = BindingExpression.equal;
+  var and = BindingExpression.and;
+  var not = BindingExpression.not;
+  var compileBinding = BindingExpression.compileBinding;
+
+  /**
+   * Method to compute the headerVisible property.
+   *
+   * @param {*} oProps Object containing the table properties
+   * @returns {string} Expression binding for headerVisible
+   */
+  var buildExpressionForHeaderVisible = function (oProps) {
+    var headerBindingExpression = resolveBindingString(oProps === null || oProps === void 0 ? void 0 : oProps.header);
+    var tabTileBindingExpression = resolveBindingString(oProps === null || oProps === void 0 ? void 0 : oProps.tabTitle);
+    var headerVisibleBindingExpression = constant(oProps.headerVisible);
+    return compileBinding(and(headerVisibleBindingExpression, not(equal(headerBindingExpression, tabTileBindingExpression))));
+  };
+
+  _exports.buildExpressionForHeaderVisible = buildExpressionForHeaderVisible;
+  return _exports;
+}, false);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRhYmxlVGVtcGxhdGluZy50cyJdLCJuYW1lcyI6WyJidWlsZEV4cHJlc3Npb25Gb3JIZWFkZXJWaXNpYmxlIiwib1Byb3BzIiwiaGVhZGVyQmluZGluZ0V4cHJlc3Npb24iLCJyZXNvbHZlQmluZGluZ1N0cmluZyIsImhlYWRlciIsInRhYlRpbGVCaW5kaW5nRXhwcmVzc2lvbiIsInRhYlRpdGxlIiwiaGVhZGVyVmlzaWJsZUJpbmRpbmdFeHByZXNzaW9uIiwiY29uc3RhbnQiLCJoZWFkZXJWaXNpYmxlIiwiY29tcGlsZUJpbmRpbmciLCJhbmQiLCJub3QiLCJlcXVhbCJdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0E7QUFDQTs7Ozs7Ozs7Ozs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ08sTUFBTUEsK0JBQStCLEdBQUcsVUFBQ0MsTUFBRCxFQUE0QztBQUMxRixRQUFNQyx1QkFBdUIsR0FBR0Msb0JBQW9CLENBQUNGLE1BQUQsYUFBQ0EsTUFBRCx1QkFBQ0EsTUFBTSxDQUFFRyxNQUFULENBQXBEO0FBQ0EsUUFBTUMsd0JBQXdCLEdBQUdGLG9CQUFvQixDQUFDRixNQUFELGFBQUNBLE1BQUQsdUJBQUNBLE1BQU0sQ0FBRUssUUFBVCxDQUFyRDtBQUNBLFFBQU1DLDhCQUE4QixHQUFHQyxRQUFRLENBQUNQLE1BQU0sQ0FBQ1EsYUFBUixDQUEvQztBQUNBLFdBQU9DLGNBQWMsQ0FBQ0MsR0FBRyxDQUFDSiw4QkFBRCxFQUFpQ0ssR0FBRyxDQUFDQyxLQUFLLENBQUNYLHVCQUFELEVBQTBCRyx3QkFBMUIsQ0FBTixDQUFwQyxDQUFKLENBQXJCO0FBQ0EsR0FMTSIsInNvdXJjZVJvb3QiOiIuIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY29tcGlsZUJpbmRpbmcsIG5vdCwgYW5kLCBlcXVhbCwgY29uc3RhbnQsIEJpbmRpbmdFeHByZXNzaW9uLCByZXNvbHZlQmluZGluZ1N0cmluZyB9IGZyb20gXCJzYXAvZmUvY29yZS9oZWxwZXJzL0JpbmRpbmdFeHByZXNzaW9uXCI7XG5cbi8qKlxuICogTWV0aG9kIHRvIGNvbXB1dGUgdGhlIGhlYWRlclZpc2libGUgcHJvcGVydHkuXG4gKlxuICogQHBhcmFtIHsqfSBvUHJvcHMgT2JqZWN0IGNvbnRhaW5pbmcgdGhlIHRhYmxlIHByb3BlcnRpZXNcbiAqIEByZXR1cm5zIHtzdHJpbmd9IEV4cHJlc3Npb24gYmluZGluZyBmb3IgaGVhZGVyVmlzaWJsZVxuICovXG5leHBvcnQgY29uc3QgYnVpbGRFeHByZXNzaW9uRm9ySGVhZGVyVmlzaWJsZSA9IChvUHJvcHM6IGFueSk6IEJpbmRpbmdFeHByZXNzaW9uPHN0cmluZz4gPT4ge1xuXHRjb25zdCBoZWFkZXJCaW5kaW5nRXhwcmVzc2lvbiA9IHJlc29sdmVCaW5kaW5nU3RyaW5nKG9Qcm9wcz8uaGVhZGVyKTtcblx0Y29uc3QgdGFiVGlsZUJpbmRpbmdFeHByZXNzaW9uID0gcmVzb2x2ZUJpbmRpbmdTdHJpbmcob1Byb3BzPy50YWJUaXRsZSk7XG5cdGNvbnN0IGhlYWRlclZpc2libGVCaW5kaW5nRXhwcmVzc2lvbiA9IGNvbnN0YW50KG9Qcm9wcy5oZWFkZXJWaXNpYmxlKTtcblx0cmV0dXJuIGNvbXBpbGVCaW5kaW5nKGFuZChoZWFkZXJWaXNpYmxlQmluZGluZ0V4cHJlc3Npb24sIG5vdChlcXVhbChoZWFkZXJCaW5kaW5nRXhwcmVzc2lvbiwgdGFiVGlsZUJpbmRpbmdFeHByZXNzaW9uKSkpKTtcbn07XG4iXX0=

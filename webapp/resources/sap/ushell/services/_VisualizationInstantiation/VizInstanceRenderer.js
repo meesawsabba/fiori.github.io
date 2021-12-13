@@ -1,0 +1,2 @@
+// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
+sap.ui.define([],function(){"use strict";var V={apiVersion:2};V.render=function(r,v){var c=this._prepareControlsToBeRendered(v);r.openStart("div",v);r.openEnd();c.forEach(function(C){r.renderControl(C);});r.close("div");};V._prepareControlsToBeRendered=function(v){var c=[v.getAggregation("content")];if(v.getEditable()){var t=v.getTileActions();var r=v._getRemoveIconVBox();c.unshift(r);if(t.length>0){var a=v._getActionDivCenter();var A=v._getActionModeButtonIconVBox();c.push(a);c.push(A);}}return c;};return V;});

@@ -1,0 +1,31 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="PlotArea">
+  <form:SimpleForm
+      editable="true"
+      labelSpanXL="3"
+      labelSpanL="3"
+      labelSpanM="3"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="4"
+      emptySpanL="4"
+      emptySpanM="4"
+      emptySpanS="4"
+      columnsXL="1"
+      columnsL="1"
+      columnsM="1"
+      >
+    <form:content>
+      <m:Label
+          labelFor="bc_PlotAreaVisible"
+          text="{i18n>LegendVisible}" />
+      <m:CheckBox
+          id="bc_PlotAreaVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/PlotArea/visible}" />
+    </form:content>
+  </form:SimpleForm>
+</core:FragmentDefinition>

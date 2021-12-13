@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+		(c) Copyright 2009-2015 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/ui/table/RowAction"],function(T){"use strict";var G=T.extend("sap.gantt.simple.GanttRowAction",{metadata:{library:"sap.gantt",properties:{rowId:{type:"string"},columnWidth:{type:"int",defaultValue:181}},aggregations:{controlTemplate:{type:"sap.ui.core.Control",multiple:false}}},init:function(){this._bFixedLayout=true;this._aActions=["",""];this._iLastCloseTime=0;},onBeforeRendering:function(){var g=this.getRow().getTable().getParent();g._oSplitter.detachResize(this.setTableColumnStyle,this);},onAfterRendering:function(){var g=this.getRow().getTable().getParent();g._oSplitter.attachResize(this.setTableColumnStyle,this);this.setTableColumnStyle();},setTableColumnStyle:function(){var r=sap.ui.getCore().getConfiguration().getRTL();var t=this.getRow().getTable(),s=t.getId();var R=(this.getColumnWidth()<181)?181+"px":this.getColumnWidth()+"px";if(r){document.getElementById(s+"-sapUiTableColHdrScr").style.marginLeft=R;document.getElementById(s+"-sapUiTableCtrlScr").style.marginLeft=R;}else{document.getElementById(s+"-sapUiTableColHdrScr").style.marginRight=R;document.getElementById(s+"-sapUiTableCtrlScr").style.marginRight=R;}document.getElementById(s+"-rowacthdr").style.width=R;document.getElementById(s+"-sapUiTableRowActionScr").style.width=R;document.getElementById(this.getId()).parentElement.style.width=R;}});return G;});

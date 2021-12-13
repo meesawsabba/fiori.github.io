@@ -1,0 +1,423 @@
+<mvc:View
+    controllerName="sap.zen.dsh.rsrt.controller.App"
+    class="sapUiZenCommonsSize"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:s="sap.suite.ui.commons"
+    xmlns:l="sap.ui.layout"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+    xmlns:eg="sap.zen.dsh"
+    xmlns:vm="sap.ui.comp.variants"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="datapreview"
+    busyIndicatorDelay="1">
+  <m:App id="prev-app1">
+    <f:DynamicPage
+        id="DynPage"
+        fitContent="true"
+        headerExpanded="{/showHeader}"
+        showFooter="false"
+        preserveHeaderStateOnScroll="true">
+      <f:title>
+        <f:DynamicPageTitle
+            id="prev-dpt1">
+          <f:heading>
+            <vm:VariantManagement
+                id="prev-vm1"
+                standardItemText="{om>/dataProvider/0/QueryTitle}"
+                showShare="false"
+                showSetAsDefault="false"
+                save="onVariantSave"
+                select="onVariantSet"
+                manage="onVariantManage"
+                variantItems="{settings>/variants}"
+                >
+              <vm:customData>
+                <core:CustomData key="help-id"
+                                 value="{='sap-rsrt-query'+${/QueryName}}"
+                                 writeToDom="true" />
+              </vm:customData>
+              <vm:variantItems>
+                <vm:VariantItem id="prev-vi1"
+                                key="{settings>key}"
+                                text="{settings>name}" />
+              </vm:variantItems>
+            </vm:VariantManagement>
+          </f:heading>
+          <f:actions>
+            <!-- Here additional buttons can be added-->
+            <core:ExtensionPoint name="ButtonToolbar"
+                                 id="dataPrev-extPoint1"></core:ExtensionPoint>
+            <m:Text
+                id="prev-btn1"
+                tooltip="{parts: [
+                         'i18nShared>txt_last_updated',
+                         'om>/dataProvider/0/LastUpdatedText'
+                         ],
+                         formatter: 'jQuery.sap.formatMessage'}
+                         "
+                text="{parts: [
+                      'i18nShared>txt_last_updated',
+                      'om>/dataProvider/0/LastUpdatedText'
+                      ],
+                      formatter: 'jQuery.sap.formatMessage'}
+                      "
+                />
+            <m:Button
+                id="msgBtn"
+                icon="sap-icon://message-popup"
+                tooltip="{i18n>txt_messages}"
+                press="displayMessages"
+                enabled="{=!!${om>/messages}&amp;&amp;!!${om>/messages}.length>0}"
+                visible="{=!!${om>/messages}&amp;&amp;!!${om>/messages}.length>0}"
+                type="Emphasized"
+                >
+              <m:layoutData>
+                <m:OverflowToolbarLayoutData
+                    closeOverflowOnInteraction="false"/>
+              </m:layoutData>
+            </m:Button>
+            <m:Button
+                icon="sap-icon://menu2"
+                id="menuFurtherActions"
+                tooltip="{i18nShared>txt_further_actions}"
+                press="furtherActions"
+                type="Transparent">
+              <m:layoutData>
+                <m:OverflowToolbarLayoutData
+                    closeOverflowOnInteraction="false"/>
+              </m:layoutData>
+            </m:Button>
+            <m:Button id="prev-btn2"
+                      icon="sap-icon://action"
+                      press="shareActions"
+                      tooltip="{i18nShared>txt_share}"
+                      type="Transparent">
+              <m:layoutData>
+                <m:OverflowToolbarLayoutData
+                    closeOverflowOnInteraction="false"/>
+              </m:layoutData>
+            </m:Button>
+          </f:actions>
+        </f:DynamicPageTitle>
+      </f:title>
+      <f:header>
+        <f:DynamicPageHeader
+            id="prev-dph"
+            pinnable="true">
+          <f:content>
+            <m:OverflowToolbar
+                id="prev-tb2"
+                >
+              <m:ToggleButton
+                  text="{i18n>txt_data}"
+                  press="gotoData"
+                  pressed="{=${/innerTab}==='data'}"
+                  type="Transparent"
+                  id="dataButton" />
+              <m:ToggleButton
+                  text="{i18n>txt_chart}"
+                  press="gotoChart"
+                  pressed="{=${/innerTab}==='chart'}"
+                  type="Transparent"
+                  id="chartButton" />
+              <m:ToggleButton
+                  text="{i18n>txt_layout}"
+                  press="gotoLayout"
+                  pressed="{=${/innerTab}==='layout'}"
+                  type="Transparent"
+                  id="layoutButton" />
+              <m:ToggleButton
+                  text="{i18n>txt_conditions}"
+                  press="gotoConditions"
+                  pressed="{=${/innerTab}==='conditions'}"
+                  type="Transparent"
+                  id="conditionsButton" />
+              <m:ToggleButton
+                  text="{i18n>txt_exceptions}"
+                  press="gotoExceptions"
+                  pressed="{=${/innerTab}==='exceptions'}"
+                  type="Transparent"
+                  id="exceptionsButton" />
+              <m:ToggleButton
+                  text="{i18n>txt_graph}"
+                  press="gotoGraph"
+                  pressed="{=${/innerTab}==='graph'}"
+                  visible="{/showGraph}"
+                  type="Transparent"
+                  id="graphButton" />
+              <m:ToggleButton
+                  text="{i18n>txt_map}"
+                  press="gotoMap"
+                  pressed="{=${/innerTab}==='map'}"
+                  visible="{/showMap}"
+                  type="Transparent"
+                  id="mapButton" />
+              <m:ToolbarSpacer
+                  id="prev-tbsp1" />
+              <m:ToggleButton
+                  id="prev-tbb3"
+                  text="{i18n>txt_cluster}"
+                  pressed="{/mapCluster}"
+                  press="onClusterPress"
+                  type="Transparent"
+                  visible="{=${/chartType}==='map'&amp;&amp;${/innerTab}==='chart'}" />
+              <m:ToggleButton
+                  text="{i18n>txt_functions}"
+                  pressed="{/functionsVisible}"
+                  press="onFunctionPress"
+                  type="Transparent"
+                  visible="{=!!${om>/dataProvider/0/Grid/inputEnabled}}"
+                  id="prev-tbfunctions" />
+              <m:ToggleButton
+                  text="{i18n>txt_variables}"
+                  pressed="{/filterVisible}"
+                  visible="{=${om>/FlatVariables}.length&gt;0}"
+                  press="onFilterPress"
+                  type="Transparent"
+                  id="prev-tbbtl3" />
+            </m:OverflowToolbar>
+            <l:VerticalLayout
+                id="appvtl"
+                visible="{/functionsVisible}">
+              <m:OverflowToolbar
+                  id="apptb1"
+                  content="{om>/Functions}">
+                <m:Button id="ExecFu"
+                          text="{om>Text}"
+                          press="onExecuteFunction"
+                          type="Transparent"
+                          app:name="{om>Name}" />
+              </m:OverflowToolbar>
+              <l:HorizontalLayout
+                  id="appHtlayout1">
+                <m:Button
+                    id="AddFunction"
+                    text="{i18n>ADAPT_FUNCTIONS}"
+                    press="onCreateFunction"
+                    type="Transparent" />
+              </l:HorizontalLayout>
+            </l:VerticalLayout>
+            <m:HBox
+                id="prev-hboxA">
+              <m:VBox
+                  id="prev-vb3"
+                  class="sapUiSmallMargin">
+                <m:layoutData>
+                  <m:FlexItemData/>
+                </m:layoutData>
+                <m:items>
+                  <m:Button
+                      id="prev-btnco1"
+                      text="{i18n>txt_create_cond}"
+                      press="onCreateCond"
+                      type="Transparent"
+                      visible="{=${/innerTab}==='conditions'}" />
+                  <m:Button
+                      id="prev-btnex3"
+                      text="{i18n>txt_create_excep}"
+                      press="onCreateExcept"
+                      type="Transparent"
+                      visible="{=${/innerTab}==='exceptions'}" />
+                  <m:Button
+                      id="applnk1"
+                      text="{i18n>chart_properties}"
+                      press="onChartProperties"
+                      type="Transparent"
+                      visible="{=${/innerTab}==='chart'}" />
+                </m:items>
+              </m:VBox>
+              <m:VBox
+                  id="prev-vb4"
+                  class="sapUiSmallMargin"
+                  visible="{=${/innerTab}==='chart'&amp;&amp;${/chartType}==='map'}">
+                <m:layoutData
+                    id="appld1"
+                    >
+                  <m:FlexItemData id="appfli1"/>
+                </m:layoutData>
+                <m:Label
+                    id="prev-lbl3"
+                    visible="{=${/innerTab}==='chart'}"
+                    text="{i18n>Select_GeoDimension}"
+                    tooltip="{i18n>SelectGeoDimensionTooltip}"
+                    design="Bold"
+                    class="settingsLabel"
+                    labelFor="geoCharSelect" />
+                <m:Select
+                    id="geoCharSelect"
+                    class="settingsSelect"
+                    selectedKey="{/GeoDimension}"
+                    items="{om>/dataProvider/0/GeoDimensions}"
+                    change="onGeoDimChange">
+                  <m:items>
+                    <core:Item
+                        id="prev-selitem2"
+                        text="{om>description}"
+                        key="{om>name}" />
+                  </m:items>
+                </m:Select>
+              </m:VBox>
+              <m:VBox
+                  id="prev-vb5"
+                  visible="{=${/innerTab}==='chart'&amp;&amp;${/chartType}==='map'&amp;&amp;${/GeoDimension}!=='1none'}">
+                <m:layoutData>
+                  <m:FlexItemData/>
+                </m:layoutData>
+                <m:HBox
+                    id="prev-hb1"
+                    wrap="Wrap">
+                  <m:ToggleButton
+                      id="prev-togglebtn3"
+                      text="{i18n>add_geofilter}"
+                      press="onSetGeoFilter"
+                      enabled="{=${/GeoDimension}!=='1none'}"
+                      pressed="{=!${/firstCoordinate}&amp;&amp;${/firstCoordVis}}"
+                      type="Transparent"
+                      tooltip="{i18n>add_geofilterTooltip}" />
+                  <m:Input
+                      id="prev-fcv"
+                      class="sapUiTinyMargin"
+                      visible="{=!!${/firstCoordVis}}"
+                      value="{/firstCoordinate}"
+                      enabled="false"
+                      placeholder="{i18n>firCoordTooltip}"
+                      tooltip="{i18n>firCoordTooltip}" />
+                  <m:ToggleButton
+                      id="prev-tb1"
+                      class="sapUiSmallMargin"
+                      text="{i18n>add_geofilter2}"
+                      visible="{=!!${/firstCoordinate}}"
+                      press="onSetGeoFilter2"
+                      enabled="{=${/GeoDimension}!=='1none'}"
+                      pressed="{=!${/secondCoordinate}&amp;&amp;${/secondCoordVis}}"
+                      type="Transparent"
+                      tooltip="{i18n>add_geofilterTooltip}" />
+                  <m:Input
+                      id="prev-input3"
+                      class="sapUiTinyMargin"
+                      visible="{=!!${/secondCoordVis}}"
+                      enabled="false"
+                      value="{/secondCoordinate}"
+                      placeholder="{/secondCoordinate}"
+                      tooltip="{i18n>secCoordTooltip}" />
+                  <m:ToggleButton
+                      id="prev-togglebtn5"
+                      class="sapUiSmallMargin"
+                      visible="{=!!${/secondCoordinate}}"
+                      text="{i18n>submitFilter}"
+                      tooltip="{i18n>submitFilterTooltip}"
+                      pressed="true"
+                      press="onSubmitGeoFilter" />
+                </m:HBox>
+                <m:Button
+                    id="prev-btn6"
+                    text="{i18n>clear_filter}"
+                    press="clearGeoFilter"
+                    type="Transparent" />
+              </m:VBox>
+            </m:HBox>
+            <fb:FilterBar
+                id="VariableBar"
+                useToolbar="false"
+                showGoOnFB="true"
+                filtersDialogSearch="submitVariables"
+                search="submitVariables"
+                visible="{=${/filterVisible}&amp;&amp;${om>/FlatVariables}.length&gt;0}"
+                filterGroupItems="{om>/FlatVariables}"
+                assignedFiltersChanged="assignedFiltersChanged">
+              <fb:filterGroupItems>
+                <fb:FilterGroupItem
+                    id="prev-fgiDate"
+                    groupName="INTERNAL_GROUP"
+                    name="{om>Name}"
+                    label="{om>Description}"
+                    visible="{om>InputEnabled}"
+                    fb:control="{om>Hints}"
+                    app:SupportsMultipleValues="{om>SupportsMultipleValues}"
+                    visibleInFilterBar="true">
+                  <fb:control>
+                    <m:VBox
+                        id="appvbox2">
+                      <m:DateRangeSelection
+                          id="DRS2"
+                          displayFormat="short"
+                          valueFormat="yyyy-MM-dd"
+                          change="onDateRangeChange" />
+                      <m:MultiInput
+                          id="prev-multi1"
+                          enableMultiLineMode="true"
+                          showValueHelp="true"
+                          showSuggestion="true"
+                          valueHelpRequest="onValueHelpRequest"
+                          startSuggestion="0"
+                          change="onFIChange"
+                          maxTokens="100"
+                          tokenChange="onFITokenChange"
+                          tokenUpdate="onFITokenUpdate" />
+                      <m:DatePicker
+                          id="DRS1"
+                          valueFormat="yyyy-MM-dd"
+                          displayFormat="short"
+                          change="onDateChange" />
+                    </m:VBox>
+                  </fb:control>
+                </fb:FilterGroupItem>
+              </fb:filterGroupItems>
+            </fb:FilterBar>
+          </f:content>
+        </f:DynamicPageHeader>
+      </f:header>
+      <f:content>
+        <m:VBox
+            id="megaBox"
+            height="100%"
+            >
+          <mvc:XMLView
+              id="ChartView"
+              async="true"
+              viewName="sap.zen.dsh.rsrt.view.Chart"
+              visible="{=${/innerTab}==='chart'}"
+              class="sapUiZenCommonsSize" />
+          <eg:PivotTable
+              id="PivotTable"
+              visible="{=${/innerTab}==='data'}"
+              navigationCmd="onNavStarted" />
+          <mvc:XMLView
+              id="Layout"
+              async="true"
+              viewName="sap.zen.dsh.rsrt.view.Layout"
+              visible="{=${/innerTab}==='layout'}" />
+          <mvc:XMLView
+              id="Conditions"
+              async="true"
+              viewName="sap.zen.dsh.rsrt.view.Conditions"
+              visible="{=${/innerTab}==='conditions'}" />
+          <mvc:XMLView
+              id="Exceptions"
+              async="true"
+              viewName="sap.zen.dsh.rsrt.view.Exceptions"
+              visible="{=${/innerTab}==='exceptions'}" />
+          <mvc:XMLView
+              id="GraphView"
+              async="true"
+              viewName="sap.zen.dsh.rsrt.view.Graph"
+              visible="{=${/innerTab}==='graph'}"
+              class="sapUiZenCommonsSize" />
+          <mvc:XMLView
+              id="MapView"
+              async="true"
+              viewName="sap.zen.dsh.rsrt.view.Map"
+              visible="{=${/innerTab}==='map'}"
+              class="sapUiZenCommonsSize" />
+          <core:ExtensionPoint
+              id="dataPrev-extPoint2"
+              name="AdditionalContent">
+          </core:ExtensionPoint>
+        </m:VBox>
+      </f:content>
+    </f:DynamicPage>
+  </m:App>
+</mvc:View>

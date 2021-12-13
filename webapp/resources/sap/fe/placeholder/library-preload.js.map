@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/fe/placeholder/library-preload.js",
+"sourceroot":".",
+"sources":["library-dbg.js","manifest.json","view/PlaceholderALP.fragment.html","view/PlaceholderALP.view.xml","view/PlaceholderLR.fragment.html","view/PlaceholderLR.view.xml","view/PlaceholderOP.fragment.html","view/PlaceholderOP.view.xml","view/PlaceholderOVP.fragment.html","view/PlaceholderOVP.view.xml"],
+"names":[],
+"mappings":";;;;;;AAgBA,gBAAa,8BACZ,CACC,mBACA,qBACD,EACA,UAAW,CACV,aAIA,8BACC,KAAM,qBACN,aAAc,gBACd,MAAO,GACP,WAAY,GACZ,SAAU,GACV,SAAU,GACV,QAAS,SACT,aAAc,MACd,WAAY,EACb,GAEA,OAAO,mBACR,CACD;;;;;;;;;;;;;",
+"x_com_sap_openui5_sections":[52,502,563,1243,1301,23956,24009,24457,24514,44228,44280,44727,44784,61023,61075,61522,61580,76694,76747,77195]
+}

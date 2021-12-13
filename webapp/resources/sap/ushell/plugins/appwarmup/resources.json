@@ -1,0 +1,27 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"size": 6680,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"size": 2020
+		},
+		{
+			"name": "ShellUIService-dbg.js",
+			"size": 815,
+			"isDebug": true
+		},
+		{
+			"name": "ShellUIService.js",
+			"size": 395
+		},
+		{
+			"name": "manifest.json",
+			"size": 664
+		}
+	]
+}

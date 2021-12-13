@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/fiori/messagebundle-preload__locale__.js",
+"sourceroot":".",
+"sources":["../ca/scfld/md/i18n/i18n_fr_CA.properties","../ca/ui/i18n/i18n_fr_CA.properties","../m/messagebundle_fr_CA.properties","../ui/core/cldr/fr_CA.json","../ui/core/messagebundle_fr_CA.properties","../ui/fl/messagebundle_fr_CA.properties","../ui/layout/messagebundle_fr_CA.properties","../ui/unified/messagebundle_fr_CA.properties","../ushell/renderers/fiori2/resources/resources_fr_CA.properties"],
+"names":[],
+"mappings":";;;;;;;;;;;;;",
+"x_com_sap_openui5_sections":[126,923,965,5421,5463,43219,43252,73585,73633,87490,87536,91386,91436,91895,91946,94016,94086,152401]
+}

@@ -1,0 +1,26 @@
+<mvc:View height="100%"
+    controllerName="sap.zen.dsh.rsrt.controller.Conditions"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="ConditionsView">
+    <m:HBox id="prev-condv-hbox">
+        <m:SelectList id="Conditions"
+            items="{om>/dataProvider/0/Conditions}"
+            itemPress="conditionPress">
+            <core:Item id="prev-condv-item"
+                text="{
+              parts: [
+                'i18n>condDescr',
+                'om>Description',
+                'om>StatusText'
+              ],
+              formatter: 'jQuery.sap.formatMessage'
+              }"
+                app:active="{om>active}"
+                key="{om>Name}" />
+        </m:SelectList>
+    </m:HBox>
+</mvc:View>

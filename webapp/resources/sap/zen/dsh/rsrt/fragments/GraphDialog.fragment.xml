@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="conditionfra">
+  <m:Dialog id="conditiondia" horizontalScrolling="false" class="sapUiSizeCompact" contentWidth="65rem" contentHeight="23rem" draggable="true" resizable="true" title="{i18n>CONDTION_SETTINGS}">
+    <m:buttons>
+      <m:Button id="graph" text="{i18n>DIALOG_OK}" press="onGraphOk" />
+     
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="graphview" viewName="sap.zen.dsh.rsrt.view.Graph" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

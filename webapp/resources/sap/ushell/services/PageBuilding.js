@@ -1,0 +1,2 @@
+// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell_abap/pbServices/ui2/Factory","sap/ushell_abap/pbServices/ui2/Page","sap/ui/thirdparty/jquery"],function(F,P,q){"use strict";function a(A,c){this.getFactory=function(){return A.getFactory();};this.getPage=function(p){return A.getFactory().createPage(p);};this.getPageSet=function(i){var d=new q.Deferred();A.getFactory().createPageSet(i,d.resolve.bind(d),d.reject.bind(d));return d.promise();};}a.hasNoAdapter=false;return a;},true);

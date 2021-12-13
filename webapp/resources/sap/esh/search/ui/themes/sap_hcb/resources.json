@@ -1,0 +1,88 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 128,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "SearchFacet.less",
+			"size": 0,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "SearchFieldGroup.less",
+			"size": 359,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "SearchPieChart.less",
+			"size": 1728,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "SearchTileContainer.less",
+			"size": 0,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 835,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 82011,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 81708,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 70248,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 265,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library.css",
+			"size": 70239,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library.less",
+			"size": 2654,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library.source.less",
+			"size": 312,
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 71417,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 71408,
+			"theme": "sap_hcb"
+		}
+	]
+}

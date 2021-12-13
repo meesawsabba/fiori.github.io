@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+        (c) Copyright 2009-2015 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["sap/ui/base/EventProvider","../svg/Element"],function(E,a){"use strict";var D=E.extend("sap.ui.vk.tools.DuplicateSvgHotspotToolHandler",{metadata:{},constructor:function(t){this._priority=10;this._tool=t;this._rect=null;}});D.prototype._getPosition=function(e){return this._tool._viewport._camera._screenToWorld(e.x-this._rect.x,e.y-this._rect.y);};D.prototype.hover=function(e){var g=this._tool.getGizmo();if(g&&this._inside(e)){g._move(this._getPosition(e));}};D.prototype.beginGesture=function(e){};D.prototype.move=function(e){};D.prototype.endGesture=function(e){};D.prototype.click=function(e){var g=this._tool.getGizmo();if(g&&this._inside(e)){e.handled=true;g._complete(this._getPosition(e));}};D.prototype.doubleClick=function(e){};D.prototype.contextMenu=function(e){};D.prototype.getViewport=function(){return this._tool._viewport;};D.prototype._getOffset=function(o){var r=o.getBoundingClientRect();var p={x:r.left+window.pageXOffset,y:r.top+window.pageYOffset};return p;};D.prototype._inside=function(e){var i=this._tool._viewport.getIdForLabel();var d=document.getElementById(i);if(d==null){return false;}var o=this._getOffset(d);this._rect={x:o.x,y:o.y,w:d.offsetWidth,h:d.offsetHeight};return(e.x>=this._rect.x&&e.x<=this._rect.x+this._rect.w&&e.y>=this._rect.y&&e.y<=this._rect.y+this._rect.h);};return D;});

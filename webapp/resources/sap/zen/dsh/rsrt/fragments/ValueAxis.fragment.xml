@@ -1,0 +1,104 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="BarChartSettings">
+  <form:SimpleForm
+      editable="true"
+      labelSpanXL="3"
+      labelSpanL="3"
+      labelSpanM="3"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="4"
+      emptySpanL="4"
+      emptySpanM="4"
+      emptySpanS="4"
+      columnsXL="1"
+      columnsL="1"
+      columnsM="1"
+      >
+    <form:content>
+      <m:Label
+          labelFor="bc_ValueDimension"
+          text="{i18n>ValueAxisDimension}" />
+      <m:Select
+          id="bc_ValueDimension"
+          selectedKey="{om>/dataProvider/0/Chart/valDimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:CheckBox
+          select="dimChange"
+          selected="{om>/dataProvider/0/Chart/hasValDimension}"
+          text="{i18n>PlaceDimOnValAxis}" />
+      <m:Label
+          labelFor="bc_ValueAxisAxisLineVisible"
+          text="{i18n>ValueAxisAxisLineVisible}" />
+      <m:CheckBox
+          id="bc_ValueAxisAxisLineVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/valueAxis/axisLine/visible}"
+          select="updateChart"  />
+      <m:Label
+          labelFor="bc_ValueAxisAxisLineSize"
+          text="{i18n>ValueAxisAxisLineSize}" />
+      <m:Input
+          id="bc_ValueAxisAxisLineSize"
+          type="Number"
+          value="{om>/dataProvider/0/Chart/vizProperties/valueAxis/axisLine/size}"
+          change="updateChart" />
+      <m:Label
+          labelFor="bc_ValueAxisAxisTickVisible"
+          text="{i18n>ValueAxisAxisTickVisible}" />
+      <m:CheckBox
+          id="bc_ValueAxisAxisTickVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/valueAxis/axisTick/visible}"
+          select="updateChart"  />
+      <m:Label
+          labelFor="bc_ValueAxisAxisShortTickVisible"
+          text="{i18n>ValueAxisAxisShortTickVisible}" />
+      <m:CheckBox
+          id="bc_ValueAxisAxisShortTickVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/valueAxis/axisTick/shortTickVisible}"
+          select="updateChart" />
+      <m:Label
+          labelFor="bc_ValueAxisColor"
+          text="{i18n>ValueAxisColor}" />
+      <m:Input
+          id="bc_ValueAxisColor"
+          value="{om>/dataProvider/0/Chart/vizProperties/valueAxis/color}"
+          type="Text"
+          change="updateChart"  />
+      <m:Label
+          labelFor="bc_ValueAxisColorHoverShadowColor"
+          text="{i18n>ValueAxisColorHoverShadowColor}" />
+      <m:Input
+          id="bc_ValueAxisColorHoverShadowColor"
+          value="{om>/dataProvider/0/Chart/vizProperties/valueAxis/hoverShadow/color}"
+          type="Text"
+          change="updateChart"  />
+      <m:Label
+          labelFor="ValueAxisLabelAlignment"
+          text="{i18n>ValueAxisLabelAlignment}" />
+      <m:Select
+          forceSelection="true"
+          selectedKey="{om>/dataProvider/0/Chart/vizProperties/valueAxis/Label/Alignment}"
+          change="updateChart" >
+        <core:Item
+            key="Top"
+            text="{i18n>Top}">
+        </core:Item>
+        <core:Item
+            key="Right"
+            text="{i18n>Right}">
+        </core:Item>
+      </m:Select>
+    </form:content>
+  </form:SimpleForm>
+</core:FragmentDefinition>

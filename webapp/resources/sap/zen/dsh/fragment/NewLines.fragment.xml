@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="newlinefrag">
+  <m:Dialog id="newlinedia" horizontalScrolling="false" contentWidth="65rem" contentHeight="35rem" draggable="true" resizable="true" title="{i18n>ENTER_NEW_LINES}">
+    <m:buttons>
+      <m:Button id="addLines" press="onAddLines" icon="sap-icon://add" tooltip="{i18n>ADD_LINES}" />
+      <m:Button id="nlok" text="{i18n>DIALOG_OK}" press="onOk" />
+      <m:Button id="nlcancel" text="{i18n>DIALOG_CANCEL}" press="onCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="nlview" viewName="sap.zen.dsh.view.NewLines" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

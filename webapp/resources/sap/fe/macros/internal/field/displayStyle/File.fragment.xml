@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	template:require="{
+        MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		FIELD: 'sap/fe/macros/field/FieldHelper'
+    }"
+>
+	<template:if
+		test="{= ${property>$Path@com.sap.vocabularies.UI.v1.IsImageURL} || RegExp('image/','i').test(${property>$Path@Org.OData.Core.V1.MediaType})}"
+	>
+
+		<template:then>
+			<Avatar src="{property>@@MODEL.value}" displaySize="S" class="sapUiSmallMarginEnd" displayShape="Square" />
+		</template:then>
+
+		<template:else>
+			<HBox core:require="{FIELDRUNTIME: 'sap/fe/macros/field/FieldRuntime'}">
+				<HBox alignItems="Center" visible="{= FIELD.getIsMediaContentTypeNullExpr(${propertyPath>}, '!==') }">
+					<core:Icon src="{= FIELD.getPathForIconSource(${propertyPath>})}" class="sapUiSmallMarginEnd" />
+					<Link
+						text="{= FIELD.getFilenameExpr(${propertyPath>@Org.OData.Core.V1.ContentDisposition/Filename@@MODEL.value}, ${this.i18n>M_FIELD_FILEUPLOADER_NOFILENAME_TEXT})}"
+						target="_blank"
+						href="{property>@@MODEL.value}"
+						ariaLabelledBy="{this>ariaLabelledBy}"
+					/>
+				</HBox>
+				<Text emptyIndicatorMode="On" text="" visible="{= FIELD.getIsMediaContentTypeNullExpr(${propertyPath>}, '===') }" />
+			</HBox>
+		</template:else>
+
+	</template:if>
+
+</core:FragmentDefinition>

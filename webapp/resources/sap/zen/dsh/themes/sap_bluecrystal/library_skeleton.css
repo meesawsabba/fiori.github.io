@@ -1,0 +1,137 @@
+/*!
+* (c) Copyright 2010-2016 SAP SE or an SAP affiliate company.
+*/
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+/******************* FILE /Base/baseLib/baseTheme/base.less (Version 11.1.34) *******************/
+/******************* FILE /Base/baseLib/sap_belize_hcw/base.less (Version 11.1.34) *******************/
+/* ============================================= */
+/* CSS for control sap.ushell/StaticTile.control */
+/* ============================================= */
+.sapUshellStaticTile ~ span.sapUshellTileBaseIcon {
+  left: auto;
+}
+/******************* FILE /Base/baseLib/sap_bluecrystal/base.less *******************/
+/* ========================= */
+/* FOCUS COLORS              */
+/* ========================= */
+/* ===================================== */
+/* FOREGROUND ELEMENT COLORS             */
+/* ===================================== */
+/* General Foreground Elements           */
+/* ===================================== */
+/* EFFECT COLORS                         */
+/* ===================================== */
+/* ===================================== */
+/* Special Colors                        */
+/* ===================================== */
+/* ===================================== */
+/* Background Colors                     */
+/* ===================================== */
+/* Grayscale Backgrounds                 */
+/* ===================================== */
+/* Border Colors                         */
+/* ===================================== */
+/* Grayscale Borders                     */
+/* ===================================== */
+/* Font Colors                           */
+/* ===================================== */
+/* Grayscale Text                        */
+/* ================================================== */
+/* Absolute fixed Colors - do not use in Controls!!   */
+/* ================================================== */
+/* ==================================================== */
+/* indirect Quick Parameters - do not use in Controls!! */
+/* ==================================================== */
+/* ================================================= */
+/* additional Parameters - do not use in Controls!!  */
+/* ================================================= */
+/* Tinted Backgrounds                    */
+/* Button Background Colors              */
+/* Transparent Backgrounds               */
+/* Hyperlinks                            */
+/* Line Colors                           */
+/* Table Colors                          */
+/* ===================================== */
+/* HOVER COLORS             */
+/* ===================================== */
+/* ===================================== */
+/* Font                                  */
+/* ===================================== */
+/*Please also note the mixins in shared.css which deal with the following background parameters*/
+/* ===================================== */
+/* Desktop (sap.ui.commons)              */
+/* ===================================== */
+/* Color used to show keyboard focus on an element (usually as outline) */
+/* =============================================== */
+/* SOME important control-specific parameters...   */
+/* Derived from Expert Theming                     */
+/* (these Parameters should be linked in controls) */
+/* =============================================== */
+/* Derived Chart Colors */
+/* Shell */
+/* Approved by UX to use a hard coded color value for this */
+/* Exact */
+/* Notification Bar */
+/* ToolPopup */
+/* Telling the ToolPopup if it's inverted per default */
+/* Callout */
+/* ==========================================*/
+/* Legacy Section - do not use in Controls!! */
+/* ==========================================*/
+/* ActionSheet                 */
+/* Bar                         */
+/* Busy Indicator              */
+/* BusyDialog              */
+/* --------------------------- */
+/* Button                START */
+/* --------------------------- */
+/* fade(@sapUiDarkText, 50%); */
+/* --------------------------- */
+/* Button                  END */
+/* --------------------------- */
+/* --------------------------- */
+/* ToggleButton          START */
+/* --------------------------- */
+/* --------------------------- */
+/* ToggleButton            END */
+/* --------------------------- */
+/* CheckBox                     */
+/* DateTimeInput Custom Picker JavaScript	  */
+/* mixed, scroller, clickpick */
+/* mixed, scroller, clickpick */
+/* modal, bubble, bottom, top */
+/* modal, bubble, bottom, top */
+/* DateTimeInput Custom Picker Design	  	*/
+/* IconTabBar			*/
+/* Input/SearchField           */
+/* Label           */
+/* List                        */
+/* List as Table               */
+/* ListItemBase                */
+/* ActionListItem               */
+/* MessageToast                 */
+/* Page                        */
+/* Panel                  */
+/* Popover                */
+/* Popups - shared parameters */
+/* PullToRefresh */
+/* RadioButton                 */
+/* Scrollbar */
+/* SegmentedButton                */
+/* Select                       */
+/* SelectList                    */
+/* ComboBox */
+/* Shell                        */
+/* Slider                       */
+/* SplitContainer */
+/* StandardListItem                */
+/* Switch                       */
+/* RatingIndicator                 */
+/* Toolbar 				*/
+/* FeedInput                    */
+/* OverlapCalendar Event Type */
+/* Calendar Legend */
+/* Tab Container */

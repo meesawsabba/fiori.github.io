@@ -1,0 +1,98 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="BarChartSettings">
+  <form:SimpleForm
+      editable="true"
+      labelSpanXL="3"
+      labelSpanL="3"
+      labelSpanM="3"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="4"
+      emptySpanL="4"
+      emptySpanM="4"
+      emptySpanS="4"
+      columnsXL="1"
+      columnsL="1"
+      columnsM="1"
+      >
+    <form:content>
+     <m:Label
+          labelFor="bc_Category2Dimension"
+          text="{i18n>CategoryAxis2Dimension}" />
+      <m:Select
+          id="bc_Category2Dimension"
+          selectedKey="{om>/dataProvider/0/Chart/cat2Dimension}"
+          items="{om>/dataProvider/0/AllDimensions}"
+          change="dimChange"
+          >
+        <core:Item
+            key="{om>Name}"
+            text="{om>Description}"
+            />
+      </m:Select>
+      <m:Label
+          labelFor="bc_CategoryAxis2AxisLineVisible"
+          text="{i18n>CategoryAxisAxisLineVisible}" />
+      <m:CheckBox
+          id="bc_CategoryAxis2AxisLineVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/categoryAxis2/axisLine/visible}"
+           select="updateChart" />
+      <m:Label
+          labelFor="bc_CategoryAxis2AxisLineSize"
+          text="{i18n>CategoryAxisAxisLineSize}" />
+      <m:Input
+          id="bc_CategoryAxis2AxisLineSize"
+          type="Number"
+          value="{om>/dataProvider/0/Chart/vizProperties/categoryAxis2/axisLine/size}" />
+      <m:Label
+          labelFor="bc_CategoryAxis2AxisTickVisible"
+          text="{i18n>CategoryAxisAxisTickVisible}" />
+      <m:CheckBox
+          id="bc_CategoryAxis2AxisTickVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/categoryAxis2/axisTick/visible}"
+           select="updateChart" />
+      <m:Label
+          labelFor="bc_CategoryAxis2AxisShortTickVisible"
+          text="{i18n>CategoryAxis2AxisShortTickVisible}" />
+      <m:CheckBox
+          id="bc_CategoryAxis2AxisShortTickVisible"
+          selected="{om>/dataProvider/0/Chart/vizProperties/categoryAxis2/axisTick/shortTickVisible}" 
+           select="updateChart"/>
+      <m:Label
+          labelFor="bc_Category2AxisColor"
+          text="{i18n>CategoryAxisColor}" />
+      <m:Input
+          id="bc_CategoryAxis2Color"
+          value="{om>/dataProvider/0/Chart/vizProperties/categoryAxis/color}"
+          type="Text" />
+      <m:Label
+          labelFor="bc_CategoryAxis2ColorHoverShadowColor"
+          text="{i18n>CategoryAxisColorHoverShadowColor}" />
+      <m:Input
+          id="bc_CategoryAxis2ColorHoverShadowColor"
+          value="{om>/dataProvider/0/Chart/vizProperties/categoryAxis2/hoverShadow/color}"
+          type="Text"
+          change="updateChart" />
+      <m:Label
+          labelFor="CategoryAxis2LabelAlignment"
+          text="{i18n>CategoryAxisLabelAlignment}" />
+      <m:Select
+          forceSelection="true"
+          selectedKey="{om>/dataProvider/0/Chart/vizProperties/categoryAxis2/Label/Alignment}"
+          change="updateChart">
+        <core:Item
+            key="Top"
+            text="{i18n>Top}">
+        </core:Item>
+        <core:Item
+            key="Right"
+            text="{i18n>Right}">
+        </core:Item>
+      </m:Select>
+    </form:content>
+  </form:SimpleForm>
+</core:FragmentDefinition>

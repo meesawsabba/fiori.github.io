@@ -1,0 +1,92 @@
+<mvc:View xmlns:m="sap.m"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns:f="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
+          id="Restriction"
+          class="sapUiSmallMargin">
+  <m:IconTabBar id="RestrictionItb"
+                expandable="false">
+    <m:items>
+      <m:IconTabFilter id="Restriction-itf0"
+                       key="itf0"
+                       text="{i18n>TXT_GENERAL_SETTINGS}">
+        <f:SimpleForm id="ITF1Form"
+                      editable="true"
+                      labelSpanXL="3"
+                      labelSpanL="3"
+                      labelSpanM="3"
+                      labelSpanS="12"
+                      adjustLabelSpan="false"
+                      emptySpanXL="4"
+                      emptySpanL="4"
+                      emptySpanM="4"
+                      emptySpanS="4"
+                      columnsXL="1"
+                      columnsL="1"
+                      columnsM="1"
+                      title="{i18n>TXT_GENERAL_SETTINGS}">
+          <f:content>
+            <m:Label text="{i18n>txt_description}"
+                     labelFor="FORM-DESCR"
+                     id="Restriction-lbl" />
+            <m:Input id="FORM-DESCR"
+                     value="{Restriction>/Description}"
+                     enabled="{Restriction>/changeMode}" />
+            <m:Label text="{i18n>txt_base_kf}"
+                     id="Restriction-lbl112"
+                     labelFor="Restriction-114" />
+            <m:Input id="Restriction-114"
+                     value="{Restriction>/KFDescription}"
+                     editable="false" />
+          </f:content>
+        </f:SimpleForm>
+      </m:IconTabFilter>
+      <m:IconTabFilter id="Restriction-itf1"
+                       key="itf2"
+                       text="{i18n>AbsoluteSelections}">
+        <f:Form id="VariableTable"
+                editable="{Restriction>/changeMode}"
+                title="{i18n>VARIABLE_VALUES}">
+          <f:layout>
+            <f:ResponsiveGridLayout id="vprgl1"
+                                    labelSpanXL="2"
+                                    labelSpanL="2"
+                                    labelSpanM="2"
+                                    labelSpanS="2" />
+
+          </f:layout>
+          <f:formContainers>
+            <f:FormContainer
+                id="vpfc2"
+                formElements="{path:'Restriction>/Dimensions', templateShareable:false}">
+              <f:FormElement
+                  id="vpfe3"
+                  label="{Restriction>Description}">
+                <m:HBox
+                    id="RestrcitonDialogHbox1">
+                  <mvc:XMLView
+                      id="DimensionInput"
+                      viewName="sap.zen.dsh.view.DimensionInput"
+                      async="true" />
+                  <m:CheckBox
+                      id="RestrictionCS"
+                      enabled="{Restriction>/changeMode}"
+                      selected="{Restriction>ConstantSelection}"
+                      text="{i18n>ConstantSelection}"
+                      tooltip="{i18n>ConstantSelectionTooltip}" />
+                </m:HBox>
+              </f:FormElement>
+            </f:FormContainer>
+          </f:formContainers>
+        </f:Form>
+      </m:IconTabFilter>
+      <m:IconTabFilter id="Restriction-itf3"
+                       text="{i18n>RelativeSelections}"
+                       visible="false"
+                       key="tbf2">
+        <m:Label text="{i18n>txt_description}"
+                 id="Restriction-lbl5" />
+      </m:IconTabFilter>
+    </m:items>
+  </m:IconTabBar>
+</mvc:View>

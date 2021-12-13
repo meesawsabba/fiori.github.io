@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>editor/Extension</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Brings JavaScript capabilities for an {@link sap.ui.integration.editor.Editor} where custom logic can be implemented.</documentation>
+    <since>1.94</since>
+    <properties>
+        <property name="formatters" type="sap.ui.core/object">
+            <documentation>The formatters, which can be used in the manifest.</documentation>
+            <developmentState state="experimental" since="1.94"></developmentState>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,7 @@
+/*! 
+ * SAPUI5
+
+		(c) Copyright 2009-2021 SAP SE. All rights reserved
+	 
+ */
+(function(){sap.ui.define(["require","exports"],function(r,e){"use strict";Object.defineProperty(e,"__esModule",{value:true});e.Log=e.Severity=void 0;var S;(function(S){S[S["ERROR"]=1]="ERROR";S[S["WARN"]=2]="WARN";S[S["INFO"]=3]="INFO";S[S["DEBUG"]=4]="DEBUG";})(S=e.Severity||(e.Severity={}));var L=(function(){function L(n){if(n===void 0){n="default-log";}this.name=n;}L.prototype.debug=function(m){this.printMessageOrError("DEBUG",m);};L.prototype.info=function(m){this.printMessageOrError("INFO",m);};L.prototype.warn=function(m){this.printMessageOrError("WARN",m);};L.prototype.error=function(m){this.printMessageOrError("ERROR",m);};L.prototype.printMessageOrError=function(s,m){if(m instanceof Error){if(m.stack){this.printMessage(s,m.stack);}else{this.printMessage(s,m+"");}}else{this.printMessage(s,m);}};L.prototype.printMessage=function(s,t){var n=S[s];var m="["+this.name+"]: "+t;if(n<=L.level){switch(n){case S.DEBUG:{if(typeof L.persistency.debug==="function"){L.persistency.debug(m);return;}}break;case S.INFO:{if(typeof L.persistency.info==="function"){L.persistency.info(m);return;}}break;case S.WARN:{if(typeof L.persistency.warn==="function"){L.persistency.warn(m);return;}}break;case S.ERROR:{if(typeof L.persistency.error==="function"){L.persistency.error(m);return;}}}console.log(m);}};L.level=S.ERROR;L.persistency=console;return L;}());e.Log=L;});})();

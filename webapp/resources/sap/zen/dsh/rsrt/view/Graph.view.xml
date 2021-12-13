@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="sap.zen.dsh.rsrt.controller.Graph"
+    xmlns="sap.suite.ui.commons.networkgraph"
+    xmlns:layout="sap.suite.ui.commons.networkgraph.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+    height="100%">
+  <Graph
+      enableWheelZoom="false"
+      nodes="{om>/dataProvider/0/Graph/nodes}"
+      lines="{om>/dataProvider/0/Graph/lines}"
+      >
+    <layoutData>
+      <m:FlexItemData minWidth="75%" maxWidth="75%"/>
+    </layoutData>
+    <layoutAlgorithm>
+      <layout:ForceDirectedLayout
+          optimalDistanceConstant="0.26"
+          >
+      </layout:ForceDirectedLayout>
+    </layoutAlgorithm>
+    <nodes>
+      <Node
+          key="{om>key}"
+          title="{om>title}"
+          icon="{om>icon}"
+          attributes="{path:'om>attributes', templateShareable:true}"
+          shape="{om>shape}"
+          status="{om>status}"
+          x="{om>x}"
+          y="{om>y}">
+        <attributes>
+          <ElementAttribute
+              label="{om>label}"
+              value="{om>value}"/>
+        </attributes>
+      </Node>
+    </nodes>
+    <lines>
+      <Line
+          from="{om>from}"
+          to="{om>to}"
+          status="{om>status}"
+          >
+      </Line>
+    </lines>
+  </Graph>
+</mvc:View>

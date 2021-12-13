@@ -1,0 +1,5 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *      (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define([],function(){"use strict";var _={};var i=function(d){return d&&d.hasOwnProperty("_type")&&d._type==="EntitySet";};_.isEntitySet=i;var g=function(e){var c,d,f;return((c=e.annotations)===null||c===void 0?void 0:(d=c.Capabilities)===null||d===void 0?void 0:(f=d.FilterRestrictions)===null||f===void 0?void 0:f.FilterExpressionRestrictions)||[];};_.getFilterExpressionRestrictions=g;var a=function(e){var c,d,f,h,j;return(c=e===null||e===void 0?void 0:(d=e.annotations)===null||d===void 0?void 0:(f=d.Capabilities)===null||f===void 0?void 0:(h=f.SortRestrictions)===null||h===void 0?void 0:(j=h.NonSortableProperties)===null||j===void 0?void 0:j.map(function(p){return p.value;}))!==null&&c!==void 0?c:[];};_.getNonSortablePropertiesRestrictions=a;var b=function(e){var c;return!!((c=e.annotations.Session)!==null&&c!==void 0&&c.StickySessionSupported);};_.isStickySessionSupported=b;return _;},false);

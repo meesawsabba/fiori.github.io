@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:control="sap.fe.core.controls"
+	template:require="{
+	}"
+>
+    <OverflowToolbarButton
+		id="{this>id}"
+		icon="sap-icon://action"
+		type="Transparent"
+		press="{= ${this>shortCutExists} ? 'cmd:Share' : '.share.openShareSheet(${$source>})' }"
+		visible="{this>visible}"
+		tooltip="{this.i18n>M_COMMON_SAPFE_ACTION_SHARE}"
+	>
+	<dependents>
+		<control:CommandExecution execute=".share.openShareSheet(${$source>}.getParent())" visible="{this>visible}" command="Share" />
+	</dependents>
+    </OverflowToolbarButton>
+</core:FragmentDefinition>

@@ -1,0 +1,2 @@
+// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
+sap.ui.define(["sap/m/MessageToast","sap/ushell/resources"],function(M,r){"use strict";function t(a){sap.ushell.Container.getServiceAsync("UserInfo").then(function(u){if(a){u.activateNewDesign().then(function(){M.show(r.i18n.getText("NewDesignSwitch.activated"));});}else{u.deactivateNewDesign().then(function(){M.show(r.i18n.getText("NewDesignSwitch.deactivated"));});}});}return{toggleNewDesign:t};},true);

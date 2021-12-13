@@ -1,0 +1,47 @@
+<mvc:View xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:vm="sap.ui.comp.variants"
+    controllerName="sap.zen.dsh.controller.FunctionVariablePrompt"
+    id="VariablePromptView">
+    <m:Panel id="Panel">
+  
+        <f:Form id="VariableTable"
+            editable="true"
+            title="{i18n>VARIABLE_VALUES}">
+            <f:layout>
+                <f:ResponsiveGridLayout id="vprgl1"
+                    labelSpanXL="2"
+                    labelSpanL="2"
+                    labelSpanM="2"
+                    labelSpanS="2" />
+
+            </f:layout>
+            <f:formContainers>
+                <f:FormContainer id="vpfc2"
+                    formElements="{FunctionVariableContainer>/Variables}">
+                    <f:FormElement id="vpfe3">
+                        <f:label>
+                            <m:Label id="FunctionVariableDescription"
+                                text="{FunctionVariableContainer>Description}"
+                                labelFor="FunctionVariableInput"
+                                required="{FunctionVariableContainer>required}"
+                                tooltip="{FunctionVariableContainer>IconTooltip}">
+                                <m:customData>
+                                    <core:CustomData key="help-id"
+                                        value="sap-zen-dsh-var-{FunctionVariableContainer>Name}"
+                                        writeToDom="true" />
+                                </m:customData>
+                            </m:Label>
+                        </f:label>
+                        <mvc:XMLView id="VariableInput"
+                            viewName="sap.zen.dsh.view.FunctionVariableInput"
+                            async="true" />
+                    </f:FormElement>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+    </m:Panel>
+</mvc:View>

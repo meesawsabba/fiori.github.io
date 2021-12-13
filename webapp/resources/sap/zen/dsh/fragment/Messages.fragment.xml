@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="msgfrag">
+  <m:MessagePopover placement="Top" items="{Messages>/Messages}" id="msgpopover" afterClose="onAfterClose">
+    <m:items>
+      <m:MessageItem id="msgitm" title="{Messages>text}" type="{Messages>type}" longtextUrl="{Messages>longtextUrl}" />
+    </m:items>
+  </m:MessagePopover>
+</core:FragmentDefinition>

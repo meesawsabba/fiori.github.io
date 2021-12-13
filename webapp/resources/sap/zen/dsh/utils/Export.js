@@ -1,0 +1,5 @@
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define("sap/zen/dsh/utils/Export",["sap/zen/commons/thirdparty/lodash"],function(_){"use strict";function d(f,t){var b=window.atob(t);var c=new window.ArrayBuffer(b.length);var g=new window.Uint8Array(c);for(var i=0;i<b.length;i++){g[i]=b.charCodeAt(i);}var h=new window.Blob([c],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});var n="navigator";if(window[n].msSaveBlob){window.navigator.msSaveBlob(h,f);}else{var j=document.createElement("a");var u=window.URL.createObjectURL(h);j.href=u;j.download=f;j.click();window.URL.revokeObjectURL(u);}}function a(f,t){var n="navigator";if(window[n].msSaveBlob){window.navigator.msSaveBlob(new window.Blob([t]),f);}else{var b=document.createElement("a");b.setAttribute("href","data:text/plain;charset=utf-8,"+encodeURIComponent(t));b.setAttribute("download",f);b.style.display="none";document.body.appendChild(b);b.click();document.body.removeChild(b);}}function e(t,s){a(t+".svg",s);}return{exportSVG:e,dowloadExcel:function(c,t){d([t,"xlsx"].join("."),c);}};});

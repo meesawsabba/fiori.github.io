@@ -1,0 +1,5 @@
+/*
+ * SAPUI5
+  (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define("sap/zen/dsh/utils/SyncActionHelper",["sap/base/Log","sap/zen/dsh/utils/ListHelper","sap/zen/commons/thirdparty/lodash"],function(L,a,_){L.info("Load SyncAction Helper");function S(){var t=this;function r(e){var E=new Error(e.getSummary());E.getMessages=_.constant(a.arrayFromList(e.getMessages()).map(function(o){var s=o.getSeverity().getName();if(s==="Info"){s="Information";}return{Text:o.getText(),Severity:s,Code:o.getCode(),MessageClass:o.getMessageClass(),LongTextUri:o.getMessageClass()?["/sap/opu/odata/iwbep/message_text;o=LOCAL/T100_longtexts(MSGID='",encodeURIComponent(o.getMessageClass()),"',MSGNO='",encodeURIComponent(o.getCode()),"',MESSAGE_V1='',MESSAGE_V2='',MESSAGE_V3='',MESSAGE_V4='')/$value"].join(""):null};}));return E;}t.reject=r;t.syncActionToPromise=function(s,t,p){var R,f;function h(c,r){R=c;f=r;}function b(o){if(o.hasErrors()){f(r(o));}else{R(o.getData());}}var P=new Promise(h);s.apply(t,_.concat([sap.firefly.SyncType.NON_BLOCKING,b],p));return P;};}return new S();});

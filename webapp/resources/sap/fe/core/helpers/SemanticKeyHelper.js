@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["sap/base/Log"],function(L){"use strict";var S={getSemanticKeys:function(m,e){return m.getObject("/"+e+"/@com.sap.vocabularies.Common.v1.SemanticKey");},getSemanticObjectInformation:function(m,e){var s=m.getObject("/"+e+"/@com.sap.vocabularies.Common.v1.SemanticObject");var a=this.getSemanticKeys(m,e);return{semanticObject:s,semanticKeys:a};},getSemanticPath:function(c,s){var m=c.getModel().getMetaModel(),E=m.getMetaContext(c.getPath()).getObject("@sapui.name"),o=this.getSemanticObjectInformation(m,E),t,a;if(c.isA("sap.ui.model.odata.v4.ODataListBinding")&&c.isRelative()){t=c.getHeaderContext().getPath();}else{t=c.getPath();}if(this._isPathForSemantic(t)&&o.semanticKeys){var b=o.semanticKeys,d=m.getObject("/"+m.getObject("/"+E).$Type);try{var f=b.map(function(g){var p=g.$PropertyPath,k=c.getProperty(p);if(k===undefined||k===null){throw new Error("Couldn't resolve semantic key value for "+p);}else{if(d[p].$Type==="Edm.String"){k="'"+encodeURIComponent(k)+"'";}if(b.length>1){k=p+"="+k;}return k;}}).join(",");a="/"+E+"("+f+")";}catch(e){L.info(e);}}return s?a:a||t;},_isPathForSemantic:function(p){return/^[^\(\)]+\([^\(\)]+\)$/.test(p);}};return S;});

@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core"
+	xmlns:macro="sap.fe.macros"
+	template:require="{
+							FIELD: 'sap/fe/macros/field/FieldHelper',
+							ID: 'sap/fe/core/helpers/StableIdHelper'
+						 }"
+>
+
+	<macro:FieldAPI
+		change="{this>onChange}"
+		id="{= ${this>_apiId} ? ${this>_apiId} : (${this>idPrefix} ? ID.generate([${this>idPrefix}, 'Field']) : undefined )}"
+		required="{= FIELD.getRequiredForDataField(${dataField>Value/$Path@@FIELD.fieldControl}, ${this>editMode}, ${dataField>@@FIELD.fieldControl})}"
+		editable="{this>editableExpression}"
+	>
+		<core:Fragment fragmentName="sap.fe.macros.internal.field.FieldContent" type="XML" />
+	</macro:FieldAPI>
+
+</core:FragmentDefinition>

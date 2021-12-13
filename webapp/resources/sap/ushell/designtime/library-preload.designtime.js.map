@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"sap/ushell/designtime/library-preload.designtime.js",
+"sourceroot":".",
+"sources":["ApplicationContainer-dbg.designtime.js"],
+"names":[],
+"mappings":";;AAMA,gBAAa,yDAAC,GAAI,QAAS,EAAG,CAC1B,aAEA,MAAO,CACH,aAAc,CAAE,MAAO,EAAG,CAC9B,EACJ;",
+"x_com_sap_openui5_sections":[66,257]
+}

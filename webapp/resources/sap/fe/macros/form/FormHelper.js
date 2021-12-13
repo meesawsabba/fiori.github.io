@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+    
+ */
+sap.ui.define([],function(){"use strict";var F={checkIfCollectionFacetNeedsToBeRendered:function(c,p){if(c.$Type==="com.sap.vocabularies.UI.v1.CollectionFacet"&&c.Facets.length){var C=function(a,R){var b=R["@com.sap.vocabularies.UI.v1.PartOfPreview"];return((a!=="false"&&b!==false)||(a==="false"&&b===false));};var r=c.Facets;return r.some(C.bind(null,p));}return false;},isReferenceFacetPartOfPreview:function(r,p){if(r.$Type==="com.sap.vocabularies.UI.v1.ReferenceFacet"){var a=r["@com.sap.vocabularies.UI.v1.PartOfPreview"];return((p==="true"&&a!==false)||(p==="false"&&a===false));}return false;},create$Select:function(s){var S="";s.forEach(function(o){S+=S?","+o.$PropertyPath:o.$PropertyPath;});return S;},generateBindingExpression:function(n,s){if(!n&&!s){return"";}var b={path:n||""};if(s){b.parameters={$select:F.create$Select(s)};}return JSON.stringify(b);},getNavigationPath:function(e){var p=e.getPath?e.getPath():e;return p;},getMarginClass:function(m,b){var f=m!==""&&b?"sapUxAPObjectPageSubSectionAlignContent "+m:"sapUxAPObjectPageSubSectionAlignContent";return f;}};return F;},true);

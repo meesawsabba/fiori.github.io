@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="formularfra">
+  <m:Dialog id="formulardia" horizontalScrolling="false" class="sapUiSizeCompact" contentWidth="500px" contentHeight="555px" draggable="true" resizable="true" beforeClose="beforeClose" title="{i18n>FORMULA_SETTINGS}">
+    <m:buttons>
+      <m:Button id="formulardiab1" text="{i18n>DIALOG_OK}" visible="{Formular>/changeMode}" press="onOk" />
+      <m:Button id="formulardiab2" text="{i18n>DIALOG_CANCEL}" visible="{Formular>/changeMode}" press="onCancel" />
+      <m:Button id="formulardiab3" text="{i18n>DIALOG_CLOSE}" visible="{Formular>/displayMode}" press="onCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="formview" viewName="sap.zen.dsh.view.Formular" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

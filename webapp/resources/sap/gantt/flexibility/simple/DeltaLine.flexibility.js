@@ -1,0 +1,1 @@
+sap.ui.define(["sap/gantt/utils/GanttFlexibilityUtils"],function(G){"use strict";return{"hideControl":"default","unhideControl":"default","moveControls":"default","ganttDeltaLineSettings":G.fnCustomisationChangeHandler("ganttDeltaLineSettings")};},true);

@@ -1,0 +1,14 @@
+{
+	"sapUiSacGridExpandedAboveIcon": "\"\\e1f0\"",
+	"sapUiSacGridExpandedBelowIcon": "\"\\e1ef\"",
+	"sapUiSacGridCollapsedIcon": "\"\\e1ed\"",
+	"sapUiSacGridCursorPointer": "pointer",
+	"sapUiSacGridNoDataCursorPointer": "auto",
+	"sapUiSacGridTextDecoration": "underline",
+	"sapUiSacGridNoDataTextDecoration": "none",
+	"sapUiSacGridCellBorder": "1px solid #ffffff",
+	"sapUiSacGridCellBorderCollapse": "separate",
+	"sapUiSacGridOverflow": "auto",
+	"sapUiSacGrid100PerCent": "100%",
+	"sapUiSacGridCellNoFlex": "none"
+}

@@ -1,0 +1,31 @@
+<mvc:View id="NewLines"
+    xmlns:ui="sap.ui.table"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    controllerName="sap.zen.dsh.controller.NewLines"
+    height="100%"
+    busyIndicatorDelay="1">
+    <ui:Table id="newLineTable"
+        rows="{NewLines>/rows}"
+        selectionMode="None"
+        visibleRowCount="{NewLines>/rows/length}"
+        paste="onPaste"
+        columns="{NewLines>/cols}">
+        <ui:columns>
+            <ui:Column width="11rem"
+                id="c"
+                app:name="{NewLines>Name}"
+                app:isDate="{NewLines>IsDate}"
+                app:isDim="{NewLines>IsDim}">
+                <m:Label text="{NewLines>Description}"
+                    labelFor="m"
+                    id="l" />
+      
+            </ui:Column>
+        </ui:columns>
+    </ui:Table>
+</mvc:View>

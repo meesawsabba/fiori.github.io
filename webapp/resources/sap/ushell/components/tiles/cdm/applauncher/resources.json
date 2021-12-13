@@ -1,0 +1,167 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/Component.js",
+			"size": 2510,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/Component-h2-preload.js",
+			"size": 3088,
+			"merged": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/m/GenericTile.js",
+				"sap/m/ImageContent.js",
+				"sap/m/TileContent.js",
+				"sap/m/library.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/JSView.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/library.js",
+				"sap/ushell/utils/UrlParsing.js",
+				"sap/ushell/utils/WindowUtils.js"
+			],
+			"included": [
+				"sap/ushell/components/tiles/cdm/applauncher/Component.js",
+				"sap/ushell/components/tiles/cdm/applauncher/manifest.json",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.controller.js",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.js",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.xml"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js.map",
+			"size": 1062,
+			"isDebug": true
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/Component-preload.js",
+			"size": 7699,
+			"merged": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/m/GenericTile.js",
+				"sap/m/ImageContent.js",
+				"sap/m/TileContent.js",
+				"sap/m/library.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/JSView.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/library.js",
+				"sap/ushell/utils/UrlParsing.js",
+				"sap/ushell/utils/WindowUtils.js"
+			],
+			"included": [
+				"sap/ushell/components/tiles/cdm/applauncher/Component.js",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.controller.js",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.js",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.xml",
+				"sap/ushell/components/tiles/cdm/applauncher/manifest.json"
+			]
+		},
+		{
+			"name": "Component-preload.js.map",
+			"size": 5457,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/Component.js",
+			"size": 1009,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "StaticTile-dbg.controller.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/StaticTile.controller.js",
+			"size": 8085,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/m/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/library.js",
+				"sap/ushell/utils/UrlParsing.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "StaticTile-dbg.view.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.js",
+			"size": 1724,
+			"isDebug": true,
+			"required": [
+				"sap/m/GenericTile.js",
+				"sap/m/ImageContent.js",
+				"sap/m/TileContent.js",
+				"sap/ui/core/mvc/JSView.js"
+			]
+		},
+		{
+			"name": "StaticTile.controller.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/StaticTile.controller.js",
+			"size": 3657,
+			"required": [
+				"sap/base/Log.js",
+				"sap/m/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/library.js",
+				"sap/ushell/utils/UrlParsing.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "StaticTile.view.js",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.js",
+			"size": 976,
+			"required": [
+				"sap/m/GenericTile.js",
+				"sap/m/ImageContent.js",
+				"sap/m/TileContent.js",
+				"sap/ui/core/mvc/JSView.js"
+			]
+		},
+		{
+			"name": "StaticTile.view.xml",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/StaticTile.view.xml",
+			"size": 957,
+			"required": [
+				"sap/m/GenericTile.js",
+				"sap/m/ImageContent.js",
+				"sap/m/TileContent.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ushell/components/tiles/cdm/applauncher/StaticTile.controller.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ushell/components/tiles/cdm/applauncher/manifest.json",
+			"size": 1512
+		},
+		{
+			"name": "resources.json",
+			"size": 3135
+		}
+	]
+}

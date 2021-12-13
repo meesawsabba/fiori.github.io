@@ -1,0 +1,7 @@
+/*! 
+ * SAPUI5
+
+		(c) Copyright 2009-2021 SAP SE. All rights reserved
+	 
+ */
+(function(){var _=(this&&this.__extends)||(function(){var e=function(d,b){e=Object.setPrototypeOf||({__proto__:[]}instanceof Array&&function(d,b){d.__proto__=b;})||function(d,b){for(var p in b)if(Object.prototype.hasOwnProperty.call(b,p))d[p]=b[p];};return e(d,b);};return function(d,b){if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");e(d,b);function a(){this.constructor=d;}d.prototype=b===null?Object.create(b):(a.prototype=b.prototype,new a());};})();sap.ui.define(["require","exports","./DataSource"],function(r,e,D){"use strict";Object.defineProperty(e,"__esModule",{value:true});e.FilteredDataSource=void 0;var F=(function(a){_(F,a);function F(p){var b,c,d,f,g,h;var i=this;p.annotations=(b=p.annotations)!==null&&b!==void 0?b:p.dataSource.annotations;p.hidden=(c=p.hidden)!==null&&c!==void 0?c:p.dataSource.hidden;p.attributesMetadata=(d=p.attributesMetadata)!==null&&d!==void 0?d:p.dataSource.attributesMetadata;p.attributeMetadataMap=(f=p.attributeMetadataMap)!==null&&f!==void 0?f:p.dataSource.attributeMetadataMap;p.attributeGroupsMetadata=(g=p.attributeGroupsMetadata)!==null&&g!==void 0?g:p.dataSource.attributeGroupsMetadata;p.attributeGroupMetadataMap=(h=p.attributeGroupMetadataMap)!==null&&h!==void 0?h:p.dataSource.attributeGroupMetadataMap;i=a.call(this,p)||this;i.dataSource=p.dataSource;i.filterCondition=p.filterCondition;return i;}return F;}(D.DataSource));e.FilteredDataSource=F;});})();

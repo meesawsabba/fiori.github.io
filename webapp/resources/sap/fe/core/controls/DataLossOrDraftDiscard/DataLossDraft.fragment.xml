@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>WARNING}" state="Warning" type="Message">
+		<content>
+			<Text text="{i18n>ST_DRAFT_DATALOSS_MESSAGE_DRAFT}" />
+		</content>
+		<buttons>
+			<Button text="{i18n>ST_DRAFT_DATALOSS_KEEP_DRAFT_BTN}" press="onDataLossKeepDraft" type="Emphasized" />
+			<Button text="{i18n>ST_DRAFT_DATALOSS_DISCARD_DRAFT_BTN}" press="onDataLossDiscardDraft" />
+			<Button text="{i18n>CANCEL}" press="onDataLossCancel" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

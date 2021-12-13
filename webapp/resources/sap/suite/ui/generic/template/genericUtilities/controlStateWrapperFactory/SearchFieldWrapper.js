@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";function S(s){function g(){return{searchString:s.getValue()};}function f(o){s.setValue(o.searchString);}function a(h){s.attachLiveChange(h);}return{getState:g,setState:f,attachStateChanged:a};}return S;});

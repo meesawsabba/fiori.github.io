@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["sap/ui/mdc/field/MultiValueFieldDelegate","sap/fe/core/CommonUtils"],function(M,C){"use strict";var a=Object.assign({},M);a.updateItems=function(p,c,o){var l=o.getBinding("items");if(l.isA("sap.ui.model.odata.v4.ODataListBinding")){var b=o.getBindingInfo("items");var t=b.template;var k=t.getBindingInfo("key");var d=t.getBindingInfo("description");var K=k&&k.parts[0].path;var D=d&&d.parts&&d.parts[0]&&d.parts[0].path;var e=l.getCurrentContexts();var i=0;var f=[];var g=C.getTargetView(o).getController();var n=c.map(function(j){return j.values[0];});var O=e.map(function(s){return s.getProperty(K);});var m=[];for(i=0;i<e.length;i++){var h=e[i];if(!n.includes(h.getProperty(K))){m.push(g._editFlow.deleteDocumentTransaction(h,{noDialog:true}));}}for(i=0;i<c.length;i++){var j=c[i];if(!O.includes(j.values[0])){var I={};if(K){var q=K.indexOf("/");if(q>=0){var P=K.substr(q+1);K=K.substr(0,q);var r={};r[P]=j.values[0];I[K]=r;}else{I[K]=j.values[0];}}if(D&&D!==K){I[D]=j.values[1];}f.push(I);}}if(f.length){m.push(g._editFlow.createMultipleDocuments(l,f,true));}return Promise.all(m);}};return a;});

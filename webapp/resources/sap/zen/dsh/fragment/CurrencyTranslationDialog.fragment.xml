@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="ctpropfrag">
+  <m:Dialog id="ctpropdia" class="sapUiSizeCompact" horizontalScrolling="false" contentWidth="40rem" contentHeight="15rem" draggable="true" resizable="true" title="{i18n>CURRENCY_TRANSLATION}">
+    <m:buttons>
+      <m:Button id="okctprop" text="{i18n>DIALOG_OK}" press="onCtSettingOk" />
+      <m:Button id="cancelctprop" text="{i18n>DIALOG_CLOSE}" press="onCtSettingCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="CurrencyTranslationProperties" viewName="sap.zen.dsh.view.CurrencyTranslation" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

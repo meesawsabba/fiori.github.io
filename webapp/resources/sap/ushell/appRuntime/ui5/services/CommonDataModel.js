@@ -1,0 +1,2 @@
+// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/services/CommonDataModel","sap/ushell/appRuntime/ui5/AppRuntimeService"],function(C,A){"use strict";function a(o,c,p,s){C.call(this,o,c,p,s);this.getAllPages=function(){return new Promise(function(r){A.sendMessageToOuterShell("sap.ushell.services.CommonDataModel.getAllPages").done(r);});};}a.prototype=C.prototype;a.hasNoAdapter=C.hasNoAdapter;return a;});

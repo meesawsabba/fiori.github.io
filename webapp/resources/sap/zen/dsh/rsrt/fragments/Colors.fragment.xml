@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="prev-msg-fra-clt1">
+   <m:Table
+            id="ColorTable"
+            headerText="{i18n>COLOR_PALETTE}"
+            class="sapUiLargeMarginBottom"
+            items="{om>dataProvider/0/Chart/colors}">
+          <m:columns>
+            <m:Column
+                id="ColorTextColumn">
+              <m:Text
+                  id="ColorText"
+                  text="{i18n>VALUE}" />
+            </m:Column>
+            <m:Column
+                width="30%"
+                id="ColorValueColumn">
+              <m:Text
+                  id="ColorColumns"
+                  text="{i18n>COLOR}" />
+            </m:Column>
+          </m:columns>
+          <m:items>
+            <m:ColumnListItem
+                id="ColorColumn">
+              <m:cells>
+                <m:ObjectIdentifier
+                    id="ObjIdent1"
+                    text="{om>text}"
+                    />
+                <core:Icon
+                    id="Icon1"
+                    tooltip="{text}"
+                    src="sap-icon://color-fill"
+                    color="{om>color}"
+                    app:position="{key}"
+                    press="openColorPicker" />
+              </m:cells>
+            </m:ColumnListItem>
+          </m:items>
+        </m:Table>
+</core:FragmentDefinition>

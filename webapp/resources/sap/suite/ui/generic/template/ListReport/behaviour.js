@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/XMLView"],function(X){"use strict";var p={html:"sap/fe/placeholder/view/PlaceholderLR.fragment.html",autoClose:false};function g(){return p;}return{getPlaceholderInfo:g};});

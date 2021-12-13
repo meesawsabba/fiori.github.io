@@ -1,0 +1,188 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:t="sap.tnt"
+    id="theContextMenu"
+    controllerName="sap.zen.dsh.controller.ContextMenu">
+    <t:NavigationList width="320px"
+        id="cm">
+        <t:NavigationListItem id="nli0"
+            text="{i18n>txt_no_action}"
+            expanded="false"
+            visible="{=!${cm>/Dimension}&amp;&amp;!!${cm>/FreeDimensions}&amp;&amp;${cm>/FreeDimensions}.length===0&amp;&amp;!${cm>/dataCell}}" />
+        <t:NavigationListItem id="KeepFilterSection"
+            text="{i18n>txt_keep_filter_and_dd}"
+            expanded="false"
+            visible="{=!!${cm>/Dimension}&amp;&amp;!!${cm>/hasMember}&amp;&amp;
+                              ${cm>/FreeDimensions}.length>0}"
+            key="KeepFilterAndDD"
+            items="{cm>/FreeDimensions}"
+            select="toggle">
+            <t:items>
+                <t:NavigationListItem id="kfadd"
+                    app:dimension="{cm>Name}"
+                    text="{cm>Description}"
+                    select="filterAndDrillDown" />
+            </t:items>
+        </t:NavigationListItem>
+
+        <t:NavigationListItem id="FilterSection"
+            text="{i18n>txt_filter}"
+            expanded="false"
+            visible="{=!!${cm>/Dimension}}"
+            key="Filter"
+            select="toggle">
+            <t:NavigationListItem id="nli2"
+                text="{i18n>txt_remove_filter}"
+                visible="{=!!${cm>/hasFilter}}"
+                select="removeFilterValue" />
+            <t:NavigationListItem id="nli3"
+                text="{i18n>txt_keep_filter_value}"
+                visible="{=!!${cm>/hasMember}}"
+                select="keepFilterValue" />
+            <t:NavigationListItem id="FilterSelector"
+                text="{i18n>CTX_SELECTOR}"
+                visible="{=!!${cm>/Dimension}}"
+                select="selectFilterValue"
+                key="Selector" />
+        </t:NavigationListItem>
+        <t:NavigationListItem id="nli4"
+            text="{i18n>CTX_SELECTOR_FOR}"
+            expanded="false"
+            select="toggle"
+            visible="{=!!${cm>/FreeDimensions}.length>0 &amp;&amp;
+                              !${cm>/Dimension}}"
+            items="{cm>/FreeDimensions}">
+            <t:items>
+                <t:NavigationListItem id="nli5"
+                    app:dimension="{cm>Name}"
+                    text="{cm>Description}"
+                    select="openSelectorFor" />
+            </t:items>
+        </t:NavigationListItem>
+        <t:NavigationListItem id="nli6"
+            text="{i18n>txt_drilldown}"
+            expanded="false"
+            visible="{=!!${cm>/FreeDimensions}&amp;&amp;${cm>/FreeDimensions}.length>0}"
+            items="{cm>/FreeDimensions}"
+            select="toggle">
+            <t:items>
+                <t:NavigationListItem id="nli7"
+                    app:dimension="{cm>Name}"
+                    text="{cm>Description}"
+                    select="drilldown" />
+            </t:items>
+        </t:NavigationListItem>
+        <t:NavigationListItem id="nli8"
+            text="{i18n>txt_exchange_with}"
+            expanded="false"
+            items="{cm>/FreeDimensions}"
+            visible="{=!!${cm>/FreeDimensions}.length>0 &amp;&amp;!${cm>/IsStructure}&amp;&amp;!!${cm>/Dimension}}"
+            select="toggle">
+            <t:items>
+                <t:NavigationListItem id="nli9"
+                    app:dimension="{cm>Name}"
+                    text="{cm>Description}"
+                    select="exchange" />
+            </t:items>
+        </t:NavigationListItem>
+        <t:NavigationListItem id="nli10"
+            expanded="false"
+            visible="{=!${cm>/IsStructure}&amp;&amp;!!${cm>/Dimension}}"
+            text="{i18n>REMOVE_LAYOUT}"
+            select="removeDrilldown" />
+        <t:NavigationListItem id="nli11"
+            text="{i18n>txt_sort}"
+            expanded="false"
+            visible="{=!!${cm>/Dimension}&amp;&amp;(!${cm>/IsStructure}||!!${cm>/Member})}"
+            icon="{cm>/sortIcon}"
+            tooltip="{cm>sortTooltip}"
+            select="toggle"
+            key="sort">
+            <t:items>
+                <t:NavigationListItem id="nli12"
+                    text="{i18n>txt_asc}"
+                    select="sortAsc"
+                    key="asc" />
+                <t:NavigationListItem id="nli13"
+                    text="{i18n>txt_desc}"
+                    select="sortDesc"
+                    key="desc" />
+            </t:items>
+        </t:NavigationListItem>
+        <t:NavigationListItem id="nli15"
+            expanded="false"
+            visible="{=${cm>/axis}==='Columns'}"
+            text="{i18n>txt_to_row}"
+            select="toRows" />
+        <t:NavigationListItem id="nli16"
+            expanded="false"
+            visible="{=${cm>/axis}==='Rows'}"
+            text="{i18n>txt_to_col}"
+            select="toColumns" />
+        <t:NavigationListItem id="nli17"
+            expanded="false"
+            visible="{=!!${cm>/Dimension}}"
+            text="{i18n>txt_char_dialog}"
+            key="Properties"
+            select="openCharDlg" />
+        <t:NavigationListItem id="nli171"
+            expanded="false"
+            visible="{=!${cm>/IsStructure}&amp;&amp;!!${cm>/Dimension}&amp;&amp;!!${cm>/hasDrill}}"
+            text="{i18n>txt_collapse_node}"
+            key="CollapseAll"
+            select="collapseAll" />
+        <t:NavigationListItem id="nli19"
+            expanded="false"
+            visible="{=!!${cm>/dataCell}}"
+            text="{i18n>txt_keyfigure_dialog}"
+            select="openKeyfigureDlg" />
+        <t:NavigationListItem id="nli112"
+            text="{i18n>txt_add}"
+            expanded="false"
+            visible="{=!!${cm>/IsStructure}}"
+            select="toggle"
+            key="addMember">
+            <t:items>
+                <t:NavigationListItem id="nliaddform"
+                    expanded="false"
+                    visible="{=!!${cm>/IsStructure}}"
+                    text="{i18n>txt_create_formula}"
+                    select="createFormular"
+                    key="addFormula" />
+                <t:NavigationListItem id="nliaddselec"
+                    expanded="false"
+                    visible="{=!!${cm>/IsStructure}}"
+                    text="{i18n>txt_create_selection}"
+                    select="createSelection"
+                    key="addRestriction" />
+
+            </t:items>
+        </t:NavigationListItem>
+        <t:NavigationListItem id="nlicelldia"
+            expanded="false"
+            visible="{=!!${cm>/IsStructure}&amp;&amp;!!${cm>/hasMember}}"
+            text="{i18n>txt_keyfigure_dialog}"
+            select="openKeyfigureDlg"
+            key="cellDialog" />
+        <t:NavigationListItem id="lib-cm-search"
+            expanded="false"
+            visible="{=!!${cm>/Dimension}&amp;&amp;!!${cm>/hasMember}}"
+            text="{i18n>txt_search}"
+            select="search" />
+        <t:NavigationListItem id="nli18"
+            expanded="false"
+            visible="{=!!${cm>/rri}&amp;&amp;${cm>/rri/length}>0}"
+            text="{i18n>txt_goto}"
+            select="toggle"
+            items="{cm>/rri}">
+            <t:items>
+                <t:NavigationListItem id="gotoRRI"
+                    expanded="false"
+                    visible="true"
+                    text="{cm>Text}"
+                    app:hash="{cm>URL}"
+                    select="openRRI" />
+            </t:items>
+        </t:NavigationListItem>
+    </t:NavigationList>
+</mvc:View>

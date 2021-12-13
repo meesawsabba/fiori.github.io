@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>AttributesLayoutType</name>
+    <derived/>
+    <documentation>Defines the layout type of the List card attributes.</documentation>
+    <since>1.96</since>
+    <enumeration>
+        <value name="OneColumn">
+            <documentation>One column.</documentation>
+        </value>
+        <value name="TwoColumns">
+            <documentation>Two columns.</documentation>
+        </value>
+    </enumeration>
+</simple-type>

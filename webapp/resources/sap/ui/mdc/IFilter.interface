@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interface xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IFilter</name>
+    <derived/>
+    <documentation>Interface for controls or entities which can serve as filters in the &lt;code&gt;sap.ui.mdc.Table&lt;/code&gt; &amp; &lt;code&gt;sap.ui.mdc.Chart&lt;/code&gt;.
+
+The following methods need to be implemented:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getConditions&lt;/code&gt; - Part of the {@link sap.ui.mdc.IFilterSource} interface.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;validate&lt;/code&gt; - The &lt;code&gt;validate&lt;/code&gt; method should return a promise which resolves after the IFilter interface has handled its inner validation. The &lt;code&gt;getConditions&lt;/code&gt; method will be called subsequently by the filtered control.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;getSearch&lt;/code&gt; - &lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;getSearch&lt;/code&gt; method can optionally be implemented and should return a string for approximate string matching implemented in the backend.&lt;/li&gt;
+&lt;/ul&gt;
+
+The following events need to be implemented:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;search&lt;/code&gt; - This event should be fired once a filtering should be executed on the IFilter using control.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filtersChanged&lt;/code&gt; - &lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;filtersChanged&lt;/code&gt; event can optionally be implemented and should be fired whenever a filter value has changed. This event will be used to display an overlay on the IFilter consuming control.&lt;/li&gt;
+&lt;/ul&gt;</documentation>
+    <since>1.70</since>
+</interface>

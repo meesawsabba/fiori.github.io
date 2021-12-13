@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["sap/fe/core/converters/ConverterContext","sap/base/util/merge","sap/base/util/uid","sap/base/util/deepClone"],function(C,m,u,d){"use strict";var g=function(c,i){var p={};if(c){var o=c[i];if(o){Object.keys(o).forEach(function(a){p[a]=o[a];});}}return p;};var s=function(p,P,o){if(p[P]===undefined){p[P]=o;}};var M={metadata:{properties:{_flexId:{type:"string"}}},extend:function(n,c){c.metadata.properties._flexId=M.metadata.properties._flexId;c.hasValidation=true;c.getOverrides=g.bind(c);c.setDefaultValue=s.bind(c);c.getConverterContext=function(v,a,S,e){var A=S.appComponent;var o=S.models.viewData&&S.models.viewData.getData();var b=Object.assign({},o);delete b.resourceBundle;b=d(b);b.controlConfiguration=m(b.controlConfiguration,e);var f=C.createConverterContextForMacro(v.startingEntitySet.name,S.models.metaModel,A&&A.getDiagnostics(),m,v.contextLocation,b);return f;};c.createBindingContext=function(D,S){var a="/"+u();S.models.converterContext.setProperty(a,D);return S.models.converterContext.createBindingContext(a);};c.parseAggregation=function(a,f){var o={};if(a&&a.children.length>0){var b=a.children;for(var e=0;e<b.length;e++){var h=f(b[e],e);if(h){o[h.key]=h;}}}return o;};return c;}};return M;});

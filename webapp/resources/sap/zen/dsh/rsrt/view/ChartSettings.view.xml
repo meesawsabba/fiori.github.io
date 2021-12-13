@@ -1,0 +1,76 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:m="sap.m"
+    controllerName="sap.zen.dsh.rsrt.controller.ChartSettingsView"
+    id="ChartSettingsView">
+  <m:IconTabBar
+      id="IconTabBar"
+      class="sapUiResponsiveContentPadding"
+      expandable="false">
+    <m:items>
+      <m:IconTabFilter
+          text="{i18n>TXT_GENERAL_SETTINGS}"
+          visible="true"
+          key="1">
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.General"
+            type="XML"
+            />
+      </m:IconTabFilter>
+      <m:IconTabFilter
+          text="{i18n>TXT_CATEGORY_AXIS}"
+          visible="true"
+          key="2"
+          >
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.CategoryAxis"
+            type="XML" />
+      </m:IconTabFilter>
+      <m:IconTabFilter
+          text="{i18n>TXT_VALUE_AXIS}"
+          key="4"
+          >
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.ValueAxis"
+            type="XML" />
+      </m:IconTabFilter>
+
+      <m:IconTabFilter
+          text="{i18n>TXT_LEGEND}"
+          key="6"
+          visible="true"
+          >
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.Legend"
+            type="XML" />
+      </m:IconTabFilter>
+      <m:IconTabFilter
+          text="{i18n>TXT_PLOT_AREA}"
+          key="7"
+          visible="false"
+          >
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.PlotArea"
+            type="XML" />
+      </m:IconTabFilter>
+      <m:IconTabFilter
+          text="{i18n>COLOR_SETTINGS}"
+          visible="false"
+          key="8">
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.Colors"
+            type="XML" />
+      </m:IconTabFilter>
+        <m:IconTabFilter
+          text="{i18n>OTHER_AXES}"
+          key="9">
+        <core:Fragment
+            fragmentName="sap.zen.dsh.rsrt.fragments.OtherAxes"
+            type="XML" />
+      </m:IconTabFilter>
+    </m:items>
+  </m:IconTabBar>
+</mvc:View>

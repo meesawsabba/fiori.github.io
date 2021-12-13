@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="conditionfra">
+  <m:Dialog id="conditiondia" horizontalScrolling="false" class="sapUiSizeCompact" contentWidth="65rem" contentHeight="23rem" draggable="true" resizable="true" title="{i18n>CONDITION_SETTINGS}">
+    <m:buttons>
+      <m:Button id="conditiondiab1" text="{i18n>DIALOG_OK}" press="onOk" />
+      <m:Button id="conditiondiab2" text="{i18n>DIALOG_CANCEL}" press="onCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="condview" viewName="sap.zen.dsh.view.Condition" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>

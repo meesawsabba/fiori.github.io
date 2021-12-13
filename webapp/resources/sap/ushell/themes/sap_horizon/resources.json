@@ -1,0 +1,262 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 90,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "ActionMode.less",
+			"size": 873,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "AnchorItem.less",
+			"size": 968,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "AnchorNavigationBar.less",
+			"size": 2879,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Appearance.less",
+			"size": 518,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "ApplicationContainer.less",
+			"size": 482,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Catalog.less",
+			"size": 1555,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "ContactSupport.less",
+			"size": 310,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "DynamicTile.less",
+			"size": 2422,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Factsheet.less",
+			"size": 968,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "FloatingContainer.less",
+			"size": 298,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "FlpSettings.less",
+			"size": 314,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "LoadingDialog.less",
+			"size": 819,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "MeArea.less",
+			"size": 588,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "NotificationSettings.less",
+			"size": 932,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Notifications.less",
+			"size": 1264,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "PictureTile.less",
+			"size": 365,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "PlusTile.less",
+			"size": 533,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "QuickAccess.less",
+			"size": 183,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Search.less",
+			"size": 1454,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "SearchBarChart.less",
+			"size": 911,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "SearchFacet.less",
+			"size": 669,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "SearchFieldGroup.less",
+			"size": 4001,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Section.less",
+			"size": 420,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "ShellHeader.less",
+			"size": 4922,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "ShellLayout.less",
+			"size": 1369,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "SplitContainer.less",
+			"size": 265,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "Tile.less",
+			"size": 3530,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "TileBase.less",
+			"size": 2412,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "TileContainer.less",
+			"size": 8183,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "TileState.less",
+			"size": 497,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "ToolAreaItem.less",
+			"size": 1238,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "UsageAnalyticsSelector.less",
+			"size": 740,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "UserPreferencesButton.less",
+			"size": 372,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 16166,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 112748,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 112386,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 194556,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 6758,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library.css",
+			"size": 194486,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library.less",
+			"size": 49790,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library.source.less",
+			"size": 1194,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 199882,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 199812,
+			"theme": "sap_horizon"
+		}
+	]
+}

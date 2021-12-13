@@ -1,0 +1,111 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 137,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "BarListCard.less",
+			"size": 324,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "Card.less",
+			"size": 1992,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "DashboardLayout.less",
+			"size": 0,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "LinkListCard.less",
+			"size": 74,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "OVPApp.less",
+			"size": 1146,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ObjectStream.less",
+			"size": 1304,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "StackPlaceHolder.less",
+			"size": 208,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 815,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 108704,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 108334,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "img/ovpDarkBg.png",
+			"size": 70907,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 52961,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 238,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.css",
+			"size": 52947,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.less",
+			"size": 5845,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.source.less",
+			"size": 372,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 55794,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 55780,
+			"theme": "sap_bluecrystal"
+		}
+	]
+}

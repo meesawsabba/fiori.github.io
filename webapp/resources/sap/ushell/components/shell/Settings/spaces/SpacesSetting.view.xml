@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="sap.ushell.components.shell.Settings.spaces.SpacesSetting"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <VBox class="sapUiSmallMargin">
+        <CheckBox text="{i18n>spacesModeLabel}" selected="{/isSpacesEnabled}"/>
+        <VBox class="sapUshellFlpSettingsDescriptionBorder">
+            <Text class="sapUshellFlpSettingsDescription sapUshellFlpSettingsWide" text="{i18n>spacesModeDescriptionText}"/>
+        </VBox>
+        <CheckBox
+            text="{i18n>showMyHomeLabel}"
+            visible="{= ${/isSpacesEnabled} &amp;&amp; ${/isShowMyHomeVisible}}"
+            selected="{/isShowMyHomeSelected}"/>
+        <VBox class="sapUshellFlpSettingsDescriptionBorder" visible="{= ${/isSpacesEnabled} &amp;&amp; ${/isShowMyHomeVisible}}">
+            <Text class="sapUshellFlpSettingsDescription sapUshellFlpSettingsWide" text="{i18n>showMyHomeDescriptionText}"/>
+        </VBox>
+        <CheckBox
+            text="{i18n>showMyHomeImportLabel}"
+            visible="{= ${/isSpacesEnabled} &amp;&amp; ${/isShowMyHomeSelected} &amp;&amp; ${/isMyHomeImportVisible}}"
+            selected="{/isMyHomeImportSelected}" />
+        <VBox class="sapUshellFlpSettingsDescriptionBorder"
+            visible="{= ${/isSpacesEnabled} &amp;&amp; ${/isShowMyHomeSelected} &amp;&amp; ${/isMyHomeImportVisible}}">
+            <Text class="sapUshellFlpSettingsDescription sapUshellFlpSettingsWide" text="{i18n>showMyHomeImportDescription}"/>
+        </VBox>
+    </VBox>
+</mvc:View>

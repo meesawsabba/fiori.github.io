@@ -1,0 +1,5 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *      (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/fe/macros/MacroMetadata","sap/fe/core/helpers/BindingExpression"],function(M,B){"use strict";var c=B.compileBinding;var r=B.resolveBindingString;var e=B.equal;var i=B.ifElse;var F=M.extend("sap.fe.macros.FormElement",{name:"FormElement",namespace:"sap.fe.macros",fragment:"sap.fe.macros.FormElement",metadata:{stereotype:"xmlmacro",properties:{metaPath:{type:"sap.ui.model.Context",required:true},contextPath:{type:"sap.ui.model.Context",required:true},id:{type:"string",required:true},label:{type:"string",required:false},visible:{type:"boolean",required:false}},aggregations:{"fields":{type:"sap.ui.core.Control"}}},create:function(p,C,a,A){if(p.label===undefined){p.label=p.metaPath.getModel().getProperty(p.metaPath.sPath+"@com.sap.vocabularies.Common.v1.Label");}if(p.editable!==undefined){p.editModeExpression=c(i(e(r(p.editable,"boolean"),true),"Editable","Display"));}else{p.editModeExpression=undefined;}p.fieldsAvailable=A.fields!==undefined;return p;}});return F;},false);

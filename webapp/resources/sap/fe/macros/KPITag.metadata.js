@@ -1,0 +1,5 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *      (c) Copyright 2009-2021 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/fe/macros/MacroMetadata","sap/fe/core/helpers/BindingExpression","sap/fe/core/formatters/KPIFormatter"],function(M,B,k){"use strict";var f=B.formatResult;var c=B.compileBinding;var b=B.bindingExpression;var K=M.extend("sap.fe.macros.KPITag",{name:"KPITag",namespace:"sap.fe.macros",fragment:"sap.fe.macros.KPITag",metadata:{stereotype:"xmlmacro",properties:{id:{type:"string",required:true},hasUnit:{type:"boolean",required:false},metaPath:{type:"sap.ui.model.Context",required:true}},aggregations:{}},create:function(p){var a=p.metaPath.getProperty("Title");if(a){var d=a.match(/{(.*)>(.*)}/);var t;if(d){t=b(d[2],d[1]);}else{t=a;}var l=f([t],k.labelFormat);p.label=c(l);var e=f([t,b("/"+p.id+"/manifest/sap.card/data/json/mainValueUnscaled","kpiModel"),b("/"+p.id+"/manifest/sap.card/data/json/mainUnit","kpiModel"),b("/"+p.id+"/manifest/sap.card/data/json/mainCriticality","kpiModel"),p.hasUnit],k.tooltipFormat);p.tooltip=c(e);}return p;}});return K;},false);

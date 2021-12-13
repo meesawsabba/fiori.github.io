@@ -1,0 +1,73 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns:vh="sap.ui.comp.valuehelpdialog"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:m="sap.m" id="openDialogView">
+  <vh:ValueHelpDialog
+      id="openDia1" class="sapUiSizeCompact" basicSearchText="" title="{i18n>OPEN_DIALOG}" supportMultiselect="false" supportRanges="false" supportRangesOnly="false" key="key" descriptionKey="Description" ok="onOkValueHelp" cancel="onCancelValueHelp">
+    <vh:filterBar>
+      <fb:FilterBar
+          id="openDia2" search="search">
+        <fb:filterGroupItems>
+          <fb:FilterGroupItem
+              id="openDia4" groupName="attributes" name="text" label="{i18n>txt_description}" visibleInFilterBar="true">
+            <fb:control>
+              <m:Input
+                  id="fbotext" placeholder="{i18n>RestrictValuePoolByTextFilter}" />
+            </fb:control>
+          </fb:FilterGroupItem>
+          <fb:FilterGroupItem
+              id="openDia14"
+              groupName="attributes"
+              name="type"
+              label="{i18n>DataSourceType}"
+              visibleInFilterBar="true">
+            <fb:control>
+              <m:Select
+                  ariaLabelledBy="openDia14"
+                  id="fbotype"
+                  selectedKey="Query">
+                <core:Item
+                    id="openDia15"
+                    text="{i18n>QUERY}"
+                    key="QUERY" />
+                <core:Item
+                    id="openDia16"
+                    text="{i18n>infoprov}"
+                    key="DEFAULT_REPORT_QUERY" />
+                <core:Item
+                    id="openDia17"
+                    text="{i18n>ProjectionView}"
+                    key="CDS_PROJECTION_VIEW" />
+                <core:Item
+                    id="openDia18"
+                    text="{i18n>View}"
+                    key="VIEW" />
+              </m:Select>
+            </fb:control>
+          </fb:FilterGroupItem>
+          <fb:FilterGroupItem
+              id="openDia14BWS"
+              groupName="attributes"
+              name="system"
+              label="{i18n>Type}"
+              visibleInFilterBar="true">
+            <fb:control>
+              <m:Select
+                  ariaLabelledBy="openDia14BWS"
+                  id="fbosystem"
+                  items="{om>/systems}"
+                  >
+                <core:Item
+                    id="openDia15BWS"
+                    text="{om>name}"
+                    key="{om>name}"
+                    />
+              </m:Select>
+            </fb:control>
+          </fb:FilterGroupItem>
+        </fb:filterGroupItems>
+      </fb:FilterBar>
+    </vh:filterBar>
+  </vh:ValueHelpDialog>
+</core:FragmentDefinition>

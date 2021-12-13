@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["./MacroMetadata"],function(M){"use strict";var a=M.extend("sap.fe.macros.MicroChart",{name:"MicroChart",namespace:"sap.fe.macros.internal",publicNamespace:"sap.fe.macros",publicName:"MicroChart",fragment:"sap.fe.macros.MicroChart",metadata:{stereotype:"xmlmacro",properties:{contextPath:{type:"sap.ui.model.Context",$kind:["EntitySet","NavigationProperty"],isPublic:true},metaPath:{type:"sap.ui.model.Context",required:true,isPublic:true},id:{type:"string",isPublic:true,required:true},showOnlyChart:{type:"boolean",defaultValue:false,isPublic:true},batchGroupId:{type:"string",defaultValue:"",isPublic:true},title:{type:"string",defaultValue:"",visibility:"hidden"},hideOnNoData:{type:"boolean",defaultValue:false,isPublic:true},description:{type:"string",defaultValue:"",visibility:"hidden"},navigationType:{type:"sap.fe.macros.NavigationType",defaultValue:"None",visibility:"hidden"},onTitlePressed:{type:"string",visibility:"hidden"},size:{type:"string",isPublic:true},isAnalytics:{type:"boolean",defaultValue:false,visibility:"hidden"}},events:{}}});return a;});

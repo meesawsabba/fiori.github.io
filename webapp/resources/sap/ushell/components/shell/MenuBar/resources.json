@@ -1,0 +1,141 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/shell/MenuBar/Component.js",
+			"size": 2349,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ushell/Config.js"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js",
+			"module": "sap/ushell/components/shell/MenuBar/Component-h2-preload.js",
+			"size": 2875,
+			"merged": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/m/IconTabFilter.js",
+				"sap/m/IconTabHeader.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils.js",
+				"sap/ushell/utils/WindowUtils.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/MenuBar/Component.js",
+				"sap/ushell/components/shell/MenuBar/manifest.json",
+				"sap/ushell/components/shell/MenuBar/controller/MenuBar.controller.js",
+				"sap/ushell/components/shell/MenuBar/view/MenuBar.view.xml"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js.map",
+			"size": 1107,
+			"isDebug": true
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "sap/ushell/components/shell/MenuBar/Component-preload.js",
+			"size": 6743,
+			"merged": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/m/IconTabFilter.js",
+				"sap/m/IconTabHeader.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils.js",
+				"sap/ushell/utils/WindowUtils.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/MenuBar/Component.js",
+				"sap/ushell/components/shell/MenuBar/controller/MenuBar.controller.js",
+				"sap/ushell/components/shell/MenuBar/manifest.json",
+				"sap/ushell/components/shell/MenuBar/view/MenuBar.view.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js.map",
+			"size": 5393,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/shell/MenuBar/Component.js",
+			"size": 1003,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ushell/Config.js"
+			]
+		},
+		{
+			"name": "controller/MenuBar-dbg.controller.js",
+			"module": "sap/ushell/components/shell/MenuBar/controller/MenuBar.controller.js",
+			"size": 13027,
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/m/IconTabFilter.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "controller/MenuBar.controller.js",
+			"module": "sap/ushell/components/shell/MenuBar/controller/MenuBar.controller.js",
+			"size": 3933,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/m/IconTabFilter.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ushell/components/shell/MenuBar/manifest.json",
+			"size": 2050
+		},
+		{
+			"name": "resources.json",
+			"size": 2667
+		},
+		{
+			"name": "view/MenuBar.view.xml",
+			"module": "sap/ushell/components/shell/MenuBar/view/MenuBar.view.xml",
+			"size": 737,
+			"required": [
+				"sap/m/IconTabHeader.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ushell/components/shell/MenuBar/controller/MenuBar.controller.js"
+			]
+		}
+	]
+}

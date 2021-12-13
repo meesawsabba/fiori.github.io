@@ -1,0 +1,109 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    id="prev-asfa-ctl1">
+  <m:ActionSheet
+      id="FurtherActions"
+      title="{i18nShared>txt_further_actions}">
+    <m:Button
+        id="refreshButton"
+        tooltip="{i18n>REFRESH}"
+        text="{i18n>REFRESH}"
+        icon="sap-icon://refresh"
+        press="onRefresh" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="prev-asfa-ctl2"
+        icon="sap-icon://undo"
+        tooltip="{i18n>BACK}"
+        text="{i18n>BACK}"
+        enabled="{om>/HasUndo}"
+        press="onBack" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="prev-asfa-ctl4"
+        press="onExportExcel"
+        icon="sap-icon://download"
+        tooltip="{i18n>EXPORT_EXCEL}"
+        text="{i18n>EXPORT_EXCEL}" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="currencyTranslation"
+        tooltip="{i18n>CURRENCY_TRANSLATION}"
+        text="{i18n>CURRENCY_TRANSLATION}"
+        icon="sap-icon://detail-view"
+        press="onCurrencyTranslation"
+        visible="{om>/dataProvider/0/HasCurrencyTranslation}" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="prev-asfa-ctl1"
+        icon="sap-icon://provision"
+        tooltip="{
+                 parts:[
+                 'i18n>QUERY_SETTINGS',
+                 '/Description'
+                 ],
+                 formatter: 'jQuery.sap.formatMessage'
+                 }"
+        text="{i18n>SETTINGS}"
+        press="onSettings" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="resetBuffer"
+        tooltip="{i18n>RESET_BUFFER}"
+        text="{i18n>RESET_BUFFER}"
+        icon="sap-icon://eraser"
+        press="onResetBuffer"
+        visible="{om>/dataProvider/0/Grid/DataChanged}" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="save"
+        tooltip="{i18n>SAVE_BUFFER}"
+        text="{i18n>SAVE_BUFFER}"
+        icon="sap-icon://save"
+        press="onSaveBuffer"
+        visible="{om>/dataProvider/0/Grid/DataChanged}" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+    <m:Button
+        id="newLines"
+        tooltip="{i18n>NEW_LINES}"
+        text="{i18n>NEW_LINES}"
+        icon="sap-icon://create"
+        press="onNewLines"
+        visible="{=!!${om>/dataProvider/0/AllowsNewLines}}" >
+      <m:layoutData>
+        <m:OverflowToolbarLayoutData
+            closeOverflowOnInteraction="false"/>
+      </m:layoutData>
+    </m:Button>
+  </m:ActionSheet>
+</core:FragmentDefinition>

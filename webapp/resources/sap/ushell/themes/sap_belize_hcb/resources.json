@@ -1,0 +1,214 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 93,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ActionMode.less",
+			"size": 721,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "AnchorItem.less",
+			"size": 1791,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "AnchorNavigationBar.less",
+			"size": 484,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ApplicationContainer.less",
+			"size": 470,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "Catalog.less",
+			"size": 815,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ContactSupport.less",
+			"size": 644,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "DynamicTile.less",
+			"size": 2501,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "GroupList.less",
+			"size": 2635,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "HistoryScreen.less",
+			"size": 425,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "LoadingDialog.less",
+			"size": 404,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "MeArea.less",
+			"size": 396,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "Notifications.less",
+			"size": 310,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "PictureTile.less",
+			"size": 325,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "PlusTile.less",
+			"size": 951,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "SearchPieChart.less",
+			"size": 221,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ShellFloatingAction.less",
+			"size": 1030,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ShellHeader.less",
+			"size": 4733,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "ShellLayout.less",
+			"size": 177,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "SplitContainer.less",
+			"size": 74,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "Tile.less",
+			"size": 581,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "TileBase.less",
+			"size": 2063,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "TileContainer.less",
+			"size": 4206,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "TileState.less",
+			"size": 604,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "UserPreferencesButton.less",
+			"size": 340,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "css_variables.css",
+			"size": 16631,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "css_variables.less",
+			"size": 110352,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "css_variables.source.less",
+			"size": 109984,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "flower-standalone.less",
+			"size": 1009,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 179473,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library-parameters.json",
+			"size": 6959,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library.css",
+			"size": 179407,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library.less",
+			"size": 29946,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library.source.less",
+			"size": 969,
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library_skeleton-RTL.css",
+			"size": 183036,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "library_skeleton.css",
+			"size": 182970,
+			"theme": "sap_belize_hcb"
+		}
+	]
+}

@@ -1,0 +1,137 @@
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2020 SAP SE. All rights reserved
+ */
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2020 SAP SE. All rights reserved
+ */
+/******************* FILE /Base/baseLib/baseTheme/base.less (Version 11.1.34) *******************/
+/******************* FILE /Base/baseLib/sap_belize_hcw/base.less (Version 11.1.34) *******************/
+/* ====================================== */
+/* CSS for control sap.sac.grid.Grid */
+/* Base theme                             */
+/* ====================================== */
+.sapUiSACReactNode {
+  background-color: #fafafa;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+.reactTableComponent .tableContainer .reactTable .cellValue {
+  color: #333333;
+  flex: none !important;
+}
+.reactTableComponent .tableContainer .reactTable .cellValue:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.icon.hierarchyIcon.expandedAboveIcon:before {
+  font-family: "SAP-icons";
+  color: #333333;
+  content: "\e1f0";
+}
+.icon.hierarchyIcon.expandedAboveIcon:hover {
+  cursor: pointer;
+}
+.icon.hierarchyIcon.expandedBelowIcon:before {
+  font-family: "SAP-icons";
+  color: #333333;
+  content: "\e1ef";
+}
+.icon.hierarchyIcon.expandedBelowIcon:hover {
+  cursor: pointer;
+}
+.icon.hierarchyIcon.collapsedIcon:before {
+  font-family: "SAP-icons";
+  color: #333333;
+  content: "\e1ed";
+}
+.icon.hierarchyIcon.collapsedIcon:hover {
+  cursor: pointer;
+}
+.reactTableComponent.noDataInTable .tableContainer .reactTable .cellValue {
+  color: #333333;
+  flex: none !important;
+}
+.reactTableComponent.noDataInTable .tableContainer .reactTable .cellValue:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+/* ====================================== */
+/* CSS for control sap.sac.grid.Grid */
+/* Excel Style Adaptions                  */
+/* ====================================== */
+.reactTableComponent .tableContainer .htmlTableWrapper.showGrid .tableDivCell {
+  border-right: 1px solid #5e696e !important;
+  border-bottom: 1px solid #5e696e !important;
+  border-collapse: separate;
+}
+/******************* FILE /Base/baseLib/sap_belize/base.less (Version 11.1.34) *******************/
+/* Comment to avoid ATC errors in BSP */
+/* Comment to avoid ATC errors in BSP */
+
+/* Comment to avoid ATC errors in BSP */
+
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2020 SAP SE. All rights reserved
+ */
+
+/*!
+ * SAPUI5
+  (c) Copyright 2009-2020 SAP SE. All rights reserved
+ */
+
+/******************* FILE /Base/baseLib/baseTheme/base.less (Version 11.1.34) *******************/
+
+/******************* FILE /Base/baseLib/sap_belize_hcw/base.less (Version 11.1.34) *******************/
+
+.sapContrast.sapUiSACReactNode,
+.sapContrast .sapUiSACReactNode {
+  background-color: #3f5161;
+}
+
+.sapContrast.reactTableComponent .tableContainer .reactTable .cellValue,
+.sapContrast .reactTableComponent .tableContainer .reactTable .cellValue {
+  color: #fafafa;
+}
+
+.sapContrast.reactTableComponent .tableContainer .reactTable .cellValue:hover,
+.sapContrast .reactTableComponent .tableContainer .reactTable .cellValue:hover {
+  text-decoration: underline;
+}
+
+.sapContrast.icon.hierarchyIcon.expandedAboveIcon:before,
+.sapContrast .icon.hierarchyIcon.expandedAboveIcon:before {
+  color: #fafafa;
+}
+
+.sapContrast.icon.hierarchyIcon.expandedBelowIcon:before,
+.sapContrast .icon.hierarchyIcon.expandedBelowIcon:before {
+  color: #fafafa;
+}
+
+.sapContrast.icon.hierarchyIcon.collapsedIcon:before,
+.sapContrast .icon.hierarchyIcon.collapsedIcon:before {
+  color: #fafafa;
+}
+
+.sapContrast.reactTableComponent.noDataInTable .tableContainer .reactTable .cellValue,
+.sapContrast .reactTableComponent.noDataInTable .tableContainer .reactTable .cellValue {
+  color: #fafafa;
+}
+
+.sapContrast.reactTableComponent.noDataInTable .tableContainer .reactTable .cellValue:hover,
+.sapContrast .reactTableComponent.noDataInTable .tableContainer .reactTable .cellValue:hover {
+  text-decoration: none;
+}
+
+.reactTableComponent .tableContainer . .sapContrasthtmlTableWrapper.showGrid {
+  border-right: 1px solid #d3d7d9 !important;
+  border-bottom: 1px solid #d3d7d9 !important;
+  border-collapse: separate;
+}
+
+/* Inline theming parameters */
+#sap-ui-theme-sap\.sac\.grid{background-image:url('data:text/plain;utf-8,%7B%22default%22%3A%7B%22sapUiFontLightFamily%22%3A%22%5C%2272-Light%5C%22%2C%20%5C%2272-Lightfull%5C%22%2C%20%5C%2272%5C%22%2C%20%5C%2272full%5C%22%2C%20Arial%2C%20Helvetica%2C%20sans-serif%22%2C%22sapUiFontBoldFamily%22%3A%22%5C%2272-Bold%5C%22%2C%20%5C%2272-Boldfull%5C%22%2C%20%5C%2272%5C%22%2C%20%5C%2272full%5C%22%2C%20Arial%2C%20Helvetica%2C%20sans-serif%22%2C%22sapUiSacGridExpandedAboveIcon%22%3A%22%5C%22%5C%5Ce1f0%5C%22%22%2C%22sapUiSacGridExpandedBelowIcon%22%3A%22%5C%22%5C%5Ce1ef%5C%22%22%2C%22sapUiSacGridCollapsedIcon%22%3A%22%5C%22%5C%5Ce1ed%5C%22%22%2C%22sapUiSacGridCursorPointer%22%3A%22pointer%22%2C%22sapUiSacGridNoDataCursorPointer%22%3A%22auto%22%2C%22sapUiSacGridTextDecoration%22%3A%22underline%22%2C%22sapUiSacGridNoDataTextDecoration%22%3A%22none%22%2C%22sapUiSacGridCellBorder%22%3A%221px%20solid%20%235e696e%22%2C%22sapUiSacGridCellBorderCollapse%22%3A%22separate%22%2C%22sapUiSacGridOverflow%22%3A%22auto%22%2C%22sapUiSacGrid100PerCent%22%3A%22100%25%22%2C%22sapUiSacGridCellNoFlex%22%3A%22none%22%7D%2C%22scopes%22%3A%7B%22sapContrast%22%3A%7B%22sapUiSacGridCellBorder%22%3A%221px%20solid%20%23d3d7d9%22%7D%7D%7D')}

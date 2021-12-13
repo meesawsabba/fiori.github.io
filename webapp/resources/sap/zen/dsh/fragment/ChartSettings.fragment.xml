@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" id="chartsetfrag">
+  <m:Dialog id="chartsetdia" horizontalScrolling="false" contentWidth="65rem" contentHeight="23rem" draggable="true" resizable="true" title="{i18n>CHART_SETTINGS}">
+    <m:buttons>
+      <m:Button id="ok" text="{i18n>DIALOG_OK}" press="onOk" />
+      <m:Button id="cancel" text="{i18n>DIALOG_CANCEL}" press="onCancel" />
+    </m:buttons>
+    <m:content>
+      <mvc:XMLView id="chartsetview" viewName="sap.zen.dsh.view.ChartSettings" async="true" />
+    </m:content>
+  </m:Dialog>
+</core:FragmentDefinition>
