@@ -1,2 +1,0 @@
-// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ushell_abap/pbServices/ui2/Chip"],function(C){"use strict";if(typeof jQuery==="function"&&jQuery.sap){jQuery.sap.declare("sap.ui2.srvc.contracts.fullscreen");}C.addContract("fullscreen",function(c){this.getFullscreen=function(){return c.getFullscreen();};this.setFullscreen=function(o){c.setFullscreen(o);};this.attachFullscreen=function(e){c.attachFullscreen(e);};});});

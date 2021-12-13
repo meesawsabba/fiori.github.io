@@ -1,1 +1,0 @@
-sap.ui.define(["sap/base/security/encodeXML","sap/ui/model/odata/AnnotationHelper"],function(e,A){"use strict";var r={setRowNavigated:function(b){var c=this.getBindingContext()||this.getParent().getBindingContext();var p=c&&c.getPath();return!!p&&(p===b);},encodeHTML:function(H){return e(H);}};return r;},true);

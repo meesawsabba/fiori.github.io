@@ -1,2 +1,0 @@
-// Copyright (c) 2009-2020 SAP SE, All Rights Reserved
-sap.ui.require(["sap/ushell_abap/pbServices/ui2/Chip"],function(C){"use strict";if(typeof jQuery==="function"&&jQuery.sap){jQuery.sap.declare("sap.ui2.srvc.contracts.navigation");}var n;if(typeof sap.ui2.shell==="object"&&typeof sap.ui2.shell.getNavigationHandle==="function"){n=sap.ui2.shell.getNavigationHandle();if(typeof n==="object"&&typeof n.navigateToUrl==="function"){C.addContract("navigation",function(c){this.navigateToUrl=function(u,s){n.navigateToUrl.apply(n,arguments);};});}}});

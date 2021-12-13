@@ -1,9 +1,0 @@
-{
-"version":3,
-"file":"sap/fe/macros/library-h2-preload.js",
-"sourceroot":".",
-"sources":["library-dbg.js","manifest.json"],
-"names":["Fragment","XMLTemplateProcessor","macroLibrary","Core","coreLibrary","unifiedLibrary","mdcLibrary","feCoreLibrary","ConditionsType","MultiValueType","RangeType","mSettings"],
-"mappings":";;;;;;AASA,gBAAa,yBACZ,CACC,uBACA,mCACA,6BACA,mBACA,sBACA,yBACA,qBACA,sBACA,kCACA,uCACA,iCACD,EACA,SACCA,CAAQ,CACRC,CAAoB,CACpBC,CAAY,CACZC,CAAI,CACJC,CAAW,CACXC,CAAc,CACdC,CAAU,CACVC,CAAa,CACbC,CAAc,CACdC,CAAc,CACdC,CACD,CAAE,CACD,aAmBA,8BACC,KAAM,gBACN,aAAc,eAAgB,aAAc,iBAAkB,eAC9D,MAAO,gCAAiC,mCAAoC,qCAC5E,WAAY,GACZ,SAAU,GACV,SAAU,GACV,QAAS,SACT,aAAc,IACf,GAEA,4BAA6B,CAAE,CAK9B,SAAU,WAMV,OAAQ,SAMR,KAAM,MACP,EAQA,gCAAiC,CAAE,CAKlC,YAAa,cAMb,SAAU,UACX,EAQA,iCAAkC,CAAE,CAKnC,UAAW,YAKX,YAAa,cAKb,OAAQ,QACT,EAEAV,CAAQ,uBAAwB,CAC/B,KAAMA,CAAQ,qBACd,KAAM,SAASW,CAAS,CAAE,CACzBA,CAAS,eAAgB,CAAE,CAC1B,YACCA,CAAS,+BAAgC,EAAGA,CAAS,gDAAgDA,CAAS,IAChH,EACA,OAAOX,CAAQ,gCAAiC,WACjD,CACD,GAEA,OAAO,cACR,CACD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-"x_com_sap_openui5_sections":[50,1401,1457,2667]
-}

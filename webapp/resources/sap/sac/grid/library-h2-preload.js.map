@@ -1,9 +1,0 @@
-{
-"version":3,
-"file":"sap/sac/grid/library-h2-preload.js",
-"sourceroot":".",
-"sources":["library-dbg.js","manifest.json"],
-"names":["CellType","SemanticStyle","Format","AlertLevel","thisLib"],
-"mappings":";;;;;AAIA,gBAAa,CACX,uBAAwB,CACxB,wBACA,6BACA,sBACA,2BACA,QAAS,CACPA,CAAQ,CAAEC,CAAa,CAAEC,CAAM,CAAEC,CACnC,CAAE,CACA,aACA,6BACE,CACE,KAAM,eACN,QAAS,SACT,aAAc,CACZ,QACA,aACF,EACA,MAAO,CACL,0BACA,wBACA,qBACF,EACA,WAAY,GACZ,SAAU,CACR,mBACF,EACA,SAAU,CACR,oBAAqB,4BACvB,CACF,CACF,EAUA,IAAIC,CAAQ,CAAE,aACdA,CAAO,SAAU,CAAEJ,CAAQ,CAC3BI,CAAO,WAAY,CAAED,CAAU,CAC/BC,CAAO,cAAe,CAAEH,CAAa,CACrCG,CAAO,OAAQ,CAAEF,CAAM,CACvB,OAAOE,CAAO,CAChB,EAAkB;;;;;;;;;;;;;;;;;",
-"x_com_sap_openui5_sections":[49,680,735,1908]
-}

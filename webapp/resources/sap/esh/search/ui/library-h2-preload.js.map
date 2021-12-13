@@ -1,9 +1,0 @@
-{
-"version":3,
-"file":"sap/esh/search/ui/library-h2-preload.js",
-"sourceroot":".",
-"sources":["library-dbg.js","manifest.json"],
-"names":[],
-"mappings":";;;;;;;AASA,gBAAa,6BAAC,CACV,sBACA,gBACA,gBACA,wBACA,wBACA,qBACA,oBACA,kCACJ,EAAG,QAAS,EAAG,CACX,aASA,8BACI,KAAM,oBACN,aAAc,CACV,cACA,QACA,QACA,gBACA,gBACA,aACA,YACA,0BACJ,EACA,MAAO,CAEP,EACA,WAAY,GACZ,SAAU,CAEV,EACA,SAAU,GACV,aAAc,MACd,QAAS,SACb,GAmBA,OAAO,kBACX;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-"x_com_sap_openui5_sections":[54,677,737,2045]
-}

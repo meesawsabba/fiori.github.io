@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
-
-		(c) Copyright 2009-2021 SAP SE. All rights reserved
-	
- */
-sap.ui.define(["sap/esh/search/ui/appsearch/JsSearchFactory","sap/ui/Device"],function(j,d){"use strict";var C=function(){this.init.apply(this,arguments);};C.prototype={init:function(){this.initPromise=sap.ushell.Container.getServiceAsync("SearchableContent").then(function(s){return s.getApps();}).then(function(a){a=this.formatApps(a);var s=true;var i=(d&&d.browser&&d.browser.msie)||false;if(!String.prototype.normalize||i){s=false;}this.searchEngine=j.createJsSearch({objects:a,fields:["title","subtitle","keywords"],shouldNormalize:s,});}.bind(this));},formatApps:function(a){var r=[];a.forEach(function(b){b.visualizations.forEach(function(v){var l=v.title;if(v.subtitle){l=l+" - "+v.subtitle;}r.push({title:v.title||"",subtitle:v.subtitle||"",keywords:v.keywords?v.keywords.join(" "):"",icon:v.icon||"",label:l,visualization:v,url:v.targetURL,});});});return r;},prefetch:function(){},search:function(q){return this.initPromise.then(function(){var s=this.searchEngine.search({searchFor:q.searchTerm,top:q.top,skip:q.skip,});var a=[];for(var i=0;i<s.results.length;++i){var r=s.results[i];var f=Object.assign({},r.object);var h=r.highlighted.title||r.object.title;if(r.highlighted.subtitle){h=h+" - "+r.highlighted.subtitle;}else if(r.object.subtitle){h=h+" - "+r.object.subtitle;}if(h){f.label=h;}a.push(f);}return{totalCount:s.totalCount,tiles:a,};}.bind(this));},};return C;});
